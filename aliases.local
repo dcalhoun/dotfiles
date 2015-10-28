@@ -1,0 +1,6 @@
+# Bundler
+alias be="bundle exec"
+
+# GoNoodle
+alias gns="atom ~/Sites/rails/gonoodle/config/services.yml && atom ~/Sites/rails/accounts/config/services.yml"
+alias gnr="rake db:reset && rake db:test:prepare && rake champs:seed"
