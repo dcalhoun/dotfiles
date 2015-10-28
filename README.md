@@ -9,7 +9,12 @@ Set zsh as your login shell:
     chsh -s $(which zsh)
 
 ## Install
-Install Thoughtbot's dotfiles:
+Install [rcm](https://github.com/thoughtbot/rcm):
+
+    brew tap thoughtbot/formulae
+    brew install rcm
+
+Clone Thoughtbot's dotfiles:
 
     git clone git://github.com/thoughtbot/dotfiles.git
     env RCRC=$HOME/dotfiles/rcrc rcup
