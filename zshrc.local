@@ -17,9 +17,6 @@ git_prompt_info() {
 # build prompt
 export PS1='${SSH_CONNECTION+"%{$fg_bold[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:"}%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %# '
 
-# keybindings
-bindkey "^F" history-incremental-search-forward
-
 # load nvm
 export NVM_DIR="/Users/davidcalhoun/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
