@@ -11,7 +11,6 @@
   pl = pull origin
   ps = push origin
 [merge]
-  ff = false
   tool = opendiff
 [mergeTool]
   keepBackup = false

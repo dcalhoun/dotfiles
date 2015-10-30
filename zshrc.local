@@ -1,11 +1,3 @@
-# use vim for SSH, otherwise use atom as the visual editor
-if [[ -n $SSH_CONNECTION ]]; then
-  export VISUAL=vim
-else
-  export VISUAL=atom
-fi
-export EDITOR=$VISUAL
-
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   current_branch=$(git current-branch 2> /dev/null)
