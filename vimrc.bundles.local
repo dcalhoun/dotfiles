@@ -1,3 +1,4 @@
 " Define bundles via Github repos
 Plug 'jlanzarotta/bufexplorer'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
