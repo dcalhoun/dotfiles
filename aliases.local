@@ -4,4 +4,3 @@ alias nls="npm ls -g --depth=0"
 
 # GoNoodle
 alias gns="LIVE_RELOAD=true be rails s"
-alias gnr="rake db:reset && rake db:test:prepare && rake champs:seed"
