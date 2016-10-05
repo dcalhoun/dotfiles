@@ -1,5 +1,6 @@
 # System
 alias be="bundle exec"
+alias mux="tmuxinator"
 alias nls="npm ls -g --depth=0"
 
 # GoNoodle
