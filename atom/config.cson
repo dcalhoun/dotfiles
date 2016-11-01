@@ -1,0 +1,391 @@
+"*":
+  Zen:
+    fullscreen: false
+  "aligner-scss": {}
+  "atom-beautify":
+    _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
+  "atom-typescript": {}
+  "autoclose-html": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    maxVisibleSuggestions: 5
+    navigateCompletions: "ctrl-p,ctrl-n"
+  "base16-syntax":
+    scheme: "Solarized"
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "pain-split"
+      "inline-autocomplete"
+      "autoclose-html"
+      "autocomplete"
+      "autocomplete-paths"
+      "ember-cli-helper"
+      "atom-handlebars"
+      "maximize-panes"
+      "smart-tab-name"
+      "ember-tabs"
+      "aligner"
+      "pigments"
+      "nuclide"
+      "language-postcss"
+      "vim-mode"
+      "ex-mode"
+    ]
+    ignoredNames: [
+      ".git"
+      ".sass-cache"
+      ".DS_Store"
+      "tmp"
+      ".publish"
+    ]
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "tree-view"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 13
+    invisibles: {}
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrapHangingIndent: 2
+    tabType: "soft"
+  emmet: {}
+  "exception-reporting":
+    userId: "ac631541-c7c8-5edd-db39-cefe2e04cb69"
+  "fancy-new-file":
+    suggestCurrentFilePath: true
+  "file-icons":
+    coloured: false
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "find-and-replace":
+    focusEditorAfterSearch: true
+  "fuzzy-finder":
+    ignoredNames: [
+      "**/.tmp/*"
+      "**/node_modules/*"
+      "**/bower_components/*"
+      "**/vendor/*"
+      "**/.jekyll/*"
+      "**/build/*"
+      "**/dist/*"
+    ]
+    useAlternateScoring: true
+  "git-projects":
+    rootPath: "/Users/davidcalhoun/Sites/"
+  "highlight-line":
+    enableBackgroundColor: false
+  "inline-autocomplete": {}
+  "language-postcss": {}
+  linter:
+    errorPanelHeight: 24
+    showErrorInline: false
+    showProviderName: false
+  "linter-js-standard":
+    checkStyleDevDependencies: true
+  "linter-stylelint":
+    disableWhenNoConfig: true
+  "markdown-preview": {}
+  metrics:
+    userId: "94cae727e598b1784e1882b081dc3407dfea5494"
+  "one-dark-ui": {}
+  pigments:
+    markerType: "dot"
+    supportedFiletypes: [
+      "css"
+      "scss"
+    ]
+  react: {}
+  "status-bar": {}
+  tabs: {}
+  "tabs-to-spaces": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
+  "vim-surround":
+    changeSurroundCommand: "c S"
+    deleteCommand: "d S"
+    deleteSurroundCommand: "d S"
+    surroundCommand: "S"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".basic.html.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".c.source":
+  editor:
+    softWrapHangingIndent: 2
+".cake.source":
+  editor:
+    softWrapHangingIndent: 2
+".clojure.source":
+  editor:
+    softWrapHangingIndent: 2
+".coffee.jsx.source":
+  editor:
+    softWrapHangingIndent: 2
+".coffee.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".console.python.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".core.html.htmlbars.internal.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".cpp.source":
+  editor:
+    softWrapHangingIndent: 2
+".cs.source":
+  editor:
+    softWrapHangingIndent: 2
+".css.less.source":
+  editor:
+    softWrapHangingIndent: 2
+".css.postcss.source":
+  editor:
+    softWrapHangingIndent: 2
+".css.postcss.source.sugarss":
+  editor:
+    softWrapHangingIndent: 2
+".css.scss.source":
+  editor:
+    softWrapHangingIndent: 2
+".css.source":
+  editor:
+    softWrapHangingIndent: 2
+".csx.source":
+  editor:
+    softWrapHangingIndent: 2
+".curley.html.htmlbars.internal.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".erb.html.text":
+  editor:
+    softWrapHangingIndent: 2
+".gfm.source":
+  editor:
+    softWrapHangingIndent: 2
+".git-commit.text":
+  editor:
+    softWrapHangingIndent: 2
+".git-config.source":
+  editor:
+    softWrapHangingIndent: 2
+".git-rebase.text":
+  editor:
+    softWrapHangingIndent: 2
+".go.source":
+  editor:
+    softWrapHangingIndent: 2
+".gohtml.html.text":
+  editor:
+    softWrapHangingIndent: 2
+".gotemplate.source":
+  editor:
+    softWrapHangingIndent: 2
+".handlebars.html.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.htmlbars.inline.internal.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.htmlbars.internal.strings.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.htmlbars.internal.subexp.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.htmlbars.internal.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.htmlbars.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".html.jsp.text":
+  editor:
+    softWrapHangingIndent: 2
+".html.liquid.text":
+  editor:
+    softWrapHangingIndent: 2
+".html.mustache.text":
+  editor:
+    softWrapHangingIndent: 2
+".html.php.text":
+  editor:
+    softWrapHangingIndent: 2
+".html.ruby.text":
+  editor:
+    softWrapHangingIndent: 2
+".hyperlink.text":
+  editor:
+    softWrapHangingIndent: 2
+".java-properties.source":
+  editor:
+    softWrapHangingIndent: 2
+".java.source":
+  editor:
+    softWrapHangingIndent: 2
+".js.jsx.source":
+  editor:
+    softWrapHangingIndent: 2
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".js.regexp.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".js.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".json.source":
+  editor:
+    softWrapHangingIndent: 2
+".junit-test-report.text":
+  editor:
+    softWrapHangingIndent: 2
+".litcoffee.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".makefile.source":
+  editor:
+    softWrapHangingIndent: 2
+".mustache.source.sql":
+  editor:
+    softWrapHangingIndent: 2
+".nant-build.source":
+  editor:
+    softWrapHangingIndent: 2
+".objc.source":
+  editor:
+    softWrapHangingIndent: 2
+".objcpp.source":
+  editor:
+    softWrapHangingIndent: 2
+".perl.source":
+  editor:
+    softWrapHangingIndent: 2
+".perl6.source":
+  editor:
+    softWrapHangingIndent: 2
+".plain.text":
+  editor:
+    softWrapHangingIndent: 2
+".plist.source":
+  editor:
+    softWrapHangingIndent: 2
+".plist.text.xml":
+  editor:
+    softWrapHangingIndent: 2
+".postcss.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".python.regexp.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".python.source":
+  editor:
+    softWrapHangingIndent: 2
+".python.text.traceback":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".ruby.source":
+  editor:
+    softWrapHangingIndent: 2
+".ruby.source.sql":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".sass.source":
+  editor:
+    softWrapHangingIndent: 2
+".shell-session.text":
+  editor:
+    softWrapHangingIndent: 2
+".shell.source":
+  editor:
+    softWrapHangingIndent: 2
+".source.sql":
+  editor:
+    softWrapHangingIndent: 2
+".source.strings":
+  editor:
+    softWrapHangingIndent: 2
+".source.toml":
+  editor:
+    softWrapHangingIndent: 2
+".source.ts":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".source.tsx":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 2
+".source.yaml":
+  editor:
+    softWrapHangingIndent: 2
+".text.todo":
+  editor:
+    softWrapHangingIndent: 2
+".text.xml":
+  editor:
+    softWrapHangingIndent: 2
+".text.xml.xsl":
+  editor:
+    softWrapHangingIndent: 2

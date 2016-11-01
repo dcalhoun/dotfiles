@@ -6,30 +6,47 @@ modifications that build on top of the foundation.
 ## Requirements
 Set zsh as your login shell:
 
-    chsh -s $(which zsh)
+```bash
+chsh -s $(which zsh)
+```
 
 ## Install
 Install [rcm](https://github.com/thoughtbot/rcm):
 
-    brew tap thoughtbot/formulae
-    brew install rcm
+```bash
+brew tap thoughtbot/formulae
+brew install rcm
+```
 
 Clone and link Thoughtbot's dotfiles:
 
-    git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
-    env RCRC=$HOME/dotfiles/rcrc rcup
+```bash
+git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
+env RCRC=$HOME/dotfiles/rcrc rcup
+```
 
 Clone and link my dotfiles:
 
-    git clone git://github.com/dcalhoun/dotfiles.git ~/dotfiles-local
-    rcup
+```bash
+git clone git://github.com/dcalhoun/dotfiles.git ~/dotfiles-local
+rcup
+```
 
 This will create symlinks for config files in your home directory from
 Thoughtbot's dotfiles and my local customizations.
 
 You can safely run `rcup` multiple times to update:
 
-    rcup
+```bash
+rcup
+```
+
+Setup atom config:
+
+```bash
+cd ~/dotfiles-local/atom/
+./link.sh
+```
 
 ## Credits
 Most of my configuration is small changes on top of thoughtbot's dotfiles.

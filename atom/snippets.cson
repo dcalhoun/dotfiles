@@ -1,0 +1,157 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+
+# CoffeeScript
+'.source.coffee':
+  'Comment Block':
+    'prefix': 'cb'
+    'body': """
+      ###*
+      # $1
+      ###$0
+    """
+  'log':
+    'prefix': 'log'
+    'body': 'console.log($1)$0'
+
+  # Jasmine
+  'afterEach':
+    'prefix': 'af'
+    'body': """
+      afterEach(->
+        ${0}
+      )
+    """
+
+  'beforeEach':
+    'prefix': 'be'
+    'body': """
+      beforeEach(->
+        ${0}
+      )
+    """
+
+  'context':
+    'prefix': 'con'
+    'body': """
+      context('${1:description}', ->
+        ${0}
+      )
+    """
+
+  'Describe block':
+    'prefix': 'de'
+    'body': """
+      describe('${1:description}', ->
+        ${0}
+      )
+    """
+
+  'it':
+    'prefix': 'it'
+    'body': """
+      it('${1:description}', ->
+        expect(${2:false}).${3:ok}${0}
+      )
+    """
+
+# CSS
+'.source.css, .source.scss, .source.sass':
+  '@import':
+    'prefix': 'import'
+    'body': '@import \'$0\';'
+    'description': 'Import style rules from other style sheets.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@im\
+    port'
+
+  '@charset':
+    'prefix': 'charset'
+    'body': '@charset \'${1:UTF-8}\';$0'
+    'description': 'Specifies the character encoding used in the style sheet.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@ch\
+    arset'
+
+  '@define: Component':
+    'prefix': 'def'
+    'body': '/** @define ${1:ComponentName} */${0}'
+
+  '@define: utilities':
+    'prefix': '@defu'
+    'body': '/** @define utilities */${0}'
+
+# Comments
+'.source.css, .source.js':
+  'Comment Section':
+    'prefix': 'cs'
+    'body': """
+      /* ${1:Section comment block}
+         ======================================================================\
+         ==== */$0
+    """
+  'Comment Block':
+    'prefix': 'cb'
+    'body': """
+      /**
+       * $1
+       */$0
+    """
+  'Comment Footnote':
+    'prefix': 'cf'
+    'body': '/* ${1:1} */'
+
+# JavaScript
+'.source.js':
+  'Expectation':
+    'prefix': 'it'
+    'body': """
+      it('renders${1}', testSnapshot.bind(this,
+        <${2:Component}$3>$4</${2:Component}>
+      ))
+    """
+
+  'log':
+    'prefix': 'log'
+    'body': 'console.log($1)$0'
+
+# Underscore Templates
+'.text.html':
+  'Underscore':
+    'prefix': '_'
+    'body': '<% $0 %>'
+
+  'Underscore (interpolation)':
+    'prefix': '_='
+    'body': '<%= $0 %>'
+
+  'Underscore (if)':
+    'prefix': '_if'
+    'body': '<% if (${1}) { %>${0}'
+
+  'Underscore (else if)':
+    'prefix': '_elsif'
+    'body': '<% } else if (${1}) { %>${0}'
+
+  'Underscore (else)':
+    'prefix': '_else'
+    'body': '<% } else { %>${0}'
+
+  'Underscore (for in)':
+    'prefix': '_forin'
+    'body': '<% for (var ${1:i} in ${2:value}) { %>${0}'
+
+  'Underscore (for of)':
+    'prefix': '_forof'
+    'body': '<% for (var ${1:item} in ${2:value}) { %>${0}'
