@@ -99,6 +99,7 @@
   linter:
     errorPanelHeight: 24
     showErrorInline: false
+    showErrorPanel: false
     showProviderName: false
   "linter-js-standard":
     checkStyleDevDependencies: true
@@ -127,10 +128,11 @@
       "("
       "["
       "{"
-      "\""
-      "'"
       "<"
     ]
+    clearHighlightSearchOnResetNormalMode: true
+    clearPersistentSelectionOnResetNormalMode: true
+    highlightSearch: true
     smoothScrollOnFullScrollMotionDuration: 100
     smoothScrollOnHalfScrollMotionDuration: 50
     statusBarModeStringStyle: "long"
