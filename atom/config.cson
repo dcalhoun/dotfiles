@@ -61,7 +61,6 @@
       "solarized-dark-syntax"
     ]
   editor:
-    fontSize: 13
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -124,12 +123,19 @@
     hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "("
+      "["
+      "{"
+      "\""
+      "'"
+      "<"
+    ]
+    smoothScrollOnFullScrollMotionDuration: 100
+    smoothScrollOnHalfScrollMotionDuration: 50
+    statusBarModeStringStyle: "long"
     useClipboardAsDefaultRegister: true
-  "vim-surround":
-    changeSurroundCommand: "c S"
-    deleteCommand: "d S"
-    deleteSurroundCommand: "d S"
-    surroundCommand: "S"
+  "vim-surround": {}
   welcome:
     showOnStartup: false
   whitespace:
