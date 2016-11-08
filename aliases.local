@@ -3,4 +3,7 @@ alias be="bundle exec"
 alias nls="npm ls -g --depth=0"
 
 # GoNoodle
-alias gns="LIVE_RELOAD=true be rails s"
+alias gns="bundle exec rails s"
+alias gnsr="RESQUE_INLINE=1 bundle exec rails s"
+alias gnr="bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare && redis-cli flushall"
+alias gnrf="FULL=1 bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare && redis-cli flushall"
