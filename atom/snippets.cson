@@ -112,20 +112,6 @@
     'prefix': 'cf'
     'body': '/* ${1:1} */'
 
-# JavaScript
-'.source.js':
-  'Expectation':
-    'prefix': 'it'
-    'body': """
-      it('renders${1}', testSnapshot.bind(this,
-        <${2:Component}$3>$4</${2:Component}>
-      ))
-    """
-
-  'log':
-    'prefix': 'log'
-    'body': 'console.log($1)$0'
-
 # Underscore Templates
 '.text.html':
   'Underscore':

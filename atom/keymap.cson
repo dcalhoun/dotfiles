@@ -40,21 +40,10 @@
   'ctrl-u': 'editor:delete-to-beginning-of-line'
   'ctrl-w': 'editor:delete-to-beginning-of-word'
 
-'atom-text-editor.vim-mode:not(.insert-mode)':
-  # Split panes
-  'ctrl-w s': 'pane:split-right'
-  'ctrl-w i': 'pane:split-down'
-
-  # Move panes
-  'ctrl-w H': 'window:move-active-item-to-pane-on-left'
-  'ctrl-w J': 'window:move-active-item-to-pane-below'
-  'ctrl-w K': 'window:move-active-item-to-pane-above'
-  'ctrl-w L': 'window:move-active-item-to-pane-on-right'
-
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   # Split panes
-  'ctrl-w s': 'pane:split-right'
-  'ctrl-w i': 'pane:split-down'
+  'ctrl-w s': 'pane:split-right-and-copy-active-item'
+  'ctrl-w i': 'pane:split-down-and-copy-active-item'
 
   # Move panes
   'ctrl-w H': 'window:move-active-item-to-pane-on-left'

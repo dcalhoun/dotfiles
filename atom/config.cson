@@ -97,9 +97,8 @@
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
-    errorPanelHeight: 24
+    errorPanelHeight: 96
     showErrorInline: false
-    showErrorPanel: false
     showProviderName: false
   "linter-js-standard":
     checkStyleDevDependencies: true
