@@ -6,6 +6,12 @@ bind-key C-j send-prefix
 # Fix terminal-notifier-guard and pbcopy/pbpaste https://git.io/vXoIi
 set -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL -l"
 
+# Enable pane scrolling
+set-option -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+bind -n C-WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
+
 # Add LEFT status bar label
 set-window-option -g status-left " #S "
 set-window-option -g status-left-fg black

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: Add link for Hyper.app config
+
 ATOM_DIR=$HOME/.atom
 REAL_FILE_DIR=$PWD
 cd ${ATOM_DIR}
