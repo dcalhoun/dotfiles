@@ -1,15 +1,11 @@
+# Source plugins
 source ~/dotfiles-local/zsh/completion/tmuxinator.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# modify the prompt to contain git branch name if applicable
-git_prompt_info() {
-  current_branch=$(git current-branch 2> /dev/null)
-  if [[ -n $current_branch ]]; then
-    echo " %{$fg[blue]%}$current_branch%{$reset_color%}"
-  fi
-}
-
-# build prompt
-export PS1='${SSH_CONNECTION+"%{$fg_bold[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:"}%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %# '
+# Setup pure prompt https://git.io/6LHDOw
+fpath+=("/usr/local/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 
 # load nvm
 export NVM_DIR="/Users/davidcalhoun/.nvm"

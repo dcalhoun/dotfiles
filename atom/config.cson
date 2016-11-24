@@ -134,6 +134,9 @@
     smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 150
     statusBarModeStringStyle: "long"
+    stayOnDelete: true
+    stayOnTransformString: true
+    stayOnYank: true
     useClipboardAsDefaultRegister: true
   "vim-surround": {}
   welcome:
