@@ -48,7 +48,7 @@ module.exports = {
       '#ffffff'
     ],
 
-    summonShortcut: 'Ctrl+L',
+    summonShortcut: 'Ctrl+Space',
 
     shell: 'zsh'
   },
