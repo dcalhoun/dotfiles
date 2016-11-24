@@ -59,7 +59,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-solarized-dark', 'hypercwd', 'hyperterm-paste', 'hyperterm-summon'],
+  plugins: ['hyperterm-summon', 'hyperterm-atom-dark', 'hypercwd', 'hyperterm-paste'],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here

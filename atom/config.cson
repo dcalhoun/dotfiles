@@ -56,10 +56,6 @@
       "tree-view"
     ]
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
-    ]
   editor:
     invisibles: {}
     preferredLineLength: 100
@@ -131,9 +127,12 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
+    hideTabBarOnMaximizePane: false
     highlightSearch: true
-    smoothScrollOnFullScrollMotionDuration: 100
-    smoothScrollOnHalfScrollMotionDuration: 50
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnFullScrollMotionDuration: 150
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 150
     statusBarModeStringStyle: "long"
     useClipboardAsDefaultRegister: true
   "vim-surround": {}

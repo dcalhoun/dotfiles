@@ -141,3 +141,12 @@
   'Underscore (for of)':
     'prefix': '_forof'
     'body': '<% for (var ${1:item} in ${2:value}) { %>${0}'
+
+# JavaScript
+'.source.js':
+  'error':
+    'prefix': 'error'
+    'body': 'console.error(${1})${0}'
+  'log':
+    'prefix': 'log'
+    'body': 'console.log(${1})${0}'
