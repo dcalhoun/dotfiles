@@ -3,20 +3,28 @@ source ~/dotfiles-local/zsh/completion/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Setup pure prompt https://git.io/6LHDOw
-fpath+=("/usr/local/share/zsh/site-functions")
+fpath+=('/usr/local/share/zsh/site-functions')
 autoload -U promptinit; promptinit
 prompt pure
 
-# load nvm
-export NVM_DIR="/Users/davidcalhoun/.nvm"
+# Load nvm
+export NVM_DIR='/Users/davidcalhoun/.nvm'
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Case insensitive auto-complete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# Bind Up and Down keys to history-search
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+# Bind up and down keys to history-search
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
-# Bind custom clear screen command to preserve multi-line prompt
-bindkey -s "\C-l" "clear\n"
+# Bind custom clear screen to preserve multi-line prompt
+function clear_multi_line_prompt () {
+  zle push-input
+  BUFFER='clear'
+  zle accept-line
+  zle reset-prompt
+}
+
+zle -N clear_multi_line_prompt
+bindkey '\C-l' clear_multi_line_prompt

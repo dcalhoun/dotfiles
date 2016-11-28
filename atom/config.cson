@@ -129,9 +129,7 @@
     clearPersistentSelectionOnResetNormalMode: true
     hideTabBarOnMaximizePane: false
     highlightSearch: true
-    smoothScrollOnFullScrollMotion: true
     smoothScrollOnFullScrollMotionDuration: 150
-    smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 150
     statusBarModeStringStyle: "long"
     stayOnDelete: true

@@ -48,7 +48,7 @@ module.exports = {
       '#ffffff'
     ],
 
-    summonShortcut: 'Ctrl+Space',
+    summonShortcut: 'Ctrl+;',
 
     shell: 'zsh'
   },
@@ -59,7 +59,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperterm-summon', 'hyperterm-atom-dark', 'hypercwd', 'hyperterm-paste'],
+  plugins: ['hyperterm-summon', 'hyperterm-atom-dark', 'hypercwd'],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here
