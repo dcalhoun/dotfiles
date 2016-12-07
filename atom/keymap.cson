@@ -48,8 +48,8 @@
   # Move panes
   'ctrl-w H': 'window:move-active-item-to-pane-on-left'
   'ctrl-w L': 'window:move-active-item-to-pane-on-right'
-  'ctrl-w J': 'window:move-active-item-to-pane-above'
-  'ctrl-w K': 'window:move-active-item-to-pane-below'
+  'ctrl-w K': 'window:move-active-item-to-pane-above'
+  'ctrl-w J': 'window:move-active-item-to-pane-below'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   # vim-mode-plus shortcuts

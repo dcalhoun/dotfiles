@@ -99,18 +99,63 @@
     'body': """
       /* ${1:Section comment block}
          ======================================================================\
-         ==== */$0
+         ==== */
     """
   'Comment Block':
     'prefix': 'cb'
     'body': """
       /**
        * $1
-       */$0
+       */
     """
   'Comment Footnote':
     'prefix': 'cf'
     'body': '/* ${1:1} */'
+
+# JavaScript
+'.source.js':
+  'afterEach':
+    'prefix': 'afe'
+    'body': """
+      afterEach(() => {
+        ${0}
+      })
+    """
+  'beforeEach':
+    'prefix': 'bfe'
+    'body': """
+      beforeEach(() => {
+        ${0}
+      })
+    """
+  'describe':
+    'prefix': 'desc'
+    'body': """
+      describe('${1:description}', () => {
+        ${0}
+      })
+    """
+  'error':
+    'prefix': 'error'
+    'body': 'console.error(${1})${0}'
+  'log':
+    'prefix': 'log'
+    'body': 'console.log(${1})${0}'
+  'it asynchronous':
+    'prefix': 'ita'
+    'body': """
+      it('${1:description}', (done) => {
+        ${0}
+      })
+    """
+  'it synchronous':
+    'prefix': 'its'
+    'body': """
+      it('${1:description}', () => {
+        ${0}
+      })
+    """
+
 
 # Underscore Templates
 '.text.html':
@@ -141,12 +186,3 @@
   'Underscore (for of)':
     'prefix': '_forof'
     'body': '<% for (var ${1:item} in ${2:value}) { %>${0}'
-
-# JavaScript
-'.source.js':
-  'error':
-    'prefix': 'error'
-    'body': 'console.error(${1})${0}'
-  'log':
-    'prefix': 'log'
-    'body': 'console.log(${1})${0}'

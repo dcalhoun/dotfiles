@@ -1,0 +1,19 @@
+# ~/.tmuxinator/champlet.yml
+
+name: Champlet Dev
+root: ~/Sites/web
+
+windows:
+  - Servers:
+      layout: tiled
+      panes:
+        - GoNoodle:
+          - cd gonoodle && DISABLE_LIVE_RELOAD=true bundle exec rails server -p 3000
+        - Accounts:
+          - cd accounts && bundle exec rails server -p 3001
+        - Sign Up:
+          - cd gn-sign-up && npm start
+        - Champlet API:
+          - cd champlet-api && npm start
+  - Support:
+      - redis-server /usr/local/etc/redis.conf

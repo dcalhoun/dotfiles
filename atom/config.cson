@@ -41,7 +41,6 @@
       "pigments"
       "nuclide"
       "language-postcss"
-      "vim-mode"
       "ex-mode"
     ]
     ignoredNames: [
