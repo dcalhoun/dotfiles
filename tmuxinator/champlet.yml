@@ -1,6 +1,6 @@
 # ~/.tmuxinator/champlet.yml
 
-name: Champlet Dev
+name: Champlet
 root: ~/Sites/web
 
 windows:
