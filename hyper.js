@@ -65,7 +65,6 @@ module.exports = {
     "hyperterm-summon",
     "hyperterm-paste",
     "hyperterm-tabs",
-    "hyperlayout",
     "hyperterm-cursor",
     "hyperlinks"
   ],
