@@ -1,3 +1,6 @@
+# Do not record commands beginning with a space
+setopt hist_ignore_space
+
 # Source plugins
 source ~/dotfiles-local/zsh/completion/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -21,7 +24,7 @@ bindkey '^[[B' history-beginning-search-forward
 # Bind custom clear screen to preserve multi-line prompt
 function clear_multi_line_prompt () {
   zle push-input
-  BUFFER='clear'
+  BUFFER=' clear'
   zle accept-line
   zle reset-prompt
 }
