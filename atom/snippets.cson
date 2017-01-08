@@ -121,6 +121,13 @@
         ${0}
       })
     """
+  'beforeAll':
+    'prefix': 'bfa'
+    'body': """
+      beforeAll(() => {
+        ${0}
+      })
+    """
   'beforeEach':
     'prefix': 'bfe'
     'body': """

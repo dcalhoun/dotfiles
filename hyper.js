@@ -48,9 +48,9 @@ module.exports = {
       '#ffffff'
     ],
 
+    shell: 'zsh',
     summonShortcut: 'Ctrl+;',
-
-    shell: 'zsh'
+    windowSize: [1000, 700]
   },
 
   // a list of plugins to fetch and install from npm
@@ -66,7 +66,8 @@ module.exports = {
     "hyperterm-paste",
     "hyperterm-tabs",
     "hyperterm-cursor",
-    "hyperlinks"
+    "hyperlinks",
+    "hyper-statusline"
   ],
 
   // in development, you can create a directory under
