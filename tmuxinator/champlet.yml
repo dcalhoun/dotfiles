@@ -4,16 +4,24 @@ name: Champlet
 root: ~/Sites/web
 
 windows:
-  - Servers:
-      layout: tiled
+  - Client:
+      layout: even-horizontal
       panes:
-        - GoNoodle:
-          - cd gonoodle && DISABLE_LIVE_RELOAD=true bundle exec rails server -p 3000
-        - Accounts:
+        - gn-web:
+          - cd gn-web && yarn install && npm start
+        - gn-sign-up:
+          - cd gn-sign-up && yarn install && npm start
+  - API:
+      layout: even-horizontal
+      panes:
+        - gn-api:
+          - cd gonoodle && bundle exec rails server -p 3000
+        - gn-accounts:
           - cd accounts && bundle exec rails server -p 3001
-        - Sign Up:
-          - cd gn-sign-up && npm start
-        - Champlet API:
-          - cd champlet-api && npm start
   - Support:
-      - redis-server /usr/local/etc/redis.conf
+      layout: even-horizontal
+      panes:
+        - redis:
+          - redis-server /usr/local/etc/redis.conf
+        - champlet-api:
+          - cd champlet-api && npm start

@@ -9,15 +9,15 @@
 #
 # Here's an example taken from Atom's built-in keymap:
 #
-# '.editor':
+# 'editor':
 #   'enter': 'editor:newline'
 #
-# '.atom-workspace':
+# 'atom-workspace':
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
 
-'atom-pane':
+'body':
   # Focus panes within empty pane
   'ctrl-w ctrl-h': 'window:focus-pane-on-left'
   'ctrl-w h': 'window:focus-pane-on-left'
@@ -37,6 +37,7 @@
   'ctrl-w p': 'window:focus-previous-pane'
 
 'atom-text-editor[mini]':
+  # Mini-input delete
   'ctrl-u': 'editor:delete-to-beginning-of-line'
   'ctrl-w': 'editor:delete-to-beginning-of-word'
 
@@ -52,15 +53,15 @@
   'ctrl-w J': 'window:move-active-item-to-pane-below'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
-  # vim-mode-plus shortcuts
+  # Ex-mode
   ':': 'vim-mode-plus-ex-mode:open'
   '!': 'vim-mode-plus-ex-mode:toggle-setting'
 
-  # vim-surround
+  # Surround
   'y s': 'vim-mode-plus:surround'
   'd s': 'vim-mode-plus:delete-surround-any-pair'
   'c s': 'vim-mode-plus:change-surround-any-pair'
 
 'atom-text-editor.vim-mode-plus.visual-mode':
-  # vim-surround
+  # Surround
   'S': 'vim-mode-plus:surround'

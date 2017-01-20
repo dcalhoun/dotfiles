@@ -17,6 +17,7 @@
       "source.ini": [
         ".buckconfig"
         ".flowconfig"
+        ".hgrc"
       ]
       "source.json": [
         ".arcconfig"
@@ -39,9 +40,9 @@
       "ember-tabs"
       "aligner"
       "pigments"
-      "nuclide"
       "language-postcss"
       "ex-mode"
+      "nuclide"
     ]
     ignoredNames: [
       ".git"
@@ -126,8 +127,8 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
-    hideTabBarOnMaximizePane: false
     highlightSearch: true
+    showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150
     smoothScrollOnHalfScrollMotionDuration: 150
     statusBarModeStringStyle: "long"

@@ -1,22 +1,22 @@
-# ~/.tmuxinator/gn.yml
+# ~/.tmuxinator/gn-web.yml
 
-name: GN
+name: GN Web
 root: ~/Sites/web
 
 windows:
-  - Servers:
-      layout: even-vertical
+  - Client:
+      layout: even-horizontal
       panes:
-        - GoNoodle:
-          - cd gonoodle && bundle exec rails server -p 3000
-        - Accounts:
-          - cd accounts && bundle exec rails server -p 3001
-        - Sign Up:
+        - gn-web:
+          - cd gn-web && yarn install && npm start
+        - gn-sign-up:
           - cd gn-sign-up && yarn install && npm start
-  - Support:
-      layout: even-vertical
+  - API:
+      layout: even-horizontal
       panes:
-        - Redis:
-          - redis-server /usr/local/etc/redis.conf
-        - Guard:
-          - cd gonoodle && bundle exec guard
+        - gn-api:
+          - cd gonoodle && bundle exec rails server -p 3000
+        - gn-accounts:
+          - cd accounts && bundle exec rails server -p 3001
+  - Support:
+      - redis-server /usr/local/etc/redis.conf
