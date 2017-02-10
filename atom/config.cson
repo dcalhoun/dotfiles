@@ -98,6 +98,9 @@
     showProviderName: false
   "linter-js-standard":
     checkStyleDevDependencies: true
+  "linter-rubocop":
+    command: "/Users/davidcalhoun/.rvm/gems/ruby-2.2.1@gonoodle/bin/rubocop -R"
+    disableWhenNoConfigFile: true
   "linter-stylelint":
     disableWhenNoConfig: true
   "markdown-preview": {}
@@ -127,6 +130,8 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
+    hideStatusBarOnMaximizePane: false
+    hideTabBarOnMaximizePane: false
     highlightSearch: true
     showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150

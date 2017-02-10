@@ -53,6 +53,10 @@
   'ctrl-w J': 'window:move-active-item-to-pane-below'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
+  # Jasmine Focus
+  # '-': 'vim-mode-plus-user:jasmine-increase-focus'
+  # 'ctrl--': 'vim-mode-plus-user:jasmine-decrease-focus'
+
   # Ex-mode
   ':': 'vim-mode-plus-ex-mode:open'
   '!': 'vim-mode-plus-ex-mode:toggle-setting'
