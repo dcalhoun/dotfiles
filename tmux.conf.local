@@ -6,8 +6,8 @@ bind-key C-j send-prefix
 # Set plugins
 set -g @plugin "jlipps/tmux-safekill"
 
-# Fix terminal-notifier-guard and pbcopy/pbpaste https://git.io/vXoIi
-set -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL -l"
+# Set zsh as the default shell
+set-option -g default-shell /bin/zsh
 
 # Enable pane scrolling
 set-option -g mouse on
