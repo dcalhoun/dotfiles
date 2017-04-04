@@ -1,3 +1,6 @@
+# Add Yarn's global bin to path
+export PATH="$(yarn global bin):$PATH"
+
 # Do not record commands beginning with a space
 setopt hist_ignore_space
 

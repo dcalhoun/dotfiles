@@ -64,7 +64,6 @@ module.exports = {
     'hypercwd',
     "hyperterm-summon",
     "hyperterm-paste",
-    "hyperterm-tabs",
     "hyperterm-cursor",
     "hyperlinks",
     "hyper-statusline"

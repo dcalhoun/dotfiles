@@ -13,6 +13,7 @@
   "base16-syntax":
     scheme: "Solarized"
   core:
+    closeDeletedFileTabs: true
     customFileTypes:
       "source.ini": [
         ".buckconfig"
@@ -92,17 +93,18 @@
     enableBackgroundColor: false
   "inline-autocomplete": {}
   "language-postcss": {}
-  linter:
-    errorPanelHeight: 96
-    showErrorInline: false
-    showProviderName: false
+  linter: {}
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
-    command: "/Users/davidcalhoun/.rvm/gems/ruby-2.2.1@gonoodle/bin/rubocop -R"
+    command: "/Users/davidcalhoun/Sites/web/gn-api/vendor/ruby/2.2.0/gems/rubocop-0.38.0/bin/rubocop -R"
     disableWhenNoConfigFile: true
   "linter-stylelint":
     disableWhenNoConfig: true
+  "linter-ui-default":
+    panelRepresents: "Entire Project"
+    showPanel: true
+    statusBarRepresents: "Entire Project"
   "markdown-preview": {}
   metrics:
     userId: "94cae727e598b1784e1882b081dc3407dfea5494"
@@ -120,6 +122,7 @@
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
   "vim-mode": {}
   "vim-mode-plus":
     charactersToAddSpaceOnSurround: [
