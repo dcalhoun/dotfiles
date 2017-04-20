@@ -41,10 +41,8 @@
       "ember-tabs"
       "aligner"
       "pigments"
-      "language-postcss"
       "ex-mode"
       "nuclide"
-      "standardjs-snippets"
     ]
     ignoredNames: [
       ".git"
