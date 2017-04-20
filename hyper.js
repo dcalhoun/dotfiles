@@ -49,7 +49,10 @@ module.exports = {
     ],
 
     shell: 'zsh',
-    summonShortcut: 'Ctrl+;',
+    summon: {
+      hideDock: true,
+      hotkey: 'Ctrl+;'
+    },
     windowSize: [1000, 700]
   },
 

@@ -14,60 +14,6 @@
 #     'body': 'console.log $1'
 #
 
-# CoffeeScript
-'.source.coffee':
-  'Comment Block':
-    'prefix': 'cb'
-    'body': """
-      ###*
-      # $1
-      ###$0
-    """
-  'log':
-    'prefix': 'log'
-    'body': 'console.log($1)$0'
-
-  # Jasmine
-  'afterEach':
-    'prefix': 'af'
-    'body': """
-      afterEach(->
-        ${0}
-      )
-    """
-
-  'beforeEach':
-    'prefix': 'be'
-    'body': """
-      beforeEach(->
-        ${0}
-      )
-    """
-
-  'context':
-    'prefix': 'con'
-    'body': """
-      context('${1:description}', ->
-        ${0}
-      )
-    """
-
-  'Describe block':
-    'prefix': 'de'
-    'body': """
-      describe('${1:description}', ->
-        ${0}
-      )
-    """
-
-  'it':
-    'prefix': 'it'
-    'body': """
-      it('${1:description}', ->
-        expect(${2:false}).${3:ok}${0}
-      )
-    """
-
 # CSS
 '.source.css, .source.scss, .source.sass':
   '@import':
@@ -114,55 +60,27 @@
 
 # JavaScript
 '.source.js':
-  'afterEach':
-    'prefix': 'afe'
-    'body': """
-      afterEach(() => {
-        ${0}
-      })
-    """
-  'beforeAll':
-    'prefix': 'bfa'
-    'body': """
-      beforeAll(() => {
-        ${0}
-      })
-    """
-  'beforeEach':
-    'prefix': 'bfe'
-    'body': """
-      beforeEach(() => {
-        ${0}
-      })
-    """
-  'describe':
-    'prefix': 'desc'
-    'body': """
-      describe('${1:description}', () => {
-        ${0}
-      })
-    """
   'error':
     'prefix': 'error'
     'body': 'console.error(${1})${0}'
   'log':
     'prefix': 'log'
     'body': 'console.log(${1})${0}'
-  'it asynchronous':
-    'prefix': 'ita'
-    'body': """
-      it('${1:description}', (done) => {
-        ${0}
-      })
-    """
-  'it synchronous':
-    'prefix': 'its'
-    'body': """
-      it('${1:description}', () => {
-        ${0}
-      })
-    """
-
+  'export':
+    'prefix': 'ex'
+    'body': 'export ${1:member}'
+  'export default':
+    'prefix': 'exd'
+    'body': 'export default ${1:member}'
+  'import module':
+    'prefix': 'im'
+    'body': "import ${1:*} from '${2:module}'"
+  'import module as':
+    'prefix': 'ima'
+    'body': "import ${1:*} as ${2:name} from '${3:module}'"
+  'import module destructured':
+    'prefix': 'imd'
+    'body': "import {$1} from '${2:module}'"
 
 # Underscore Templates
 '.text.html':

@@ -44,6 +44,7 @@
       "language-postcss"
       "ex-mode"
       "nuclide"
+      "standardjs-snippets"
     ]
     ignoredNames: [
       ".git"
@@ -57,6 +58,7 @@
       "tree-view"
     ]
     telemetryConsent: "limited"
+    titleBar: "custom-inset"
   editor:
     invisibles: {}
     preferredLineLength: 100
@@ -102,6 +104,7 @@
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
+    panelHeight: 72
     panelRepresents: "Entire Project"
     showPanel: true
     statusBarRepresents: "Entire Project"
