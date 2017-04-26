@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 16,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
@@ -63,9 +63,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-atom-dark',
+    'hyper-snazzy',
     'hypercwd',
-    "hyperterm-summon",
     "hyperterm-paste",
     "hyperterm-cursor",
     "hyperlinks",

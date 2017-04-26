@@ -58,6 +58,7 @@
     telemetryConsent: "limited"
     titleBar: "custom-inset"
   editor:
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
