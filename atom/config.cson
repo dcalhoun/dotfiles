@@ -58,6 +58,7 @@
     telemetryConsent: "limited"
     titleBar: "custom-inset"
   editor:
+    fontFamily: "'SF Mono'"
     fontSize: 16
     invisibles: {}
     preferredLineLength: 100
