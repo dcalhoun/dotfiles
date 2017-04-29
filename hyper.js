@@ -68,7 +68,8 @@ module.exports = {
     "hyperterm-paste",
     "hyperterm-cursor",
     "hyperlinks",
-    "hyper-statusline"
+    "hyper-statusline",
+    "hyper-import-sf-mono"
   ],
 
   // in development, you can create a directory under

@@ -95,7 +95,8 @@
     enableBackgroundColor: false
   "inline-autocomplete": {}
   "language-postcss": {}
-  linter: {}
+  linter:
+    lintOnChange: false
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
