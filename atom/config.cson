@@ -137,8 +137,6 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
-    hideStatusBarOnMaximizePane: false
-    hideTabBarOnMaximizePane: false
     highlightSearch: true
     showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150

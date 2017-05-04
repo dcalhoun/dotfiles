@@ -54,6 +54,7 @@
 
   # Sort & Mutations
   'g _': 'vim-mode-plus:snake-case'
+  'g c': 'vim-mode-plus:camel-case'
   'g r': 'vim-mode-plus:reverse'
   'g s': 'vim-mode-plus:sort'
   # 'ctrl-s': 'vim-mode-plus:transform-string-by-select-list'
