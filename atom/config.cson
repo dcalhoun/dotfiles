@@ -65,6 +65,7 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
     tabType: "soft"
   emmet: {}
@@ -89,6 +90,8 @@
       "**/dist/*"
     ]
     useAlternateScoring: true
+  "git-blame":
+    columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
   "highlight-line":
@@ -96,7 +99,7 @@
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
-    lintOnChange: false
+    lintOnChangeInterval: 1500
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
@@ -124,7 +127,6 @@
   tabs: {}
   "tabs-to-spaces": {}
   "tree-view":
-    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}

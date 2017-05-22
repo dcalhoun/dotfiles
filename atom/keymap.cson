@@ -53,6 +53,7 @@
   'ctrl-w J': 'window:move-active-item-to-pane-below'
 
   # Sort & Mutations
+  'g C': 'vim-mode-plus:pascal-case'
   'g _': 'vim-mode-plus:snake-case'
   'g c': 'vim-mode-plus:camel-case'
   'g r': 'vim-mode-plus:reverse'

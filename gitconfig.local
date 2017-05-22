@@ -11,6 +11,7 @@
   pl = pull origin
   ps = push origin
   rl = reflog --pretty=reflog
+  tr = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 [merge]
   ff = true
   tool = opendiff

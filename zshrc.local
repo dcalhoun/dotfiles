@@ -25,12 +25,12 @@ bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
 # Bind custom clear screen to preserve multi-line prompt
-function clear_multi_line_prompt () {
-  zle push-input
-  BUFFER=' clear'
-  zle accept-line
-  zle reset-prompt
-}
-
-zle -N clear_multi_line_prompt
-bindkey '\C-l' clear_multi_line_prompt
+# function clear_multi_line_prompt () {
+#   zle push-input
+#   BUFFER=' clear'
+#   zle accept-line
+#   zle reset-prompt
+# }
+#
+# zle -N clear_multi_line_prompt
+# bindkey '\C-l' clear_multi_line_prompt

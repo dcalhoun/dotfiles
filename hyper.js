@@ -53,7 +53,10 @@ module.exports = {
       hideDock: true,
       hotkey: 'Ctrl+;'
     },
-    windowSize: [1000, 700]
+    windowSize: [1000, 700],
+    modifierKeys: {
+      altIsMeta: true
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -69,13 +72,12 @@ module.exports = {
     "hyperterm-cursor",
     "hyperlinks",
     "hyper-statusline",
-    "hyper-import-sf-mono"
+    "hyper-import-sf-mono",
+    "hyperterm-summon"
   ],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [
-    "hyperterm-summon"
-  ]
+  localPlugins: []
 };
