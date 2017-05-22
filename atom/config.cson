@@ -58,7 +58,7 @@
     telemetryConsent: "limited"
     titleBar: "custom-inset"
   editor:
-    fontFamily: "'SF Mono'"
+    fontFamily: "'SF Mono', Menlo"
     fontSize: 16
     invisibles: {}
     preferredLineLength: 100
@@ -108,7 +108,7 @@
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
-    panelHeight: 72
+    panelHeight: 69
     panelRepresents: "Entire Project"
     showPanel: true
     statusBarRepresents: "Entire Project"
