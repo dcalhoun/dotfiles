@@ -41,7 +41,6 @@
       "ember-tabs"
       "aligner"
       "pigments"
-      "ex-mode"
       "nuclide"
     ]
     ignoredNames: [
@@ -110,7 +109,6 @@
   "linter-ui-default":
     panelHeight: 69
     panelRepresents: "Entire Project"
-    showPanel: true
     statusBarRepresents: "Entire Project"
   "markdown-preview": {}
   metrics:
@@ -148,6 +146,8 @@
     stayOnTransformString: true
     stayOnYank: true
     useClipboardAsDefaultRegister: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   "vim-surround": {}
   welcome:
     showOnStartup: false

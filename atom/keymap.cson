@@ -65,10 +65,6 @@
   'ctrl--': 'vim-mode-plus-user:jasmine-increase-focus'
   'ctrl-_': 'vim-mode-plus-user:jasmine-decrease-focus'
 
-  # Ex-mode
-  ':': 'vim-mode-plus-ex-mode:open'
-  '!': 'vim-mode-plus-ex-mode:toggle-setting'
-
   # Surround
   'y s': 'vim-mode-plus:surround'
   'd s': 'vim-mode-plus:delete-surround-any-pair'

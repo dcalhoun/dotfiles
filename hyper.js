@@ -69,11 +69,9 @@ module.exports = {
     'hyper-snazzy',
     'hypercwd',
     "hyperterm-paste",
-    "hyperterm-cursor",
     "hyperlinks",
-    "hyper-statusline",
     "hyper-import-sf-mono",
-    "hyperterm-summon"
+    "hyperterm-cursor"
   ],
 
   // in development, you can create a directory under
