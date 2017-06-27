@@ -2,6 +2,7 @@
 
 name: GN Web
 root: ~/Sites/web
+startup_pane: 1
 
 windows:
   - Client:

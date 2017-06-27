@@ -125,6 +125,7 @@
   tabs: {}
   "tabs-to-spaces": {}
   "tree-view":
+    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}

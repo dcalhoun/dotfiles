@@ -2,6 +2,7 @@
 
 name: Champlet
 root: ~/Sites/web
+startup_pane: 1
 
 windows:
   - Client:

@@ -20,15 +20,13 @@
     'prefix': 'import'
     'body': '@import \'$0\';'
     'description': 'Import style rules from other style sheets.'
-    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@im\
-    port'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@import'
 
   '@charset':
     'prefix': 'charset'
     'body': '@charset \'${1:UTF-8}\';$0'
     'description': 'Specifies the character encoding used in the style sheet.'
-    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@ch\
-    arset'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@charset'
 
   '@define: Component':
     'prefix': 'def'
@@ -37,6 +35,16 @@
   '@define: utilities':
     'prefix': '@defu'
     'body': '/** @define utilities */${0}'
+
+  '@media':
+    'prefix': '@media'
+    'body': """
+      @media (min-width: $1) {
+        $2
+      }
+    """
+    'description': 'Associates a set of nested statements, in a CSS block that is delimited by curly braces, with a condition defined by a media query.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/CSS/@media'
 
 # Comments
 '.source.css, .source.js':
@@ -92,6 +100,16 @@
 
       expect(actual).toBe(expected)
     """
+  'jsdoc':
+    'prefix': 'doc'
+    'body': """
+      /**
+       * @module      $1
+       * @extends     {$2}
+       * @description $3
+       */
+    """
+
 
 # Underscore Templates
 '.text.html':
