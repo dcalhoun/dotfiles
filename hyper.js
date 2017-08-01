@@ -50,6 +50,7 @@ module.exports = {
 
     shell: 'zsh',
     summon: {
+      hideOnBlur: true,
       hideDock: true,
       hotkey: 'Ctrl+;'
     },
@@ -71,7 +72,8 @@ module.exports = {
     "hyperterm-paste",
     "hyperlinks",
     "hyper-import-sf-mono",
-    "hyperterm-cursor"
+    "hyperterm-cursor",
+    "hyperterm-summon"
   ],
 
   // in development, you can create a directory under

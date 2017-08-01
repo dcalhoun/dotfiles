@@ -60,6 +60,12 @@
   'g s': 'vim-mode-plus:sort'
   # 'ctrl-s': 'vim-mode-plus:transform-string-by-select-list'
 
+  # vim macros
+  'q': 'atom-keyboard-macros-vim:toggle_record_macro_vim'
+  '@': 'atom-keyboard-macros-vim:execute_macro_vim'
+  'Q': 'atom-keyboard-macros:call_last_kbd_macro'
+
+
 'atom-text-editor.vim-mode-plus.normal-mode':
   # Jasmine Focus
   'ctrl--': 'vim-mode-plus-user:jasmine-increase-focus'

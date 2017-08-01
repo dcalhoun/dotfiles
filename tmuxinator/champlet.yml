@@ -9,9 +9,7 @@ windows:
       layout: even-horizontal
       panes:
         - gn-web:
-          - cd gn-web && yarn install && npm start
-        - gn-sign-up:
-          - cd gn-sign-up && yarn install && npm start
+          - cd gn-web && yarn start
   - API:
       layout: even-horizontal
       panes:
@@ -25,4 +23,4 @@ windows:
         - redis:
           - redis-server /usr/local/etc/redis.conf
         - champlet-api:
-          - cd champlet-api && npm start
+          - cd champlet-api && yarn start

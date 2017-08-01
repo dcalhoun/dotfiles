@@ -40,8 +40,8 @@
       "smart-tab-name"
       "ember-tabs"
       "aligner"
-      "pigments"
       "nuclide"
+      "atom-keyboard-macros-vim"
     ]
     ignoredNames: [
       ".git"
@@ -93,29 +93,31 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line":
-    enableBackgroundColor: false
+  "highlight-line": {}
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
-    lintOnChangeInterval: 1500
+    lintOnChangeInterval: 600
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
-    command: "/Users/davidcalhoun/Sites/web/gn-api/vendor/ruby/2.2.0/gems/rubocop-0.38.0/bin/rubocop -R"
+    command: "/Users/davidcalhoun/.rbenv/versions/2.2.6/bin/rubocop"
     disableWhenNoConfigFile: true
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
     panelHeight: 69
     panelRepresents: "Entire Project"
+    showPanel: true
     statusBarRepresents: "Entire Project"
   "markdown-preview": {}
   metrics:
     userId: "94cae727e598b1784e1882b081dc3407dfea5494"
   "one-dark-ui": {}
   pigments:
+    autocompleteSuggestionsFromValue: true
     markerType: "dot"
+    sassShadeAndTintImplementation: "bourbon"
     supportedFiletypes: [
       "css"
       "scss"
