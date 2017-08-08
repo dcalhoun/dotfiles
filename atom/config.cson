@@ -116,7 +116,6 @@
   "one-dark-ui": {}
   pigments:
     autocompleteSuggestionsFromValue: true
-    markerType: "dot"
     sassShadeAndTintImplementation: "bourbon"
     supportedFiletypes: [
       "css"

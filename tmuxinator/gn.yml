@@ -16,6 +16,4 @@ windows:
         - gn-api:
           - cd gn-api && bundle exec rails server -p 3000
         - gn-accounts:
-          - cd accounts && bundle exec rails server -p 3001
-  - Support:
-      - redis-server /usr/local/etc/redis.conf
+          - cd gn-accounts && bundle exec rails server -p 3001

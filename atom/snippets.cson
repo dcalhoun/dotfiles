@@ -68,9 +68,6 @@
 
 # JavaScript
 '.source.js':
-  'Hi':
-    'prefix': 'hi'
-    'body': "console.log('⊂(◉‿◉)つ hi')"
   'error':
     'prefix': 'error'
     'body': 'console.error(${1})${0}'
@@ -79,10 +76,10 @@
     'body': 'console.log(${1})${0}'
   'export':
     'prefix': 'ex'
-    'body': 'export ${1:member}'
+    'body': 'export ${1:member}\n$0'
   'export default':
     'prefix': 'exd'
-    'body': 'export default ${1:member}'
+    'body': 'export default ${1:member}\n$0'
   'import module':
     'prefix': 'im'
     'body': "import ${1:*} from '${2:module}'$0"

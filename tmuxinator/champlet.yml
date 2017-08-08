@@ -20,7 +20,5 @@ windows:
   - Support:
       layout: even-horizontal
       panes:
-        - redis:
-          - redis-server /usr/local/etc/redis.conf
         - champlet-api:
           - cd champlet-api && yarn start
