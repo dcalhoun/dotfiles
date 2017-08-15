@@ -37,7 +37,6 @@
       "ember-cli-helper"
       "atom-handlebars"
       "maximize-panes"
-      "smart-tab-name"
       "ember-tabs"
       "aligner"
       "nuclide"
@@ -58,7 +57,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'SF Mono', Menlo"
-    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -113,7 +111,8 @@
   "markdown-preview": {}
   metrics:
     userId: "94cae727e598b1784e1882b081dc3407dfea5494"
-  "one-dark-ui": {}
+  "one-dark-ui":
+    hideDockButtons: true
   pigments:
     autocompleteSuggestionsFromValue: true
     sassShadeAndTintImplementation: "bourbon"
@@ -123,6 +122,8 @@
     ]
   react: {}
   "status-bar": {}
+  "tab-foldername-index":
+    equalsNamesEnabled: false
   tabs: {}
   "tabs-to-spaces": {}
   "tree-view":
@@ -131,6 +132,7 @@
     squashDirectoryNames: true
   "vim-mode": {}
   "vim-mode-plus":
+    centerPaneOnMaximizePane: false
     charactersToAddSpaceOnSurround: [
       "("
       "["
@@ -139,6 +141,8 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
+    hideStatusBarOnMaximizePane: false
+    hideTabBarOnMaximizePane: false
     highlightSearch: true
     showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150

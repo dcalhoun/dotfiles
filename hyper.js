@@ -54,7 +54,7 @@ module.exports = {
       hideDock: true,
       hotkey: 'Ctrl+;'
     },
-    windowSize: [1000, 700],
+    windowSize: [1440, 900],
     modifierKeys: {
       altIsMeta: true
     }

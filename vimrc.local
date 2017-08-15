@@ -1,1 +1,4 @@
 map <leader>n :NERDTreeToggle<CR>
+
+syntax on
+colorscheme onedark

@@ -1,4 +1,13 @@
+" Remove unused plugins from thoughtbot/dotfiles
+UnPlug 'elixir-lang/vim-elixir'
+UnPlug 'fatih/vim-go'
+UnPlug 'kchmck/vim-coffee-script'
+UnPlug 'slim-template/vim-slim'
+
 " Define bundles via Github repos
+Plug 'itchyny/lightline.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+
