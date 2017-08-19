@@ -104,7 +104,7 @@
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
-    panelHeight: 69
+    panelHeight: 72
     panelRepresents: "Entire Project"
     showPanel: true
     statusBarRepresents: "Entire Project"

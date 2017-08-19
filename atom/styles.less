@@ -8,6 +8,27 @@
  * http://www.lesscss.org
  */
 
-atom-workspace.vim-mode-plus--pane-maximized atom-text-editor:not(.mini) {
-  margin-left: 0;
+
+/* vim-mode-plus
+   ========================================================================== */
+
+atom-workspace.vim-mode-plus--pane-maximized .bottom.atom-dock-open atom-pane-container atom-pane {
+  display: flex; // Prevent hiding lint errors on maximize pane
+}
+
+/* ex-mode
+   ========================================================================== */
+
+.command-mode-input atom-text-editor[mini].ex-mode-editor {
+  background-color: transparent;
+  margin: 0.375rem auto;
+}
+
+.command-mode-input {
+  padding-right: 0.375rem;
+  padding-left: 0.375rem;
+}
+
+atom-text-editor.ex-mode-editor .scroll-view {
+  left: 0.125rem !important; // Fix broken ex-mode mini editor positioning
 }
