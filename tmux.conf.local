@@ -1,7 +1,7 @@
 # Change leader key
-set -g prefix C-j
-unbind-key C-b
-bind-key C-j send-prefix
+# set -g prefix C-j
+# unbind-key C-b
+# bind-key C-j send-prefix
 
 # Set plugins
 set -g @plugin "jlipps/tmux-safekill"

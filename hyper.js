@@ -1,34 +1,5 @@
 module.exports = {
   config: {
-    // default font size in pixels for all tabs
-    fontSize: 16,
-
-    // font family with optional fallbacks
-    fontFamily: '"SF Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-
-    // terminal cursor background color (hex)
-    cursorColor: '#F81CE5',
-
-    // color of the text
-    foregroundColor: '#fff',
-
-    // terminal background color
-    backgroundColor: '#000',
-
-    // border color (window, tabs)
-    borderColor: '#333',
-
-    // custom css to embed in the main window
-    css: '',
-
-    // custom css to embed in the terminal window
-    termCSS: '',
-
-    // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
-
-    // some color overrides. see http://bit.ly/29k1iU2 for
-    // the full list
     colors: [
       '#000000',
       '#ff0000',
@@ -47,37 +18,34 @@ module.exports = {
       '#00ffff',
       '#ffffff'
     ],
-
-    shell: 'zsh',
-    summon: {
-      hideOnBlur: true,
-      hideDock: true,
-      hotkey: 'Ctrl+;'
-    },
-    windowSize: [1440, 900],
+    backgroundColor: '#000',
+    borderColor: '#333',
+    css: '',
+    cursorColor: '#F81CE5',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontSize: 16,
+    foregroundColor: '#fff',
     modifierKeys: {
       altIsMeta: true
-    }
+    },
+    padding: '12px 14px',
+    shell: '/bin/zsh',
+    summon: {
+      hideOnBlur: false
+    },
+    termCSS: '',
+    windowSize: [1440, 900]
   },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
+  localPlugins: [
+    'hyperterm-summon'
+  ],
+
   plugins: [
     'hyper-snazzy',
     'hypercwd',
     "hyperterm-paste",
     "hyperlinks",
-    "hyper-import-sf-mono",
-    "hyperterm-cursor",
-    "hyperterm-summon"
-  ],
-
-  // in development, you can create a directory under
-  // `~/.hyperterm_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
-  localPlugins: []
+    "hyperterm-cursor"
+  ]
 };

@@ -1,3 +1,7 @@
+# Set default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Add Yarn's global bin to path
 PATH="$(yarn global bin):$PATH"
 
