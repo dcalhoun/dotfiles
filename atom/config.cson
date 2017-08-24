@@ -41,6 +41,8 @@
       "aligner"
       "nuclide"
       "atom-terminal-tab"
+      "tester-jest"
+      "tester"
     ]
     ignoredNames: [
       ".git"
@@ -57,7 +59,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'SF Mono', Menlo"
-    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -128,6 +129,8 @@
   tabs: {}
   "tabs-to-spaces": {}
   tester:
+    testOnOpen: false
+    testOnSave: false
     testStateStyle: "Icon"
   "tree-view":
     hideIgnoredNames: true

@@ -11,3 +11,4 @@ windows:
         - cd gn-api && bundle exec rails server -p 3000
         - cd gn-accounts && bundle exec rails server -p 3001
   - Client: cd gn-web && yarn start
+  - Test: cd gn-web && yarn test -- --watch
