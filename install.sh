@@ -1,3 +1,5 @@
+#!/bin/sh
+
 chsh -s $(which zsh)
 
 MY_DOTFILES=$HOME/.dotfiles
