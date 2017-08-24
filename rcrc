@@ -1,2 +1,2 @@
-EXCLUDES="README.md LICENSE Brewfile install.sh"
+EXCLUDES="README.md LICENSE Brewfile install.sh rcrc"
 DOTFILES_DIRS="$HOME/.dotfiles $HOME/.dotfiles-thoughtbot"
