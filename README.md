@@ -3,11 +3,11 @@ I use [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles) as the
 foundation of my personal configuration. These files are the `.local`
 modifications that build on top of the foundation.
 
-## Requirements
+## Perquisites
 - Install [Homebrew](https://brew.sh).
-- Install [Atom](https://atom.io)
+- Install [Atom](https://atom.io).
 
-## Install
+## Installation
 ```bash
 git clone git@github.com:dcalhoun/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
