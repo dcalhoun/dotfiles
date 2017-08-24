@@ -1,5 +1,7 @@
 module.exports = {
   config: {
+    backgroundColor: '#000',
+    borderColor: '#333',
     colors: [
       '#000000',
       '#ff0000',
@@ -18,8 +20,7 @@ module.exports = {
       '#00ffff',
       '#ffffff'
     ],
-    backgroundColor: '#000',
-    borderColor: '#333',
+    copyOnSelect: true,
     css: '',
     cursorColor: '#f81ce5',
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',

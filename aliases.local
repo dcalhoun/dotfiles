@@ -2,6 +2,7 @@
 alias be="bundle exec"
 alias df="cd ~/.dotfiles"
 alias nls="npm ls -g --depth=0"
+alias eap="apm list --installed --bare > ~/.dotfiles/atom/packages.txt"
 
 # GoNoodle
 alias gns="bundle exec rails s"
