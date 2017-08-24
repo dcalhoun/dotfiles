@@ -17,7 +17,7 @@
 #   'ctrl-p': 'core:move-down'
 #
 
-'body':
+'.workspace':
   # Focus panes within empty pane
   'ctrl-w ctrl-h': 'window:focus-pane-on-left'
   'ctrl-w h': 'window:focus-pane-on-left'
@@ -35,6 +35,14 @@
   'ctrl-w w': 'window:focus-next-pane'
   'ctrl-w ctrl-p': 'window:focus-previous-pane'
   'ctrl-w p': 'window:focus-previous-pane'
+
+  # Manage docks
+  'cmd-ctrl-b': 'window:toggle-bottom-dock'
+  'cmd-ctrl-l': 'window:toggle-left-dock'
+  'cmd-ctrl-r': 'window:toggle-right-dock'
+
+  # Launch terminal pane
+  'cmd-ctrl-t': 'terminal:open'
 
 'atom-text-editor[mini]':
   # Mini-input delete

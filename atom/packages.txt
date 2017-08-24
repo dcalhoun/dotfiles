@@ -1,9 +1,11 @@
 nerd-treeview@0.5.4
 tab-foldername-index@3.0.0
+tester@1.4.0
 vim-mode-plus@0.96.2
 
 Zen@0.18.0
 atom-jest-snippets-standard@1.1.0
+atom-terminal-tab@0.2.2
 busy-signal@1.4.3
 ex-mode@0.18.0
 file-icons@2.1.11

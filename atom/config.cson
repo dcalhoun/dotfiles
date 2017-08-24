@@ -40,6 +40,7 @@
       "ember-tabs"
       "aligner"
       "nuclide"
+      "atom-terminal-tab"
     ]
     ignoredNames: [
       ".git"
@@ -127,7 +128,6 @@
   tabs: {}
   "tabs-to-spaces": {}
   tester:
-    testOnOpen: false
     testStateStyle: "Icon"
   "tree-view":
     hideIgnoredNames: true

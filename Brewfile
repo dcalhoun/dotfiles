@@ -1,7 +1,13 @@
 tap 'caskroom/cask'
 tap 'thoughtbot/formulae'
+
 brew 'diff-so-fancy'
+brew 'git'
+brew 'hub'
 brew 'rcm'
+brew 'tmux'
+brew 'vim'
+brew 'vim'
 brew 'yarn'
 brew 'zsh-syntax-highlighting'
 cask 'atom'
