@@ -1,5 +1,5 @@
 # Set default editor
-export VISUAL='atom -nw'
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Add Yarn's global bin to path
