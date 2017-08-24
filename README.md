@@ -5,7 +5,6 @@ modifications that build on top of the foundation.
 
 ## Prerequisites
 - Install [Homebrew](https://brew.sh)
-- Install [Atom](https://atom.io)
 
 ## Installation
 ```bash
