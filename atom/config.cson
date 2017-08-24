@@ -127,7 +127,7 @@
   tabs: {}
   "tabs-to-spaces": {}
   tester:
-    showStatusBar: false
+    testOnOpen: false
     testStateStyle: "Icon"
   "tree-view":
     hideIgnoredNames: true
