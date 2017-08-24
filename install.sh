@@ -13,9 +13,11 @@ if [ ! -e ${MY_DOTFILES}/tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ${MY_DOTFILES}/tmux/plugins/tpm
 fi
 
-brew bundle
+brew bundle --file=${MY_DOTFILES}/Brewfile
 
 yarn global add pure-prompt
+
+apm install --packages-file ${MY_DOTFILES}/atom/packages.txt
 
 rcup -d $TB_DOTFILES -x README.md -x Brewfile -x LICENSE -x rcrc
 rcup -f -d $MY_DOTFILES -x README.md -x Brewfile -x LICENSE -x install.sh

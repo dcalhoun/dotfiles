@@ -40,7 +40,6 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "atom-keyboard-macros-vim"
     ]
     ignoredNames: [
       ".git"

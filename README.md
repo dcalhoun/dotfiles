@@ -4,7 +4,8 @@ foundation of my personal configuration. These files are the `.local`
 modifications that build on top of the foundation.
 
 ## Requirements
-Install [Homebrew](https://brew.sh).
+- Install [Homebrew](https://brew.sh).
+- Install [Atom](https://atom.io)
 
 ## Install
 ```bash
