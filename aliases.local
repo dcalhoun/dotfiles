@@ -1,5 +1,6 @@
 # System
 alias be="bundle exec"
+alias df="cd ~/.dotfiles"
 alias nls="npm ls -g --depth=0"
 
 # GoNoodle

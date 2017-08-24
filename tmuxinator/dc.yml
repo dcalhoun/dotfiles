@@ -1,12 +1,8 @@
 # ~/.tmuxinator/dc.yml
 
 name: Personal
-root: ~/Sites/web
+root: ~/Sites/web/dcalhoun.github.io
 startup_pane: 1
 
 windows:
-  - Server:
-      layout: even-horizontal
-      panes:
-        - gn-web:
-          - cd dcalhoun.github.io && yarn start
+  - yarn start

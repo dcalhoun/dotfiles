@@ -21,7 +21,7 @@ module.exports = {
     backgroundColor: '#000',
     borderColor: '#333',
     css: '',
-    cursorColor: '#F81CE5',
+    cursorColor: '#f81ce5',
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontSize: 16,
     foregroundColor: '#fff',
@@ -31,7 +31,7 @@ module.exports = {
     padding: '12px 14px',
     shell: '/bin/zsh',
     summon: {
-      hideOnBlur: false
+      hideDock: true
     },
     termCSS: '',
     windowSize: [1440, 900]
@@ -44,7 +44,6 @@ module.exports = {
   plugins: [
     'hyper-snazzy',
     'hypercwd',
-    "hyperterm-paste",
     "hyperlinks",
     "hyperterm-cursor"
   ]

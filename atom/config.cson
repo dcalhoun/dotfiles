@@ -57,6 +57,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'SF Mono', Menlo"
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -126,6 +127,9 @@
     equalsNamesEnabled: false
   tabs: {}
   "tabs-to-spaces": {}
+  tester:
+    showStatusBar: false
+    testStateStyle: "Icon"
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true

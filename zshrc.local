@@ -14,7 +14,7 @@ export -U PATH
 setopt hist_ignore_space
 
 # Source plugins
-source ~/dotfiles-local/zsh/completion/tmuxinator.zsh
+source ~/.dotfiles/zsh/completion/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Setup pure prompt https://git.io/6LHDOw

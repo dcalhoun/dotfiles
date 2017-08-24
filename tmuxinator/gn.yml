@@ -1,19 +1,13 @@
-# ~/.tmuxinator/gn-web.yml
+# ~/.tmuxinator/gn.yml
 
-name: GN Web
+name: gn
 root: ~/Sites/web
 startup_pane: 1
 
 windows:
-  - Client:
-      layout: even-horizontal
-      panes:
-        - gn-web:
-          - cd gn-web && yarn start
   - API:
       layout: even-horizontal
       panes:
-        - gn-api:
-          - cd gn-api && bundle exec rails server -p 3000
-        - gn-accounts:
-          - cd gn-accounts && bundle exec rails server -p 3001
+        - cd gn-api && bundle exec rails server -p 3000
+        - cd gn-accounts && bundle exec rails server -p 3001
+  - Client: cd gn-web && yarn start

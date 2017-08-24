@@ -1,0 +1,5 @@
+tap 'thoughtbot/formulae'
+brew 'diff-so-fancy'
+brew 'rcm'
+brew 'yarn'
+brew 'zsh-syntax-highlighting'
