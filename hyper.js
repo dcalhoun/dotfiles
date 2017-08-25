@@ -12,7 +12,6 @@ module.exports = {
     foregroundColor: '#fff',
     hyperTabs: {
       activityColor: 'salmon',
-      border: true,
       closeAlign: 'left',
       tabIconsColored: true
     },
