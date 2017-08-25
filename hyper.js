@@ -38,6 +38,7 @@ module.exports = {
     'hyper-tabs-enhanced',
     'hypercwd',
     'hyperlinks',
-    'hyperterm-cursor'
+    'hyperterm-cursor',
+    'hyperterm-paste'
   ]
 };
