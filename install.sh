@@ -27,5 +27,5 @@ yarn global add pure-prompt
 apm install --packages-file ${MY_DOTFILES}/atom/packages.txt
 
 # Link files with rcup
-rcup -d $TB_DOTFILES
-rcup -f -d $MY_DOTFILES
+rcup -d $TB_DOTFILES -x README.md -x LICENSE -x Brewfile -x install.sh -x rcrc
+rcup -f -d $MY_DOTFILES -x README.md -x LICENSE -x Brewfile -x install.sh -x rcrc

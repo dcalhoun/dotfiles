@@ -1,2 +1,1 @@
-notification :tmux,
-  color_location: ''
+notification :off

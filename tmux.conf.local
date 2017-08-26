@@ -7,6 +7,9 @@ set -g @plugin "jlipps/tmux-safekill"
 # Set zsh as the default shell
 set-option -g default-shell /bin/zsh
 
+# Fix terminal-notifier within tmux https://git.io/vXoIi
+set-option -g default-command "reattach-to-user-namespace -l $SHELL || $SHELL"
+
 # Enable pane scrolling
 set-option -g mouse on
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"

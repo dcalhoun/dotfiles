@@ -12,7 +12,7 @@ file-icons@2.1.11
 gist-it@0.9.2
 highlight-line@0.12.0
 intentions@1.1.5
-language-babel@2.72.0
+language-babel@2.73.0
 language-diff@0.7.0
 language-generic-config@1.4.0
 linter@2.2.0
@@ -27,6 +27,6 @@ tab-foldername-index@3.1.0
 tabs-to-spaces@1.0.3
 tester@1.4.0
 tester-jest@1.1.6
-vim-mode-plus@0.98.0
+vim-mode-plus@0.99.1
 vim-mode-plus-jasmine-increase-focus@0.3.0
 
