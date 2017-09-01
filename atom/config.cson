@@ -43,6 +43,8 @@
       "atom-terminal-tab"
       "tester-jest"
       "tester"
+      "file-icons"
+      "pigments"
     ]
     ignoredNames: [
       ".git"
@@ -58,7 +60,7 @@
     telemetryConsent: "limited"
     titleBar: "custom-inset"
   editor:
-    fontFamily: "'SF Mono', Menlo"
+    fontFamily: "Menlo, monospace"
     fontSize: 16
     invisibles: {}
     preferredLineLength: 100
@@ -109,8 +111,8 @@
   "linter-ui-default":
     panelHeight: 69
     panelRepresents: "Entire Project"
-    showPanel: true
     statusBarRepresents: "Entire Project"
+    tooltipFollows: "Mouse"
   "markdown-preview": {}
   metrics:
     userId: "94cae727e598b1784e1882b081dc3407dfea5494"

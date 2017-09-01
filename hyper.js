@@ -28,7 +28,7 @@ module.exports = {
   },
 
   localPlugins: [
-    'hyperterm-summon'
+    // 'hyperterm-summon'
   ],
 
   plugins: [
@@ -38,6 +38,7 @@ module.exports = {
     'hypercwd',
     'hyperlinks',
     'hyperterm-cursor',
-    'hyperterm-paste'
+    'hyperterm-paste',
+    'hyperterm-summon'
   ]
 };

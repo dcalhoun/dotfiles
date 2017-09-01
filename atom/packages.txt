@@ -16,10 +16,10 @@ language-babel@2.73.0
 language-diff@0.7.0
 language-generic-config@1.4.0
 linter@2.2.0
-linter-js-standard@3.9.3
+linter-js-standard@4.0.0
 linter-rubocop@2.1.1
 linter-stylelint@4.0.2
-linter-ui-default@1.6.7
+linter-ui-default@1.6.8
 nerd-treeview@0.5.4
 one-dark-vivid-syntax@1.8.0
 pigments@0.40.2
@@ -27,6 +27,6 @@ tab-foldername-index@3.1.0
 tabs-to-spaces@1.0.3
 tester@1.4.0
 tester-jest@1.1.6
-vim-mode-plus@0.99.1
+vim-mode-plus@1.1.1
 vim-mode-plus-jasmine-increase-focus@0.3.0
 
