@@ -7,6 +7,10 @@ unbind C-b
 set -g prefix C-i
 bind C-i send-prefix
 
+# Experimental leader key
+set -g prefix2 C-Space
+bind Space send-prefix
+
 # Set plugins
 set -g @plugin "jlipps/tmux-safekill"
 

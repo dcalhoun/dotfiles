@@ -1,10 +1,9 @@
 # ~/.tmuxinator/dc.yml
 
-name: dc
-root: ~/Sites/web/dcalhoun.github.io
+name: df
+root: ~/.dotfiles
 startup_pane: 1
 
 windows:
-  - Server: yarn start
   - Editor: vim .
   - Shell: cd .
