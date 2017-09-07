@@ -1,9 +1,11 @@
-# Update leader key
-set -u -g prefix2 # Unset thoughtbot/dotfiles prefix2
-set -g prefix C-i # Not working
+# Unset thoughtbot/dotfiles prefix2
 unbind C-s
-unbind C-b # Not working
-bind C-i send-prefix # Not working
+set -u -g prefix2 
+
+# Update leader key
+unbind C-b
+set -g prefix C-i
+bind C-i send-prefix
 
 # Set plugins
 set -g @plugin "jlipps/tmux-safekill"
