@@ -1,13 +1,14 @@
 " Bindings
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
+noremap <leader>ff :Ack<space>
 
 " Ignore files for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
- \  'dir':  '\v[\/](node_modules|\.(git|hg|svn))$',
+ \  'dir':  '\v[\/](node_modules|vendor|\.(git|hg|svn))$',
  \  'file': '\v\.(exe|so|dll)$'
  \ }
 
@@ -19,8 +20,10 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" Include custom snippets
+" Custom snippets
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
+autocmd BufRead,BufNewFile *.tpl set filetype=html
 
+" Syntax highlighting
 syntax on
 colorscheme onedark

@@ -5,12 +5,13 @@ UnPlug 'kchmck/vim-coffee-script'
 UnPlug 'slim-template/vim-slim'
 
 " Define bundles via Github repos
+Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'mileszs/ack.vim'
+Plug 'mxw/vim-jsx'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Yggdroot/indentLine'
-Plug 'mxw/vim-jsx'
 
 " To review...
 Plug 'jlanzarotta/bufexplorer'

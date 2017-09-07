@@ -1,6 +1,7 @@
 tap 'caskroom/cask'
 tap 'thoughtbot/formulae'
 
+brew 'ack'
 brew 'diff-so-fancy'
 brew 'git'
 brew 'hub'
@@ -14,3 +15,4 @@ brew 'zsh-syntax-highlighting'
 cask 'atom'
 cask 'google-chrome'
 cask 'hyper'
+cask 'iterm2'
