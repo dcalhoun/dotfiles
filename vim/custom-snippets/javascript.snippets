@@ -1,0 +1,50 @@
+extends c
+
+snippet log "log"
+console.log(${1})${0}
+endsnippet
+
+snippet ex "export"
+export ${1:member}\n$0
+endsnippet
+
+snippet exd "export default"
+export default ${1:member}\n$0
+endsnippet
+
+snippet im "import module"
+import ${1:*} from '${2:module}'$0
+endsnippet
+
+snippet ima "import module as"
+import ${1:*} as ${2:name} from '${3:module}'$0
+endsnippet
+
+snippet imd "import module destructured"
+import { $1 } from '${2:module}'$0
+endsnippet
+
+snippet doc "jsdoc"
+/**
+ * @module      $1
+ * @extends     {$2}
+ * @description $0
+ */
+endsnippet
+
+snippet jt "Jest Test Template"
+import ${1:Subject} from "../$1"
+
+let subject
+
+describe('$1', () => {
+	beforeAll(() => {
+		subject = new $1()
+	})
+
+	it('fails a test', () => {
+		expect(subject).toBeUndefined()$0
+	})
+})
+
+endsnippet

@@ -1,0 +1,16 @@
+extends c
+
+snippet import "@import"
+@import '$0';
+endsnippet
+
+snippet def "Component"
+/** @define ${1:ComponentName} */${0}
+endsnippet
+
+snippet med "@media"
+@media screen and (min-width: $1) {
+	$0
+}
+endsnippet
+

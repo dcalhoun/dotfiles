@@ -1,4 +1,26 @@
+" Bindings
 map <leader>n :NERDTreeToggle<CR>
+map <leader>m :NERDTreeFind<CR>
+
+" Ignore files for ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+ \  'dir':  '\v[\/](node_modules|\.(git|hg|svn))$',
+ \  'file': '\v\.(exe|so|dll)$'
+ \ }
+
+" Misc
+set nowrap
+
+" Force indentation to use soft tabs
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" Include custom snippets
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 
 syntax on
 colorscheme onedark

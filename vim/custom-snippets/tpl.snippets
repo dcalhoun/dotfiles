@@ -1,0 +1,33 @@
+snippet _ "ejs"
+<% $0 %>
+endsnippet
+
+snippet _= "ejs (return)"
+<%= $0 %>
+endsnippet
+
+snippet _if "ejs (if)"
+<% if (${1}) { %>
+	${0}
+<% } %>
+endsnippet
+
+snippet _ife "ejs (if else)"
+<% if (${1}) { %>
+	${0}
+<% } else { %>
+<% } %>
+endsnippet
+
+snippet _elsif "ejs (else if)"
+<% } else if (${1}) { %>${0}}
+endsnippet
+
+snippet _else "ejs (else)"
+<% } else { %>${0}}
+endsnippet
+
+snippet _forin "ejs (for in)"
+<% for (var ${1:i} in ${2:value}) { %>${0}}
+endsnippet
+
