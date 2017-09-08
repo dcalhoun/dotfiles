@@ -61,6 +61,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Menlo, monospace"
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
