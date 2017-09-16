@@ -61,7 +61,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Menlo, monospace"
-    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -96,7 +95,8 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line": {}
+  "highlight-line":
+    enableBackgroundColor: false
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
@@ -168,6 +168,25 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  xterm:
+    colors:
+      background: "#353846"
+      brightBlack: "#686868"
+      brightBlue: "#57c7ff"
+      brightCyan: "#9aedfe"
+      brightGreen: "#5af78e"
+      brightPurple: "#ff6ac1"
+      brightRed: "#ff5c57"
+      brightYellow: "#f3f99d"
+      foreground: "#eff0eb"
+      normalBlack: "#282a36"
+      normalBlue: "#57c7ff"
+      normalCyan: "#9aedfe"
+      normalGreen: "#5af78e"
+      normalPurple: "#ff6ac1"
+      normalRed: "#ff5c57"
+      normalWhite: "#f1f1f0"
+      normalYellow: "#f3f99d"
 ".basic.html.text":
   editor:
     preferredLineLength: 100

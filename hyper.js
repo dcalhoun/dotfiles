@@ -21,14 +21,16 @@ module.exports = {
     padding: '12px 14px',
     shell: '/bin/zsh',
     summon: {
-      hideDock: true
+      hotkey: 'Ctrl+;'
+      // hideDock: true,
+      // hideOnBlur: true
     },
     termCSS: '',
     windowSize: [1440, 900]
   },
 
   localPlugins: [
-    // 'hyperterm-summon'
+    'hyperterm-summon'
   ],
 
   plugins: [
@@ -38,7 +40,7 @@ module.exports = {
     'hypercwd',
     'hyperlinks',
     'hyperterm-cursor',
-    'hyperterm-paste',
-    'hyperterm-summon'
+    'hyperterm-paste'
+    // 'hyperterm-summon'
   ]
 };

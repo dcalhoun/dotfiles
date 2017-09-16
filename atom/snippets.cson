@@ -74,6 +74,9 @@
   'log':
     'prefix': 'log'
     'body': 'console.log(${1})${0}'
+  'switch':
+    'prefix': 'switch'
+    'body': 'switch (${1:expression}) {\n\tcase ${2:expression}:\n\t\t$4\n\t\tbreak$5\n\tdefault:\n\t\t$3\n}'
   'export':
     'prefix': 'ex'
     'body': 'export ${1:member}\n$0'

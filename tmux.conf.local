@@ -1,6 +1,6 @@
 # Unset thoughtbot/dotfiles prefix2
 unbind C-s
-set -u -g prefix2 
+set -u -g prefix2
 
 # Update leader key
 unbind C-b
@@ -32,7 +32,7 @@ set-window-option -g status-left-fg black
 set-window-option -g status-left-bg white
 
 # Add RIGHT status bar label
-set-window-option -g status-right " %H:%M / %d-%m-%Y "
+set-window-option -g status-right " %H:%M / %d.%m.%Y "
 set-window-option -g status-right-fg black
 set-window-option -g status-right-bg white
 

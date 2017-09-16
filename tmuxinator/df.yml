@@ -6,4 +6,3 @@ startup_pane: 1
 
 windows:
   - Editor: vim .
-  - Shell: cd .
