@@ -13,6 +13,7 @@
   "base16-syntax":
     scheme: "Solarized"
   core:
+    audioBeep: false
     closeDeletedFileTabs: true
     customFileTypes:
       "source.ini": [
@@ -40,7 +41,6 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "atom-terminal-tab"
       "tester-jest"
       "tester"
       "file-icons"
@@ -95,8 +95,7 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line":
-    enableBackgroundColor: false
+  "highlight-line": {}
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
@@ -111,6 +110,7 @@
   "linter-ui-default":
     panelHeight: 69
     panelRepresents: "Entire Project"
+    showPanel: true
     statusBarRepresents: "Entire Project"
     tooltipFollows: "Mouse"
   "markdown-preview": {}

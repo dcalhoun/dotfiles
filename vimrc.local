@@ -27,3 +27,5 @@ autocmd BufRead,BufNewFile *.tpl set filetype=html
 " Syntax highlighting
 syntax on
 colorscheme onedark
+"set background=dark
+"let g:one_allow_italics = 1
