@@ -13,6 +13,9 @@ module.exports = {
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontSize: 16,
     foregroundColor: '#fff',
+    hypercwd: {
+      initialWorkingDirectory: '~'
+    },
     hyperTabs: {
       activityColor: 'salmon',
       tabIconsColored: true,
@@ -26,7 +29,7 @@ module.exports = {
     summon: {
       hotkey: 'Ctrl+;',
       // hideDock: true,
-      // hideOnBlur: true
+      hideOnBlur: true
     },
     termCSS: '',
     updateChannel: 'canary',

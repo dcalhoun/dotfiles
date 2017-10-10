@@ -45,6 +45,8 @@
       "tester"
       "file-icons"
       "pigments"
+      "linter"
+      "linter-ui-default"
     ]
     ignoredNames: [
       ".git"
@@ -99,7 +101,7 @@
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
-    lintOnChangeInterval: 600
+    lintOnChange: false
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
@@ -108,9 +110,8 @@
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
-    panelHeight: 69
+    panelHeight: 157
     panelRepresents: "Entire Project"
-    showPanel: true
     statusBarRepresents: "Entire Project"
     tooltipFollows: "Mouse"
   "markdown-preview": {}
@@ -153,6 +154,7 @@
     hideStatusBarOnMaximizePane: false
     hideTabBarOnMaximizePane: false
     highlightSearch: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150
     smoothScrollOnHalfScrollMotionDuration: 150

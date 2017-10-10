@@ -6,4 +6,3 @@ startup_pane: 1
 
 windows:
   - Server: yarn start
-  - Editor: vim .
