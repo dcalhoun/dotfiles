@@ -33,11 +33,12 @@ module.exports = {
     },
     termCSS: '',
     updateChannel: 'canary',
+    // windowSize: [200, 200]
     windowSize: [1440, 900]
   },
 
   localPlugins: [
-    // 'hyperterm-summon'
+    'hyperterm-summon'
   ],
 
   plugins: [
@@ -48,6 +49,6 @@ module.exports = {
     'hyperlinks',
     'hyperterm-cursor',
     'hyperterm-paste',
-    'hyperterm-summon'
+    // 'hyperterm-summon'
   ]
 };

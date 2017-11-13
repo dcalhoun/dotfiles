@@ -4,6 +4,10 @@
   "aligner-scss": {}
   "atom-beautify":
     _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
+  "atom-jest-snippets": {}
   "atom-typescript": {}
   "autoclose-html": {}
   "autocomplete-plus":
@@ -43,10 +47,9 @@
       "nuclide"
       "tester-jest"
       "tester"
-      "file-icons"
-      "pigments"
       "linter"
       "linter-ui-default"
+      "ide-flowtype"
     ]
     ignoredNames: [
       ".git"
@@ -97,11 +100,13 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line": {}
+  "highlight-line":
+    enableBackgroundColor: false
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
     lintOnChange: false
+  "linter-eslint": {}
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
@@ -126,6 +131,16 @@
       "css"
       "scss"
     ]
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "es5"
+    useEslint: true
   react: {}
   "status-bar": {}
   "tab-foldername-index":
@@ -191,7 +206,6 @@
       normalYellow: "#f3f99d"
 ".basic.html.text":
   editor:
-    preferredLineLength: 100
     softWrapHangingIndent: 2
 ".c.source":
   editor:
@@ -334,7 +348,6 @@
     softWrapHangingIndent: 2
 ".js.source":
   editor:
-    preferredLineLength: 100
     softWrapHangingIndent: 2
 ".json.source":
   editor:
