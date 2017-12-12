@@ -13,9 +13,6 @@ module.exports = {
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontSize: 16,
     foregroundColor: '#fff',
-    hypercwd: {
-      initialWorkingDirectory: '~'
-    },
     hyperTabs: {
       activityColor: 'salmon',
       tabIconsColored: true,
@@ -33,7 +30,7 @@ module.exports = {
     },
     termCSS: '',
     updateChannel: 'canary',
-    // windowSize: [200, 200]
+    // windowSize: [400, 400]
     windowSize: [1440, 900]
   },
 
@@ -45,7 +42,6 @@ module.exports = {
     'hyper-search',
     'hyper-snazzy',
     'hyper-tabs-enhanced',
-    'hypercwd',
     'hyperlinks',
     'hyperterm-cursor',
     'hyperterm-paste',

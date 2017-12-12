@@ -5,8 +5,8 @@
   "atom-beautify":
     _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
   "atom-ide-ui":
-    "atom-ide-diagnostics-ui":
-      autoVisibility: true
+    "atom-ide-code-format": {}
+    "atom-ide-diagnostics-ui": {}
   "atom-jest-snippets": {}
   "atom-typescript": {}
   "autoclose-html": {}
@@ -47,9 +47,10 @@
       "nuclide"
       "tester-jest"
       "tester"
+      "ide-flowtype"
+      "tab-foldername-index"
       "linter"
       "linter-ui-default"
-      "ide-flowtype"
     ]
     ignoredNames: [
       ".git"
@@ -67,11 +68,9 @@
   editor:
     fontFamily: "Menlo, monospace"
     invisibles: {}
-    preferredLineLength: 100
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
     tabType: "soft"
   emmet: {}
@@ -115,7 +114,7 @@
   "linter-stylelint":
     disableWhenNoConfig: true
   "linter-ui-default":
-    panelHeight: 157
+    panelHeight: 171
     panelRepresents: "Entire Project"
     statusBarRepresents: "Entire Project"
     tooltipFollows: "Mouse"
@@ -169,7 +168,6 @@
     hideStatusBarOnMaximizePane: false
     hideTabBarOnMaximizePane: false
     highlightSearch: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     showHoverSearchCounter: true
     smoothScrollOnFullScrollMotionDuration: 150
     smoothScrollOnHalfScrollMotionDuration: 150
@@ -412,6 +410,9 @@
   editor:
     preferredLineLength: 100
     softWrapHangingIndent: 2
+".reason.source":
+  editor:
+    preferredLineLength: 110
 ".ruby.source":
   editor:
     softWrapHangingIndent: 2
