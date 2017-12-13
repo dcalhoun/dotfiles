@@ -29,4 +29,4 @@
   reflog = %C(auto)%h %<|(17)%gd %<|(30)%C(blue)%cr%C(reset) %s
   ; reflog = %C(auto)%h %<|(17)%gd %C(blue)%ci%C(reset) %s
 [rerere]
-  enabled = true
+  enabled = false

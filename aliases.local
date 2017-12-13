@@ -3,7 +3,7 @@ alias be="bundle exec"
 alias df="cd ~/.dotfiles"
 alias nls="npm ls -g --depth=0"
 alias eap="apm list --installed --bare > ~/.dotfiles/atom/packages.txt"
-alias tf="terraform"
+alias tka="tmux ls | cut -d: -f1 | xargs -l1 tmux kill-session -t"
 
 # GoNoodle
 alias gns="bundle exec rails s"

@@ -151,7 +151,6 @@
     testOnSave: false
     testStateStyle: "Icon"
   "tree-view":
-    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
