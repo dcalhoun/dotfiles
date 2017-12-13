@@ -1,6 +1,6 @@
 # ~/.tmuxinator/er.yml
 
-name: gn
+name: er
 root: ~/Sites/web/evergreen-roots
 startup_pane: 1
 
