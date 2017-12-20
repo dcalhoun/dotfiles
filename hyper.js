@@ -10,7 +10,7 @@ module.exports = {
       .terminal { opacity: 1 !important; } /* Snazzy: Disable blur opacity */
     `,
     cursorColor: '#f81ce5',
-    fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: '"Operator Mono SSm", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontSize: 16,
     foregroundColor: '#fff',
     hyperTabs: {

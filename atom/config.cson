@@ -64,9 +64,13 @@
       "tree-view"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "oceanic-next"
+    ]
     titleBar: "custom-inset"
   editor:
-    fontFamily: "Menlo, monospace"
+    fontFamily: "'Operator Mono SSm', Menlo, monospace"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true

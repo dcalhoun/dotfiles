@@ -1,24 +1,34 @@
-/*
- * Your Stylesheet
- *
- * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed.
- *
- * If you are unfamiliar with LESS, you can read more about it here:
- * http://www.lesscss.org
- */
+/* Setup Operator typeface
+   ========================================================================== */
+atom-workspace {
+  font-family: "Operator Mono SSm";
+  font-size: 11px;
+}
 
+atom-workspace,
+atom-text-editor {
+ font-weight: 400;
+ line-height: 1.6;
+}
+
+atom-panel.tool-panel {
+  font-size: 0.9em;
+}
+
+// Set italics for all comments
+.syntax--comment,
+.syntax--punctuation.syntax--italic {
+  font-style: italic;
+}
 
 /* vim-mode-plus
    ========================================================================== */
-
 atom-workspace.vim-mode-plus--pane-maximized .bottom.atom-dock-open atom-pane-container atom-pane {
   display: flex; // Prevent hiding lint errors on maximize pane
 }
 
 /* ex-mode
    ========================================================================== */
-
 .command-mode-input atom-text-editor[mini].ex-mode-editor {
   background-color: transparent;
   margin: 0.375rem auto;
