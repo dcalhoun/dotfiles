@@ -45,12 +45,12 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "tester-jest"
-      "tester"
       "ide-flowtype"
       "tab-foldername-index"
       "linter"
       "linter-ui-default"
+      "tester-jest"
+      "tester"
     ]
     ignoredNames: [
       ".git"
@@ -71,6 +71,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'Operator Mono SSm', Menlo, monospace"
+    fontSize: 15
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -151,9 +152,11 @@
   tabs: {}
   "tabs-to-spaces": {}
   tester:
+    gutterPosition: "Left"
+    softWrapDefault: false
+    statusBarOnClick: "results"
+    statusBarPosition: "Right"
     testOnOpen: false
-    testOnSave: false
-    testStateStyle: "Icon"
   "tree-view":
     hideVcsIgnoredFiles: true
     squashDirectoryNames: true

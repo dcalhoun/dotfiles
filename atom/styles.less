@@ -2,7 +2,6 @@
    ========================================================================== */
 atom-workspace {
   font-family: "Operator Mono SSm";
-  font-size: 11px;
 }
 
 atom-workspace,
@@ -11,14 +10,19 @@ atom-text-editor {
  line-height: 1.6;
 }
 
-atom-panel.tool-panel {
+status-bar {
   font-size: 0.9em;
 }
 
-// Set italics for all comments
 .syntax--comment,
+.syntax--keyword.syntax--other,
+.syntax--storage.syntax--type,
 .syntax--punctuation.syntax--italic {
   font-style: italic;
+}
+
+.about {
+  font-size: 1.15em;
 }
 
 /* vim-mode-plus
