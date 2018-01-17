@@ -29,3 +29,6 @@ syntax on
 colorscheme onedark
 "set background=dark
 "let g:one_allow_italics = 1
+
+" workaround for https://github.com/zeit/hyper/issues/2592
+highlight Normal ctermbg=none

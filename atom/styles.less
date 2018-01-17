@@ -47,12 +47,19 @@ atom-text-editor.ex-mode-editor .scroll-view {
   left: 0.125rem !important; // Fix broken ex-mode mini editor positioning
 }
 
-/* xterm
+/* atom-terminal-tab
    ========================================================================== */
-.xterm.terminal {
+terminal-view .xterm {
   height: 100%;
 }
 
-.xterm-rows {
-  padding: 1rem;
+terminal-view .xterm-rows {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// Repair broken yellow from atom-terminal-tab + oceanic-next
+terminal-view.themed .terminal .xterm-color-3,
+terminal-view.themed .terminal .xterm-color-11 {
+  color: #c4a000;
 }

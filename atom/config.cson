@@ -8,6 +8,8 @@
     "atom-ide-code-format": {}
     "atom-ide-diagnostics-ui": {}
   "atom-jest-snippets": {}
+  "atom-package-deps":
+    ignored: []
   "atom-typescript": {}
   "autoclose-html": {}
   "autocomplete-plus":
@@ -46,11 +48,7 @@
       "aligner"
       "nuclide"
       "ide-flowtype"
-      "tab-foldername-index"
       "linter"
-      "linter-ui-default"
-      "tester-jest"
-      "tester"
     ]
     ignoredNames: [
       ".git"
@@ -71,7 +69,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'Operator Mono SSm', Menlo, monospace"
-    fontSize: 15
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -151,6 +148,8 @@
     equalsNamesEnabled: false
   tabs: {}
   "tabs-to-spaces": {}
+  "terminal-tab":
+    defaultLocation: "center"
   tester:
     gutterPosition: "Left"
     softWrapDefault: false
