@@ -93,7 +93,7 @@
       "**/bower_components/*"
       "**/vendor/*"
       "**/.jekyll/*"
-      "**/build/*"
+      "**/!(config)/build/*"
       "**/dist/*"
     ]
     useAlternateScoring: true
@@ -101,8 +101,7 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line":
-    enableBackgroundColor: false
+  "highlight-line": {}
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
@@ -135,8 +134,6 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
-      isDisabledIfNoConfigFile: true
-      isDisabledIfNotInPackageJson: true
       showInStatusBar: true
     prettierOptions:
       singleQuote: true
