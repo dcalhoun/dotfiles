@@ -1,13 +1,13 @@
 /* Setup Operator typeface
    ========================================================================== */
 atom-workspace {
-  font-family: "Operator Mono SSm";
+  font-family: 'Operator Mono SSm';
 }
 
 atom-workspace,
 atom-text-editor {
- font-weight: 400;
- line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 status-bar {
@@ -27,7 +27,10 @@ status-bar {
 
 /* vim-mode-plus
    ========================================================================== */
-atom-workspace.vim-mode-plus--pane-maximized .bottom.atom-dock-open atom-pane-container atom-pane {
+atom-workspace.vim-mode-plus--pane-maximized
+  .bottom.atom-dock-open
+  atom-pane-container
+  atom-pane {
   display: flex; // Prevent hiding lint errors on maximize pane
 }
 
@@ -49,15 +52,6 @@ atom-text-editor.ex-mode-editor .scroll-view {
 
 /* atom-terminal-tab
    ========================================================================== */
-terminal-view .xterm {
-  height: 100%;
-}
-
-terminal-view .xterm-rows {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 // Repair broken yellow from atom-terminal-tab + oceanic-next
 terminal-view.themed .terminal .xterm-color-3,
 terminal-view.themed .terminal .xterm-color-11 {

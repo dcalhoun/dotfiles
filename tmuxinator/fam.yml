@@ -1,0 +1,9 @@
+# ~/.tmuxinator/fam.yml
+
+name: fam
+root: ~/Sites/web
+startup_pane: 1
+
+windows:
+  - API: cd gn-api && bundle exec rails server
+  - App: cd gn-web-family && yarn start

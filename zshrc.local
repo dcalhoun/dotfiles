@@ -2,6 +2,9 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# GoNoodle Rack setup
+export RACK_ENV="development"
+
 # Add Yarn's global bin to path
 PATH="$(yarn global bin):$PATH"
 

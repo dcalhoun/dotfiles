@@ -1,8 +1,9 @@
 # System
 alias be="bundle exec"
 alias df="cd ~/.dotfiles"
-alias nls="npm ls -g --depth=0"
 alias eap="apm list --installed --bare > ~/.dotfiles/atom/packages.txt"
+alias nls="npm ls -g --depth=0"
+alias tf="terraform"
 alias tka="tmux ls | cut -d: -f1 | xargs -L1 tmux kill-session -t"
 
 # GoNoodle
@@ -13,5 +14,6 @@ alias gnr="bundle exec rake log:clear db:reset && bundle exec rake db:test:prepa
 alias gnrf="FULL=1 bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare"
 alias gnrh="bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare && redis-cli flushall"
 alias api="cd ~/Sites/web/gn-api"
+alias fam="cd ~/Sites/web/gn-web-family"
 alias sup="cd ~/Sites/web/gn-sign-up"
 alias web="cd ~/Sites/web/gn-web"
