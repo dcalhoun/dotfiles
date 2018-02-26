@@ -1,7 +1,7 @@
 # ~/.tmuxinator/dc.yml
 
 name: dc
-root: ~/Sites/web/dcalhoun.github.io
+root: ~/Sites/personal/dcalhoun.github.io
 startup_pane: 1
 
 windows:

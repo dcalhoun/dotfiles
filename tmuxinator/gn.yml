@@ -1,7 +1,7 @@
 # ~/.tmuxinator/gn.yml
 
 name: gn
-root: ~/Sites/web
+root: ~/Sites/gonoodle
 startup_pane: 1
 
 windows:

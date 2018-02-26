@@ -49,6 +49,7 @@
       "nuclide"
       "ide-flowtype"
       "linter"
+      "ide-typescript"
     ]
     ignoredNames: [
       ".git"
