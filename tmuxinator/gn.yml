@@ -5,5 +5,6 @@ root: ~/Sites/gonoodle
 startup_pane: 1
 
 windows:
-  - API: cd gn-api && bundle exec rails server
-  - App: cd gn-web && yarn start
+  - API: cd gn-api && bundle exec rails server -b 0.0.0.0
+  - Teacher: cd gn-web
+  - Family: cd gn-web-family && PORT=8082 yarn start
