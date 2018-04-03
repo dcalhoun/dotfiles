@@ -6,5 +6,5 @@ startup_pane: 1
 
 windows:
   - API: cd gn-api && bundle exec rails server -b 0.0.0.0
-  - Teacher: cd gn-web
+  - Teacher: cd gn-web && PORT=8080 yarn start
   - Family: cd gn-web-family && PORT=8082 yarn start

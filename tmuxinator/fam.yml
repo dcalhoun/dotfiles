@@ -1,9 +1,0 @@
-# ~/.tmuxinator/fam.yml
-
-name: fam
-root: ~/Sites/gonoodle
-startup_pane: 1
-
-windows:
-  - API: cd gn-api && bundle exec rails server -b 0.0.0.0
-  - App: cd gn-web-family && PORT=8082 yarn start
