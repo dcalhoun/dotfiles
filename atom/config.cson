@@ -6,11 +6,14 @@
     _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
   "atom-ide-ui":
     "atom-ide-code-format": {}
-    "atom-ide-diagnostics-ui": {}
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
     use: {}
   "atom-jest-snippets": {}
   "atom-package-deps":
-    ignored: []
+    ignored: [
+      "prettier-atom"
+    ]
   "atom-typescript": {}
   "autoclose-html": {}
   "autocomplete-plus":
@@ -48,13 +51,7 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "linter"
       "teletype"
-      "gist-it"
-      "linter-stylelint"
-      "terminal-tab"
-      "intentions"
-      "busy-signal"
     ]
     ignoredNames: [
       ".git"
@@ -75,7 +72,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'Operator Mono SSm', Menlo, monospace"
-    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -144,7 +140,6 @@
       enabled: true
       showInStatusBar: true
     prettierOptions:
-      singleQuote: true
       trailingComma: "es5"
     useEslint: true
   react: {}
