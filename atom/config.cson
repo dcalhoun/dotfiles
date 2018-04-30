@@ -137,7 +137,6 @@
     ]
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
       showInStatusBar: true
     prettierOptions:
       trailingComma: "es5"
