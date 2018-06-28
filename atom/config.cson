@@ -52,6 +52,7 @@
       "aligner"
       "nuclide"
       "teletype"
+      "ide-flowtype"
     ]
     ignoredNames: [
       ".git"
@@ -76,6 +77,7 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
     tabType: "soft"
   emmet: {}
@@ -137,8 +139,10 @@
     ]
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       showInStatusBar: true
     prettierOptions:
+      singleQuote: true
       trailingComma: "es5"
     useEslint: true
   react: {}
@@ -156,7 +160,6 @@
     statusBarPosition: "Right"
     testOnOpen: false
   "tree-view":
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
   "vim-mode-plus":
