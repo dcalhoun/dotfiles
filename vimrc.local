@@ -29,3 +29,7 @@ syntax on
 colorscheme onedark
 "set background=dark
 "let g:one_allow_italics = 1
+
+" Use async Prettier formatting on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
