@@ -160,6 +160,7 @@
     statusBarPosition: "Right"
     testOnOpen: false
   "tree-view":
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
   "vim-mode-plus":

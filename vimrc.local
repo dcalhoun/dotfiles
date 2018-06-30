@@ -25,11 +25,24 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 autocmd BufRead,BufNewFile *.tpl set filetype=html
 
 " Syntax highlighting
-syntax on
-colorscheme onedark
+syntax enable
+
+" colorscheme onedark
 "set background=dark
 "let g:one_allow_italics = 1
+"
+" Oceanic Next theme
+" if (has("termguicolors"))
+ " set termguicolors
+" endif
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+highlight Comment cterm=italic
 
 " Use async Prettier formatting on save
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+" nerdcommenter
+let g:NERDSpaceDelims = 1

@@ -1,0 +1,9 @@
+# ~/.tmuxinator/gn.yml
+
+name: Teacher
+root: ~/Sites/gonoodle/gn-web
+startup_pane: 1
+
+windows:
+  - Shell:
+  - Editor: vim .
