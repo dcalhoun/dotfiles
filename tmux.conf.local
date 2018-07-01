@@ -39,3 +39,6 @@ set-window-option -g window-status-format " #I: #W "
 set-window-option -g window-status-current-fg black
 set-window-option -g window-status-current-bg green
 set-window-option -g window-status-current-format " #I: #W "
+
+# Fix colors for vim within tmux
+set -g terminal-overrides ',xterm-256color:Tc'

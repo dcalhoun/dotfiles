@@ -7,8 +7,6 @@ UnPlug 'slim-template/vim-slim'
 " Define bundles via Github repos
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
-"Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
