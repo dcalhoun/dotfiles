@@ -31,12 +31,16 @@ syntax on
 " 24-bit Color
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
-set termguicolors
+if (has("termguicolors"))
+  set termguicolors
+endif
+let base16colorspace=256
 
 " Theme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme base16-default-dark
 highlight Comment cterm=italic
 set background=dark
 
