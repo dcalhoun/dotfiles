@@ -6,8 +6,7 @@
     _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
   "atom-ide-ui":
     "atom-ide-code-format": {}
-    "atom-ide-diagnostics-ui":
-      autoVisibility: true
+    "atom-ide-diagnostics-ui": {}
     use: {}
   "atom-jest-snippets": {}
   "atom-package-deps":

@@ -7,7 +7,6 @@ UnPlug 'slim-template/vim-slim'
 " Define bundles via Github repos
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'scrooloose/nerdtree'
@@ -21,7 +20,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 Plug 'othree/yajs.vim'
 Plug 'othree/html5.vim'
-Plug 'chriskempson/base16-vim'
-
+Plug 'mhartington/oceanic-next'
