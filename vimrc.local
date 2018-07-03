@@ -15,6 +15,7 @@ let g:ctrlp_custom_ignore = {
 " Misc
 set nowrap
 set noshowmode
+set hlsearch
 
 " Force indentation to use soft tabs
 set expandtab
@@ -38,16 +39,12 @@ let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
 
-" Remove background color from editor
+" Remove background color from...
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! EndOfBuffer ctermbg=NONE guibg=NONE
-
-" Remove background color from line numbers
-hi LineNr ctermfg=DarkGrey ctermbg=NONE guifg=#65737e guibg=NONE
-
-" Remove background color from comments
-hi Comment cterm=NONE ctermfg=DarkGrey guifg=#65737e guibg=NONE
+hi! LineNr ctermfg=DarkGrey ctermbg=NONE guifg=#65737e guibg=NONE
+hi! Comment cterm=italic ctermfg=DarkGrey guifg=#65737e guibg=NONE
 
 " Use async Prettier formatting on save
 let g:prettier#autoformat = 0

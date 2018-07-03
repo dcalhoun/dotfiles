@@ -41,7 +41,7 @@ module.exports = {
       hotkey: 'Ctrl+;',
     },
     termCSS: '',
-    updateChannel: 'stable',
+    updateChannel: 'canary',
     windowSize: [1440, 900],
   },
   plugins: [
