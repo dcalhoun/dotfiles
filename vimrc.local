@@ -26,16 +26,17 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 autocmd BufRead,BufNewFile *.tpl set filetype=html
 
 " Enable true colors
-if (has("termguicolors"))
-  set t_8f=[38;2;%lu;%lu;%lum
-  set t_8b=[48;2;%lu;%lu;%lum
-  set termguicolors
-endif
+" Break *only* Terminal vim
+" if (has("termguicolors"))
+  " set t_8f=[38;2;%lu;%lu;%lum
+  " set t_8b=[48;2;%lu;%lu;%lum
+  " set termguicolors
+" endif
 
 " Theme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-silent! colorscheme OceanicNext
+colorscheme OceanicNext
 
 " Remove background color from editor
 hi! Normal ctermbg=NONE guibg=NONE
