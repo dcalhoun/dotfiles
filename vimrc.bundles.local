@@ -12,6 +12,7 @@ Plug 'mxw/vim-jsx'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'reasonml-editor/vim-reason-plus'
 
 " To review...
 Plug 'jlanzarotta/bufexplorer'
