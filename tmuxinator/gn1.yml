@@ -5,5 +5,5 @@ root: ~/Sites/gonoodle/gn-web
 startup_pane: 1
 
 windows:
-  - Shell:
   - Editor: vim .
+  - Shell:

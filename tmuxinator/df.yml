@@ -5,5 +5,5 @@ root: ~/.dotfiles
 startup_pane: 1
 
 windows:
-  - Shell:
   - Editor: vim .
+  - Shell:

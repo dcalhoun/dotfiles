@@ -6,4 +6,5 @@ startup_pane: 1
 
 windows:
   - Buckle: yarn buckle
+  - Editor: vim .
   - Server: yarn dev

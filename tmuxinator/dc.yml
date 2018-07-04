@@ -5,4 +5,6 @@ root: ~/Sites/personal/dcalhoun.github.io
 startup_pane: 1
 
 windows:
+  - Editor: vim .
   - Server: yarn start
+  - Shell:
