@@ -43,8 +43,15 @@ colorscheme OceanicNext
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! EndOfBuffer ctermbg=NONE guibg=NONE
-hi! LineNr ctermfg=DarkGrey ctermbg=NONE guifg=#65737e guibg=NONE
-hi! Comment cterm=italic ctermfg=DarkGrey guifg=#65737e guibg=NONE
+hi! LineNr ctermbg=NONE guibg=NONE
+hi! VertSplit term=NONE cterm=NONE ctermbg=NONE ctermfg=240 gui=NONE guibg=NONE guifg=#4f5b66
+
+" Set italics for...
+hi! Comment cterm=italic
+hi! xmlAttrib cterm=italic ctermfg=221 gui=bold guifg=#fac863
+
+" Change colors for...
+hi! StorageClass ctermfg=176 guifg=#c594c5
 
 " Use async Prettier formatting on save
 let g:prettier#autoformat = 0
@@ -52,3 +59,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
+
+" F12 reveals highlight group beneath cursor
+map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
