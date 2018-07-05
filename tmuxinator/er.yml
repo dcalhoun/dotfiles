@@ -5,6 +5,7 @@ root: ~/Sites/personal/evergreen-roots
 startup_pane: 1
 
 windows:
-  - Buckle: yarn buckle
+  - Shell:
   - Editor: vim .
+  - Buckle: yarn buckle
   - Server: yarn dev

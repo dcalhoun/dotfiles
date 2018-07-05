@@ -1,9 +1,9 @@
-# ~/.tmuxinator/gn.yml
+# ~/.tmuxinator/gn2.yml
 
-name: Family
+name: gn2
 root: ~/Sites/gonoodle/gn-web-family
 startup_pane: 1
 
 windows:
-  - Editor: vim .
   - Shell:
+  - Editor: vim .

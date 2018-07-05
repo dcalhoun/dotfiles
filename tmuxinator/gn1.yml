@@ -1,9 +1,9 @@
-# ~/.tmuxinator/gn.yml
+# ~/.tmuxinator/gn1.yml
 
-name: Teacher
+name: gn1
 root: ~/Sites/gonoodle/gn-web
 startup_pane: 1
 
 windows:
-  - Editor: vim .
   - Shell:
+  - Editor: vim .

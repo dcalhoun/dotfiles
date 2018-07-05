@@ -1,9 +1,9 @@
 # ~/.tmuxinator/dc.yml
 
-name: Dotfiles
+name: dotfiles
 root: ~/.dotfiles
 startup_pane: 1
 
 windows:
-  - Editor: vim .
   - Shell:
+  - Editor: vim .
