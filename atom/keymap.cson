@@ -44,6 +44,9 @@
   # Launch terminal pane
   'cmd-ctrl-t': 'terminal:open'
 
+  # Fuzzy finder
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+
 'atom-text-editor[mini]':
   # Mini-input delete
   'ctrl-u': 'editor:delete-to-beginning-of-line'
@@ -51,8 +54,8 @@
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   # Split panes
-  'ctrl-w s': 'pane:split-right-and-move-active-item'
-  'ctrl-w i': 'pane:split-down-and-move-active-item'
+  'ctrl-w s': 'pane:split-right-and-copy-active-item'
+  'ctrl-w i': 'pane:split-down-and-copy-active-item'
 
   # Move panes
   'ctrl-w H': 'window:move-active-item-to-pane-on-left'

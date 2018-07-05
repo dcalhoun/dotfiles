@@ -22,9 +22,10 @@ module.exports = {
     ],
     copyOnSelect: true,
     cursorColor: '#f81ce5',
+    css: ``,
     fontFamily:
       '"Operator Mono SSm", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-    fontSize: 16,
+    fontSize: 12,
     foregroundColor: '#fff',
     hypercwd: {},
     hyperTabs: {
