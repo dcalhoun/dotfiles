@@ -72,6 +72,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'Operator Mono SSm', Menlo, monospace"
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true

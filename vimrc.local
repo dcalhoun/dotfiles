@@ -1,3 +1,8 @@
+" Silence python@3.7 warnings (https://git.io/fbhWT)
+if has('python3')
+  silent! python3 1
+endif
+
 " Bindings
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
