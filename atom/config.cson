@@ -151,8 +151,7 @@
     equalsNamesEnabled: false
   tabs: {}
   "tabs-to-spaces": {}
-  "terminal-tab":
-    defaultLocation: "center"
+  "terminal-tab": {}
   tester:
     gutterPosition: "Left"
     softWrapDefault: false

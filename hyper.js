@@ -40,6 +40,7 @@ module.exports = {
     shell: '/bin/zsh',
     summon: {
       hotkey: 'Ctrl+;',
+      hideOnBlur: true,
     },
     termCSS: '',
     updateChannel: 'canary',

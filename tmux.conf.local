@@ -1,10 +1,10 @@
 # Unset thoughtbot/dotfiles prefix2
-unbind C-s
+unbind-key C-s
 set -u -g prefix2
 
 # Update leader key
-unbind C-b
-set -g prefix C-i
+set -g prefix C-o
+unbind-key C-b
 bind C-i send-prefix
 
 # Set plugins
