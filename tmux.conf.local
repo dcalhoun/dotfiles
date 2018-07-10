@@ -5,7 +5,7 @@ set -u -g prefix2
 # Update leader key
 set -g prefix C-o
 unbind-key C-b
-bind C-i send-prefix
+bind C-o send-prefix
 
 # Set plugins
 set -g @plugin "jlipps/tmux-safekill"
@@ -13,8 +13,10 @@ set -g @plugin "jlipps/tmux-safekill"
 # Set zsh as the default shell
 set-option -g default-shell /bin/zsh
 
-# Fix terminal-notifier within tmux https://git.io/vXoIi
+# Copy/paste to/from clipboard
 set-option -g default-command "reattach-to-user-namespace -l $SHELL || $SHELL"
+bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+bind C-v run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
 # Enable pane scrolling
 set-option -g mouse on
