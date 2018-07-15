@@ -45,7 +45,7 @@
   'cmd-ctrl-t': 'terminal:open'
 
   # Fuzzy finder
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  # 'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
 'atom-text-editor[mini]':
   # Mini-input delete
