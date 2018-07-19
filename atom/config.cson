@@ -50,8 +50,8 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "teletype"
       "ide-flowtype"
+      "teletype"
     ]
     ignoredNames: [
       ".git"
