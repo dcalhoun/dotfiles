@@ -84,8 +84,8 @@
 
   # Surround
   'y s': 'vim-mode-plus:surround'
-  'd s': 'vim-mode-plus:delete-surround-any-pair'
-  'c s': 'vim-mode-plus:change-surround-any-pair'
+  'd s': 'vim-mode-plus:delete-surround'
+  'c s': 'vim-mode-plus:change-surround'
 
 'atom-text-editor.vim-mode-plus.visual-mode':
   # Surround
