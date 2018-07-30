@@ -1,6 +1,6 @@
-# ~/.tmuxinator/gn1.yml
+# ~/.tmuxinator/app1.yml
 
-name: gn1
+name: app1
 root: ~/Sites/gonoodle/gn-web
 startup_pane: 1
 
