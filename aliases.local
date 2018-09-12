@@ -11,6 +11,6 @@ alias gnr="bundle exec rake log:clear db:reset && bundle exec rake db:test:prepa
 alias gnrf="FULL=1 bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare"
 alias gnrh="bundle exec rake log:clear db:reset && bundle exec rake db:test:prepare && redis-cli flushall"
 alias api="cd ~/Sites/gonoodle/gn-api"
-alias gn1="cd ~/Sites/gonoodle/gn-web"
-alias gn2="cd ~/Sites/gonoodle/gn-web-family"
+alias app1="cd ~/Sites/gonoodle/gn-web"
+alias app2="cd ~/Sites/gonoodle/gn-web-family"
 alias sup="cd ~/Sites/gonoodle/gn-sign-up"
