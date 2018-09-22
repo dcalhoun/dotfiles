@@ -367,6 +367,7 @@
 ".makefile.source":
   editor:
     softWrapHangingIndent: 2
+    tabType: "hard"
 ".mustache.source.sql":
   editor:
     softWrapHangingIndent: 2
