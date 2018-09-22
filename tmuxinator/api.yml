@@ -1,9 +1,0 @@
-# ~/.tmuxinator/api.yml
-
-name: api
-root: ~/Sites/gonoodle/gn-api
-startup_pane: 1
-
-windows:
-  - Shell:
-  - Editor: vim .

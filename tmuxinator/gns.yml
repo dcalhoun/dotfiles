@@ -1,8 +1,5 @@
-# ~/.tmuxinator/gns.yml
-
-name: servers
+name: gns
 root: ~/Sites/gonoodle
-startup_pane: 1
 
 windows:
   - API: cd gn-api && bundle exec rails server -b 0.0.0.0
