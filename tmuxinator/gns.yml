@@ -1,7 +1,0 @@
-name: gns
-root: ~/Sites/gonoodle
-
-windows:
-  - API: cd gn-api && bundle exec rails server -b 0.0.0.0
-  - GN1: cd gn-web && PORT=8080 yarn start
-  - GN2: cd gn-web-family && PORT=8082 yarn start

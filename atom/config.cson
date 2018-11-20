@@ -50,7 +50,6 @@
       "ember-tabs"
       "aligner"
       "nuclide"
-      "ide-flowtype"
       "teletype"
     ]
     ignoredNames: [
@@ -139,6 +138,8 @@
     ]
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNotInPackageJson: true
       showInStatusBar: true
     prettierOptions:
       singleQuote: true

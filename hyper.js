@@ -22,7 +22,9 @@ module.exports = {
     ],
     copyOnSelect: true,
     cursorColor: '#f81ce5',
-    css: ``,
+    css: `
+      .tabs_title.tabs_title { display: block !important; } /* Snazzy: Disable hide single tab */
+    `,
     fontFamily:
       '"Operator Mono SSm", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontSize: 12,
@@ -53,6 +55,6 @@ module.exports = {
     'hyperterm-paste',
     'hyperterm-summon',
     'hypercwd',
-    'hyper-oceanic-next',
-  ],
+    'hyper-snazzy',
+  ]
 };
