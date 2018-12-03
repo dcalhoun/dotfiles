@@ -51,6 +51,15 @@
       "aligner"
       "nuclide"
       "teletype"
+      "language-swift-89"
+      "language-reason"
+      "language-ocaml"
+      "reason-refmt"
+      "terminal-tab"
+      "tool-bar"
+      "ide-flowtype"
+      "ide-reason"
+      "ide-swift"
     ]
     ignoredNames: [
       ".git"
@@ -66,7 +75,7 @@
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "oceanic-next"
+      "night-owl-vs-code-syntax"
     ]
     titleBar: "custom-inset"
   editor:
