@@ -1,3 +1,6 @@
+#########
+# Keybindings
+#########
 # Unset thoughtbot/dotfiles prefix2
 unbind-key C-s
 set -u -g prefix2
@@ -24,6 +27,14 @@ bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft=
 bind -n WheelDownPane select-pane -t= \; send-keys -M
 bind -n C-WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
 
+# Open new windows with current path
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+
+#########
+# Appearance
+#########
 # Add LEFT status bar label
 set-window-option -g status-left " #S "
 set-window-option -g status-left-fg black

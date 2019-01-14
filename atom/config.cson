@@ -60,6 +60,7 @@
       "ide-flowtype"
       "ide-reason"
       "ide-swift"
+      "language-babel"
     ]
     ignoredNames: [
       ".git"
