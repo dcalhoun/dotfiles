@@ -28,16 +28,18 @@ autocmd BufRead,BufNewFile *.tpl set filetype=html
 
 " Enable true colors
 " Break *only* Terminal vim
-" if (has("termguicolors"))
+if (has("termguicolors"))
   " set t_8f=[38;2;%lu;%lu;%lum
   " set t_8b=[48;2;%lu;%lu;%lum
-  " set termguicolors
-" endif
+  set termguicolors
+endif
 
 " Theme
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+syntax enable
+colorscheme night-owl
 
 " Remove background color from...
 hi! Normal ctermbg=NONE guibg=NONE

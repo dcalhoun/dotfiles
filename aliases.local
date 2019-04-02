@@ -21,6 +21,7 @@ alias gnr="\
   "
 
 alias gnc="\
+  be rake \
   seed:videos \
   seed:youtube_videos \
   seed:discover_modules \

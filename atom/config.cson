@@ -51,7 +51,6 @@
       "aligner"
       "nuclide"
       "teletype"
-      "language-swift-89"
       "language-reason"
       "language-ocaml"
       "reason-refmt"
@@ -121,7 +120,9 @@
   "language-postcss": {}
   linter:
     lintOnChange: false
-  "linter-eslint": {}
+  "linter-eslint":
+    disabling:
+      disableWhenNoEslintConfig: false
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
@@ -149,12 +150,7 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
-      isDisabledIfNotInPackageJson: true
       showInStatusBar: true
-    prettierOptions:
-      singleQuote: true
-      trailingComma: "es5"
-    useEslint: true
   react: {}
   "status-bar": {}
   "tab-foldername-index":
