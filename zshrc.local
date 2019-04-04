@@ -39,6 +39,3 @@ export PATH=/Users/davidcalhoun/Library/Android/sdk/platform-tools:$PATH
 
 # Setup Fastlane CLI
 export PATH="$HOME/.fastlane/bin:$PATH"
-
-# Setup Homebrew pull request automation
-export HOMEBREW_GITHUB_API_TOKEN=d41c60866e9f5425cd040729212f19f36dc9c3c9
