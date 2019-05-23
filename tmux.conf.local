@@ -50,7 +50,7 @@ set-window-option -g window-status-format " #I: #W "
 
 # Update active window appearance in status bar
 set-window-option -g window-status-current-fg black
-set-window-option -g window-status-current-bg green
+set-window-option -g window-status-current-bg yellow
 set-window-option -g window-status-current-format " #I: #W "
 
 # Enable true color support and italics

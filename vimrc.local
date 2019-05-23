@@ -29,15 +29,10 @@ autocmd BufRead,BufNewFile *.tpl set filetype=html
 " Enable true colors
 " Break *only* Terminal vim
 if (has("termguicolors"))
-  " set t_8f=[38;2;%lu;%lu;%lum
-  " set t_8b=[48;2;%lu;%lu;%lum
   set termguicolors
 endif
 
 " Theme
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-" colorscheme OceanicNext
 syntax enable
 colorscheme night-owl
 
@@ -47,6 +42,7 @@ hi! NonText ctermbg=NONE guibg=NONE
 hi! EndOfBuffer ctermbg=NONE guibg=NONE
 hi! LineNr ctermbg=NONE guibg=NONE
 hi! VertSplit term=NONE cterm=NONE ctermbg=NONE ctermfg=240 gui=NONE guibg=NONE guifg=#4f5b66
+hi! SignColumn ctermbg=NONE guibg=NONE
 
 " Set italics for...
 hi! Comment cterm=italic
@@ -69,7 +65,10 @@ map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" Prettier customization
-let g:prettier#config#single_quote = 'true'
+" Revert vim-prettior confg to Prettier defaults (https://git.io/fjBWW)
+let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#parser = 'babylon'
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#trailing_comma = 'none'

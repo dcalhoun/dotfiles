@@ -24,6 +24,7 @@ module.exports = {
     cursorColor: "#f81ce5",
     css: `
       .tabs_title.tabs_title { display: block !important; } /* Snazzy: Disable hide single tab */
+      .header_header.header_header { background-color: inherit !important; } /* Night Owl: Disable header tint */
     `,
     fontFamily:
       '"Operator Mono SSm", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
@@ -42,8 +43,8 @@ module.exports = {
     shell: "/bin/zsh",
     summon: {
       hotkey: "Ctrl+;",
-      hideDock: true,
-      hideOnBlur: true
+      hideDock: false,
+      hideOnBlur: false
     },
     termCSS: "",
     updateChannel: "canary",
@@ -55,6 +56,6 @@ module.exports = {
     "hyperterm-paste",
     "hyperterm-summon",
     "hypercwd",
-    "hyper-snazzy"
+    "hyper-night-owl"
   ]
 };

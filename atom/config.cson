@@ -12,6 +12,7 @@
   "atom-package-deps":
     ignored: [
       "prettier-atom"
+      "linter-eslint"
     ]
   "atom-typescript": {}
   "autoclose-html": {}
@@ -79,7 +80,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "'Operator Mono SSm', Menlo, monospace"
-    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -195,6 +195,11 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  "wrap-guide":
+    columns: [
+      80
+      100
+    ]
   xterm:
     colors:
       background: "#353846"
@@ -358,7 +363,13 @@
     softWrapHangingIndent: 2
 ".js.source":
   editor:
+    preferredLineLength: 100
     softWrapHangingIndent: 2
+  "wrap-guide":
+    columns: [
+      80
+      100
+    ]
 ".json.source":
   editor:
     softWrapHangingIndent: 2
