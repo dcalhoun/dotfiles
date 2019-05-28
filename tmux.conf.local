@@ -37,20 +37,17 @@ bind c new-window -c "#{pane_current_path}"
 #########
 # Add LEFT status bar label
 set-window-option -g status-left " #S "
-set-window-option -g status-left-fg black
-set-window-option -g status-left-bg white
+set-window-option -g status-left-style fg=black,bg=white
 
 # Add RIGHT status bar label
 set-window-option -g status-right " %H:%M / %d.%m.%Y "
-set-window-option -g status-right-fg black
-set-window-option -g status-right-bg white
+set-window-option -g status-right-style fg=black,bg=white
 
 # Update window appearance in status bar
 set-window-option -g window-status-format " #I: #W "
 
 # Update active window appearance in status bar
-set-window-option -g window-status-current-fg black
-set-window-option -g window-status-current-bg yellow
+set-window-option -g window-status-current-style fg=black,bg=yellow
 set-window-option -g window-status-current-format " #I: #W "
 
 # Enable true color support and italics
