@@ -44,9 +44,6 @@
   # Launch terminal pane
   'cmd-ctrl-t': 'terminal:open'
 
-  # Fuzzy finder
-  # 'ctrl-p': 'fuzzy-finder:toggle-file-finder'
-
 'atom-text-editor[mini]':
   # Mini-input delete
   'ctrl-u': 'editor:delete-to-beginning-of-line'
@@ -76,6 +73,14 @@
   '@': 'atom-keyboard-macros-vim:execute_macro_vim'
   'Q': 'atom-keyboard-macros:call_last_kbd_macro'
 
+  # Nerdtree
+  'space n': 'nerd-treeview:toggle'
+  'space m': 'nerd-treeview:reveal-active-file'
+
+'.tree-view':
+  # Nerdtree
+  'space n': 'nerd-treeview:toggle'
+  'space m': 'nerd-treeview:reveal-active-file'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   # Jasmine Focus

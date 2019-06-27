@@ -109,7 +109,9 @@
       "**/!(config)/build/*"
       "**/dist/*"
     ]
+    scoringSystem: "fast"
     useAlternateScoring: true
+    useRipGrep: true
   "git-blame":
     columnWidth: 404
   "git-projects":
