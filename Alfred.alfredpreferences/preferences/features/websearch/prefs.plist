@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>93137E89-0264-4FBA-A926-056CB4DCBEF4</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>jq</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Search jQuery API for</string>
+			<key>url</key>
+			<string>http://api.jquery.com/{query}/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>A019BA25-E995-4D8C-9A6F-1A9625F18F8B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>wp</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Search WordPress docs for</string>
+			<key>url</key>
+			<string>http://wordpress.org/search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C7700DCC-7E72-4353-A923-48648B50E02F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>dr</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Search Drupal API for</string>
+			<key>url</key>
+			<string>http://api.drupal.org/?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>EF6FD870-AE8C-46DF-9254-ABDB7B834FFC</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gh</string>
+			<key>text</key>
+			<string>Github GN</string>
+			<key>url</key>
+			<string>https://github.com/HealthTeacher/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

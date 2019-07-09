@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Inspect Device</string>
+	<key>connections</key>
+	<dict>
+		<key>8FCF4CE5-8CC2-4E5D-832A-D6FCC5F04AE8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D006E27-6054-4F19-8CA4-6C55A5A19059</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Calhoun</string>
+	<key>description</key>
+	<string>Open Safari web inspector for a remote device.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Inspect Remote Device v1.0</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Safari"
+    activate
+    delay 2
+    tell application "System Events"
+        tell process "Safari"
+            set frontmost to true
+            click menu item 2 of menu 1 of menu item q of menu 1 of menu bar item "Develop" of menu bar 1
+        end tell
+    end tell
+  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1D006E27-6054-4F19-8CA4-6C55A5A19059</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>inspect</string>
+				<key>subtext</key>
+				<string>Enter the name of the remote device to be inspected.</string>
+				<key>text</key>
+				<string>Inspect {query}</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8FCF4CE5-8CC2-4E5D-832A-D6FCC5F04AE8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1D006E27-6054-4F19-8CA4-6C55A5A19059</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8FCF4CE5-8CC2-4E5D-832A-D6FCC5F04AE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://davidcalhoun.me</string>
+</dict>
+</plist>

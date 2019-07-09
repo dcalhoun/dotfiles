@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentthemeuid</key>
+	<string>alfred.theme.custom.CBFA6650-375D-41A9-90AD-EE79730F41D7</string>
+	<key>darkthemeuid</key>
+	<string>alfred.theme.custom.3659F489-81A4-4AD0-9F58-446AA0245897</string>
+	<key>lightthemeuid</key>
+	<string>alfred.theme.custom.CBFA6650-375D-41A9-90AD-EE79730F41D7</string>
+	<key>theme</key>
+	<string>alfred.theme.custom.CBFA6650-375D-41A9-90AD-EE79730F41D7</string>
+</dict>
+</plist>
