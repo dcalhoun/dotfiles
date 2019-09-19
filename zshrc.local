@@ -34,8 +34,8 @@ bindkey "^U" history-incremental-search-forward
 export TERM="xterm-256color-italic"
 
 # Setup Android Studio for Expo development
-export ANDROID_SDK=/Users/davidcalhoun/Library/Android/sdk
-export PATH=/Users/davidcalhoun/Library/Android/sdk/platform-tools:$PATH
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 # Setup Fastlane CLI
 export PATH="$HOME/.fastlane/bin:$PATH"
