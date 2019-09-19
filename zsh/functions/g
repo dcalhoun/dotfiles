@@ -1,0 +1,13 @@
+g() {
+  if [[ $# -gt 0 ]]; then
+    # Override thoughtbot's g function to integrate with pure prompt. https://git.io/Je3E2
+    if [[ $* =~ (.*\ )?($prompt_pure_git_fetch_pattern)(\ .*)?$ ]]; then
+      # we must flush the async jobs to cancel our git fetch in order
+      # to avoid conflicts with the user issued pull / fetch.
+      async_flush_jobs 'prompt_pure'
+    fi
+    git "$@"
+  else
+    git status
+  fi
+}
