@@ -56,7 +56,6 @@
       "language-ocaml"
       "reason-refmt"
       "terminal-tab"
-      "tool-bar"
       "ide-flowtype"
       "ide-swift"
       "language-babel"
