@@ -39,3 +39,6 @@ export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 # Setup Fastlane CLI
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Setup macOS Font Tools CLI
+export PATH="/Library/Apple/usr/bin/:$PATH"
