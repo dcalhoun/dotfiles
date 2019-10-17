@@ -1,5 +1,5 @@
 # Set default editor
-export VISUAL=atom
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # GoNoodle Rack setup
