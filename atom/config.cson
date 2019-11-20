@@ -55,7 +55,6 @@
       "language-reason"
       "language-ocaml"
       "reason-refmt"
-      "terminal-tab"
       "ide-flowtype"
       "ide-swift"
       "language-babel"
@@ -121,12 +120,11 @@
   linter:
     lintOnChange: false
   "linter-eslint":
-    disabling:
-      disableWhenNoEslintConfig: false
+    disabling: {}
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-rubocop":
-    command: "/Users/davidcalhoun/.rbenv/versions/2.2.6/bin/rubocop"
+    command: "bundle exec rubocop"
     disableWhenNoConfigFile: true
   "linter-stylelint":
     disableWhenNoConfig: true
