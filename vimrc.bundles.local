@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 " To review...
 Plug 'jlanzarotta/bufexplorer'
