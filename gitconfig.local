@@ -33,3 +33,5 @@
   ; reflog = %C(auto)%h %<|(17)%gd %C(blue)%ci%C(reset) %s
 [rerere]
   enabled = false
+[url "git@github.com:"]
+  insteadOf = https://github.com/
