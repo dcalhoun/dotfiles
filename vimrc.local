@@ -2,6 +2,8 @@
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 noremap <leader>ff :Ack<space>
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
 
 " Ignore files for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux

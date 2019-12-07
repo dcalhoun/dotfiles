@@ -2,3 +2,4 @@ name: <%= args[0] || 'project' %>
 
 windows:
   - Shell:
+  - Editor: vim .
