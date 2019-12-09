@@ -6,7 +6,6 @@ chsh -s $(which zsh)
 # Globals
 MY_DOTFILES=$HOME/.dotfiles
 TB_DOTFILES=$HOME/.dotfiles-thoughtbot
-ASDF=$HOME/.asdf
 
 # Install thoughtbot/dotfiles
 if [ ! -e $TB_DOTFILES ]; then
@@ -18,12 +17,8 @@ if [ ! -e ${MY_DOTFILES}/tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ${MY_DOTFILES}/tmux/plugins/tpm
 fi
 
-# Install asdf
-if [ ! -e $ASDF ]; then
-  git clone https://github.com/asdf-vm/asdf.git $ASDF --branch v0.5.0
-fi
-
 # Install Homebrew packages
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle --file=${MY_DOTFILES}/Brewfile
 
 # Install pure-prompt

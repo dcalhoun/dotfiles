@@ -2,6 +2,7 @@ tap 'caskroom/cask'
 tap 'thoughtbot/formulae'
 
 brew 'ack'
+brew 'asdf'
 brew 'diff-so-fancy'
 brew 'git'
 brew 'grip'
