@@ -1,7 +1,10 @@
-name: <%= args[0] || 'project' %>
+name: dev
 
 windows:
-  - Shell:
-  - Editor: vim .
-  - Test:
-  - Server:
+  - shell:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim: vim .
+        - test:
+  - server:
