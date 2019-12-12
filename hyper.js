@@ -42,9 +42,9 @@ module.exports = {
     padding: "12px 14px",
     shell: "/bin/zsh",
     summon: {
-      hotkey: "Ctrl+;"
-      // hideDock: true,
-      // hideOnBlur: true
+      hotkey: "Ctrl+;",
+      hideDock: true,
+      hideOnBlur: true
     },
     termCSS: "",
     updateChannel: "canary",
