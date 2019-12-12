@@ -3,4 +3,3 @@ root: <%= @args[0] %>
 
 windows:
   - shell:
-  - editor: vim .

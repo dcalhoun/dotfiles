@@ -3,9 +3,5 @@ root: <%= @args[0] %>
 
 windows:
   - shell:
-  - editor:
-      layout: main-vertical
-      panes:
-        - vim: vim .
-        - test:
+  - test:
   - server:
