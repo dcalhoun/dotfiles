@@ -42,7 +42,7 @@
 	<key>description</key>
 	<string>Change the theme of macOS</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Toggle Theme</string>
 	<key>objects</key>

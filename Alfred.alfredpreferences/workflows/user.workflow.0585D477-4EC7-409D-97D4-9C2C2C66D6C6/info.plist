@@ -15,6 +15,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -31,12 +33,28 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>62</integer>
 				<key>keyword</key>
-				<string>st</string>
+				<string>so</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Please Wait...</string>
 				<key>script</key>
@@ -91,6 +109,12 @@ for q in data['items']:
 
 xml = alfred.xml(results)
 alfred.write(xml)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
 				<key>title</key>
 				<string>Stack Overflow</string>
 				<key>type</key>
@@ -103,13 +127,15 @@ alfred.write(xml)</string>
 			<key>uid</key>
 			<string>0640EF58-9502-445E-A797-AC2055920155</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
 				<key>url</key>
 				<string>{query}</string>
 				<key>utf8</key>
@@ -120,7 +146,7 @@ alfred.write(xml)</string>
 			<key>uid</key>
 			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -141,11 +167,15 @@ Credit:
 	<dict>
 		<key>0640EF58-9502-445E-A797-AC2055920155</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>170</real>
 		</dict>
 		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>170</real>
 		</dict>

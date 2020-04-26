@@ -118,7 +118,7 @@
 	<key>description</key>
 	<string>Paste an response to a job applicant.</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>GN Applicant</string>
 	<key>objects</key>
@@ -163,7 +163,7 @@ Cheers,</string>
 			<key>uid</key>
 			<string>FD58018C-DC39-4396-A00F-A04372220916</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -205,7 +205,7 @@ Cheers,</string>
 			<key>uid</key>
 			<string>D80D84B9-D00B-445F-AC56-E52BC8FCA4B2</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -224,7 +224,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>4B5A9EB5-4EC2-4BD9-B23C-DEB0EC500922</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -283,7 +283,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>D8DF425F-C30F-4B4D-A477-63943F198FF3</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -336,7 +336,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>3C948DFE-6C0D-4444-B0B2-C3C25C23E614</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -353,7 +353,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>99920F4C-F262-452B-957E-B46AE9F27FAD</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -412,7 +412,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>1E01DB72-FC85-47A1-BFC4-DC494CE579C1</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -451,7 +451,7 @@ Rather than set up a time to chat, let’s just keep a conversation going in Sla
 			<key>uid</key>
 			<string>60CAA16A-05E8-490A-BBA9-9CE9349EEDCA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
