@@ -7,6 +7,20 @@ alias tf="terraform"
 alias tka="tmux ls | cut -d: -f1 | xargs -L1 tmux kill-session -t"
 
 # GoNoodle
+#
+# - FULL=1 rake seed:champs (25 records, 5 without the FULL option)
+# - FULL=1 rake seed:channels (19 records, 9 without the FULL option)
+# - rake seed:discover_modules (6 records, one of each type of module)
+# - FULL=1 rake seed:extras (15 records, 3 without the FULL option)
+# - FULL=1 rake seed:games (8 records, 3 without the FULL option)
+# - rake seed:learning_extensions (2 records)
+# - rake seed:library_question_sets (8 question sets, each with 5 questions)
+# - rake seed:mixes (5 records)
+# - rake seed:promotional_tiles (2 records)
+# - rake seed:randomizer_tiles (4 records)
+# - FULL=1 rake seed:recommendation_tiles (4 records, 2 without the FULL option)
+# - FULL=1 rake seed:videos (34 records, 7 without the FULL option)
+# - rake seed:youtube_videos (2 records)
 alias gnr="\
   be rake log:clear \
   db:reset \

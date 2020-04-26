@@ -40,6 +40,7 @@ module.exports = {
       altIsMeta: true
     },
     padding: "12px 14px",
+    scrollback: 3000,
     shell: "/bin/zsh",
     summon: {
       hotkey: "Ctrl+;",
@@ -47,11 +48,10 @@ module.exports = {
       hideOnBlur: true
     },
     termCSS: "",
-    updateChannel: "canary",
+    updateChannel: "stable",
     windowSize: [1440, 900]
   },
   plugins: [
-    "hyper-search",
     "hyperlinks",
     "hyperterm-paste",
     "hyperterm-summon",

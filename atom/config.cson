@@ -6,7 +6,8 @@
     _analyticsUserId: "2c1e1555-1184-456c-becb-8e16add5dfa2"
   "atom-ide-ui":
     "atom-ide-code-format": {}
-    "atom-ide-diagnostics-ui": {}
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
     use: {}
   "atom-jest-snippets": {}
   "atom-package-deps":
@@ -52,12 +53,12 @@
       "aligner"
       "nuclide"
       "teletype"
-      "language-reason"
       "language-ocaml"
-      "reason-refmt"
       "ide-flowtype"
       "ide-swift"
       "language-babel"
+      "ide-typescript"
+      "reason-refmt"
     ]
     ignoredNames: [
       ".git"
