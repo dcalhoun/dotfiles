@@ -2,6 +2,6 @@ name: dev
 root: <%= @args[0] %>
 
 windows:
-  - shell:
-  - test:
-  - server:
+  - Shell:
+  - Test:
+  - Server:

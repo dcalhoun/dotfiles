@@ -114,8 +114,7 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line":
-    enableBackgroundColor: false
+  "highlight-line": {}
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:

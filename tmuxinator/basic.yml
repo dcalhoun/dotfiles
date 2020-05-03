@@ -2,4 +2,4 @@ name: basic
 root: <%= @args[0] %>
 
 windows:
-  - shell:
+  - Shell:
