@@ -3,5 +3,5 @@ root: <%= @args[0] %>
 
 windows:
   - Shell:
-  - Test:
   - Server:
+  - Test:

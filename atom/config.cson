@@ -7,6 +7,7 @@
   "atom-ide-ui":
     "atom-ide-code-format": {}
     "atom-ide-diagnostics-ui":
+      autoVisibility: true
       showDiagnosticTraces: true
     use: {}
   "atom-jest-snippets": {}
@@ -114,7 +115,8 @@
     columnWidth: 404
   "git-projects":
     rootPath: "/Users/davidcalhoun/Sites/"
-  "highlight-line": {}
+  "highlight-line":
+    enableBackgroundColor: false
   "inline-autocomplete": {}
   "language-postcss": {}
   linter:
@@ -150,6 +152,7 @@
       enabled: true
       showInStatusBar: true
   react: {}
+  "spell-check": {}
   "status-bar": {}
   "tab-foldername-index":
     equalsNamesEnabled: false
