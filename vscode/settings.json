@@ -1,0 +1,46 @@
+{
+  "workbench.editor.showIcons": false,
+  "window.zoomLevel": 0,
+  "editor.fontFamily": "'Operator Mono SSm', Menlo, Monaco, 'Courier New', monospace",
+  "editor.cursorBlinking": "solid",
+  "atomKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "workbench.colorTheme": "Night Owl",
+  "explorer.openEditors.visible": 0,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "s"
+      ],
+      "commands": [
+        ":sort"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "editor.renderWhitespace": "boundary",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "vim.highlightedyank.enable": true,
+  "editor.occurrencesHighlight": false,
+  "editor.selectionHighlight": false,
+  "workbench.activityBar.visible": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.useSystemClipboard": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabCompletion": "on",
+  "jest.autoEnable": false,
+}
