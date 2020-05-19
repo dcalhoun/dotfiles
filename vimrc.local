@@ -74,3 +74,6 @@ let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#parser = 'babylon'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
+
+" Set syntax for fastlane Fastfile
+autocmd BufNewFile,BufRead Fastfile set syntax=ruby
