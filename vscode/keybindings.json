@@ -273,5 +273,5 @@
   {
     "key": "ctrl+w i",
     "command": "workbench.action.splitEditorDown"
-  },
+  }
 ]

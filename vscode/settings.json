@@ -31,7 +31,7 @@
   "vim.highlightedyank.enable": true,
   "editor.occurrencesHighlight": false,
   "editor.selectionHighlight": false,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -43,4 +43,7 @@
   "files.trimTrailingWhitespace": true,
   "editor.tabCompletion": "on",
   "jest.autoEnable": false,
+  "editor.fontSize": 13,
+  "explorer.autoReveal": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
 }
