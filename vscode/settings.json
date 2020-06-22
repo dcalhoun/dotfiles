@@ -46,4 +46,11 @@
   "editor.fontSize": 13,
   "explorer.autoReveal": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "workbench.editor.tabCloseButton": "left",
+  "gitlens.defaultDateFormat": "D MMMM YYYY hh:mm",
+  "gitlens.defaultDateShortFormat": "D MMM YYYY",
+  "editor.renderLineHighlightOnlyWhenFocus": true,
+  "editor.rulers": [80, 100],
+  "jest.enableCodeLens": false,
+  "gitlens.codeLens.enabled": false
 }
