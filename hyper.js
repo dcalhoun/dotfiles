@@ -52,10 +52,10 @@ module.exports = {
     windowSize: [1440, 900]
   },
   plugins: [
-    "hyperlinks",
     "hyperterm-paste",
-    "hyperterm-summon",
     "hypercwd",
-    "hyper-night-owl"
+    "hyper-night-owl",
+    "hyperlinks",
+    "hyperterm-summon"
   ]
 };

@@ -1,6 +1,5 @@
 # System
 alias be="bundle exec"
-alias df="cd ~/.dotfiles"
 alias eap="apm list --installed --bare > ~/.dotfiles/atom/packages.txt"
 alias ecp="code --list-extensions > ~/.dotfiles/code/packages.txt"
 alias nls="npm ls -g --depth=0"
