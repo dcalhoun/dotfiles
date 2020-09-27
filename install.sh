@@ -18,7 +18,7 @@ if [ ! -e ${MY_DOTFILES}/tmux/plugins/tpm ]; then
 fi
 
 # Install Homebrew packages
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew bundle --file=${MY_DOTFILES}/Brewfile
 
 # Install pure-prompt
