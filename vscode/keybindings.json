@@ -25,18 +25,19 @@
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // {
+  //   "key": "space n",
+  //   "command": "workbench.action.toggleSidebarVisibility",
+  //   "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus || editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  // },
+  // {
+  //   "key": "space n",
+  //   "command": "workbench.files.action.focusFilesExplorer",
+  //   "when": "!explorerViewletVisible && editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  // },
   {
-    "key": "space n",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus || editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "space n",
-    "command": "workbench.files.action.focusFilesExplorer",
-    "when": "!explorerViewletVisible && editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "space m",
+    // "key": "space m",
+    "key": "cmd+shift+\\",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
