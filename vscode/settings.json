@@ -52,5 +52,6 @@
   "editor.renderLineHighlightOnlyWhenFocus": true,
   "editor.rulers": [80, 100],
   "jest.enableCodeLens": false,
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "eslint.lintTask.enable": true
 }

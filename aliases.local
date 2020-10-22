@@ -5,6 +5,7 @@ alias ecp="code --list-extensions > ~/.dotfiles/code/packages.txt"
 alias nls="npm ls -g --depth=0"
 alias tf="terraform"
 alias tka="tmux ls | cut -d: -f1 | xargs -L1 tmux kill-session -t"
+alias oni="oni2"
 
 # GoNoodle
 #
@@ -24,7 +25,6 @@ alias tka="tmux ls | cut -d: -f1 | xargs -L1 tmux kill-session -t"
 alias gnr="\
   be rake log:clear \
   db:reset \
-  db:test:prepare \
   seed:channels \
   seed:videos \
   seed:youtube_videos \
@@ -32,6 +32,7 @@ alias gnr="\
   seed:mixes \
   seed:recommendation_tiles \
   seed:randomizer_tiles
+  db:test:prepare \
   "
 
 alias gnc="\
