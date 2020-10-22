@@ -8,11 +8,36 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>0E436966-C053-4545-977E-8AA3395DEA41</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B1E2193-56A9-4883-848F-D2ADB2155ECC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B0C9BBC4-BC68-4A32-A4FF-FD0912D129DD</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+				<string>0E436966-C053-4545-977E-8AA3395DEA41</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -35,8 +60,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://app.clubhouse.io/gonoodle/story/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7B1E2193-56A9-4883-848F-D2ADB2155ECC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>keyword</key>
 				<string>ch</string>
 				<key>subtext</key>
@@ -44,12 +88,42 @@
 				<key>text</key>
 				<string>Open Clubhouse</string>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>find ticket</string>
+						<key>uid</key>
+						<string>B0C9BBC4-BC68-4A32-A4FF-FD0912D129DD</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>0E436966-C053-4545-977E-8AA3395DEA41</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -77,12 +151,19 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0E436966-C053-4545-977E-8AA3395DEA41</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
 		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>175</integer>
 		</dict>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
 		<dict>
@@ -90,6 +171,13 @@
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>50</integer>
+		</dict>
+		<key>7B1E2193-56A9-4883-848F-D2ADB2155ECC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>35</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
