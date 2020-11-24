@@ -1,0 +1,18 @@
+[
+  // See the onivim documentation for details on the format:
+  // https://onivim.github.io/docs/configuration/key-bindings
+  // Add key bindings here, ie:
+  {
+    "key": "Ctrl+Shift+F",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "Ctrl+Shift+B",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "Cmd+Shift+B",
+    "command": "workbench.action.toggleSidebarVisibility"
+  }
+]
