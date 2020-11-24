@@ -1,7 +1,7 @@
 {
   "workbench.editor.showIcons": false,
   "window.zoomLevel": 0,
-  "editor.fontFamily": "'Operator Mono SSm', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Operator Mono SSm Lig', Menlo, Monaco, 'Courier New', monospace",
   "editor.cursorBlinking": "solid",
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -53,5 +53,6 @@
   "editor.rulers": [80, 100],
   "jest.enableCodeLens": false,
   "gitlens.codeLens.enabled": false,
-  "eslint.lintTask.enable": true
+  "eslint.lintTask.enable": true,
+  "editor.find.cursorMoveOnType": false
 }
