@@ -54,5 +54,8 @@
   "jest.enableCodeLens": false,
   "gitlens.codeLens.enabled": false,
   "eslint.lintTask.enable": true,
-  "editor.find.cursorMoveOnType": false
+  "editor.find.cursorMoveOnType": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
