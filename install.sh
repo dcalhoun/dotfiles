@@ -31,5 +31,4 @@ apm install --packages-file ${MY_DOTFILES}/atom/packages.txt
 cat ${MY_DOTFILES}/vscode/packages.txt | xargs -n 1 code --install-extension
 
 # Link files with rcup
-rcup -d $TB_DOTFILES -x README.md -x LICENSE -x Brewfile -x install.sh -x rcrc
-rcup -f -d $MY_DOTFILES -x README.md -x LICENSE -x Brewfile -x install.sh -x rcrc
+env RCRC=$HOME/.dotfiles/rcrc rcup
