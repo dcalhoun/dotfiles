@@ -17,7 +17,7 @@ fpath+=('/usr/local/share/zsh/site-functions')
 autoload -U promptinit; promptinit
 prompt pure
 
-# Setup zmv
+# Set up zmv
 autoload -U zmv
 
 # Case insensitive auto-complete
@@ -33,12 +33,15 @@ bindkey "^U" history-incremental-search-forward
 # Set term colors and italics
 export TERM="xterm-256color-italic"
 
-# Setup Android Studio for Expo development
+# Set Android SDK for React Native development
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools:$PATH
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Setup Fastlane CLI
+# Set up Fastlane CLI
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-# Setup macOS Font Tools CLI
+# Set up macOS Font Tools CLI
 export PATH="/Library/Apple/usr/bin/:$PATH"
