@@ -15,7 +15,6 @@
   "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "all",
   "editor.rulers": [ 80, 100 ],
-  // "editor.smoothScroll": false,
   "editor.tabSize": 2,
   "editor.zenMode.hideTabs": true,
   "editor.zenMode.singleFile": true,
@@ -28,7 +27,5 @@
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 2,
   "vim.useSystemClipboard": [ "yank" ],
-  "vim.leader": "<space>",
-//  "oni.layout.singleTabMode": true,
-//  "oni.layout.layoutTabPosition": "top"
+  "vim.leader": "<space>"
 }
