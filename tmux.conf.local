@@ -37,6 +37,7 @@ bind c new-window -c "#{pane_current_path}"
 #########
 # Add LEFT status bar label
 set-window-option -g status-left " #S "
+set-window-option -g status-left-length 20
 set-window-option -g status-left-style fg=black,bg=white
 
 # Add RIGHT status bar label
