@@ -6,13 +6,5 @@
     "key": "Ctrl+Shift+F",
     "command": "editor.action.formatDocument",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "Ctrl+Shift+B",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "Cmd+Shift+B",
-    "command": "workbench.action.toggleSidebarVisibility"
   }
 ]
