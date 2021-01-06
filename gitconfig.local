@@ -14,6 +14,7 @@
   pl = pull
   ps = push
   rl = reflog --pretty=reflog
+  sw = switch
   tr = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 [merge]
   ff = true
