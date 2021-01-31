@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "Night Owl",
   "editor.detectIndentation": true,
-  "editor.fontFamily": "Operator Mono SSm Lig",
+  "editor.fontFamily": "Operator Mono SSm",
   "editor.fontSize": 14,
   "editor.largeFileOptimizations": true,
   "editor.highlightActiveIndentGuide": true,
