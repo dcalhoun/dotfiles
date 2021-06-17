@@ -49,3 +49,8 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Set up macOS Font Tools CLI
 export PATH="/Library/Apple/usr/bin/:$PATH"
+
+if [ -e tokens.sh ]
+then
+	source "./tokens.sh"
+fi
