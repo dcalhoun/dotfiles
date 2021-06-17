@@ -28,7 +28,6 @@
   "workbench.tree.indent": 2,
   "vim.useSystemClipboard": [ "yank" ],
   "vim.leader": "<space>",
-  "tailwindCSS.includeLanguages": {
-    "rescript": "javascript"
-  }
+  "tailwindCSS.includeLanguages": { "rescript": "javascript" },
+  "files.useExperimentalFileWatcher": true
 }
