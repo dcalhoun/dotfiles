@@ -54,3 +54,6 @@ if [ -e tokens.sh ]
 then
 	source "./tokens.sh"
 fi
+
+# Automattically added by tooling, not sure what
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
