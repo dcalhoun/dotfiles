@@ -21,8 +21,11 @@ fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew bundle --file=${MY_DOTFILES}/Brewfile
 
-# Install pure-prompt
-yarn global add pure-prompt
+# Install Node.js and pure-prompt
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs latest
+asdf global nodejs latest
+npm install --global pure-prompt
 
 # Link files with rcup
 env RCRC=$HOME/.dotfiles/rcrc rcup
