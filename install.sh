@@ -24,11 +24,5 @@ brew bundle --file=${MY_DOTFILES}/Brewfile
 # Install pure-prompt
 yarn global add pure-prompt
 
-# Install Atom packages
-apm install --packages-file ${MY_DOTFILES}/atom/packages.txt
-
-# Install Code packages
-cat ${MY_DOTFILES}/vscode/packages.txt | xargs -n 1 code --install-extension
-
 # Link files with rcup
 env RCRC=$HOME/.dotfiles/rcrc rcup
