@@ -55,5 +55,5 @@ then
 	source "./tokens.sh"
 fi
 
-# Automattically added by tooling, not sure what
+# Automatically added by tooling, not sure what
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
