@@ -53,3 +53,6 @@ set-window-option -g window-status-current-format " #I: #W "
 
 # Enable true color support and italics
 set -g default-terminal "xterm-256color-italic"
+
+# Sort sessions by name alphabetically
+bind s choose-tree -sZ -O name
