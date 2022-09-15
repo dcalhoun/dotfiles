@@ -18,7 +18,7 @@ module.exports = {
       "#0066ff",
       "#cc00ff",
       "#00ffff",
-      "#ffffff"
+      "#ffffff",
     ],
     copyOnSelect: true,
     cursorColor: "#f81ce5",
@@ -34,10 +34,10 @@ module.exports = {
     hyperTabs: {
       activityColor: "salmon",
       tabIconsColored: true,
-      trafficButtons: true
+      trafficButtons: true,
     },
     modifierKeys: {
-      altIsMeta: true
+      altIsMeta: true,
     },
     padding: "12px 14px",
     scrollback: 3000,
@@ -45,17 +45,17 @@ module.exports = {
     summon: {
       hotkey: "Ctrl+;",
       hideDock: true,
-      hideOnBlur: true
+      hideOnBlur: true,
     },
     termCSS: "",
     updateChannel: "stable",
-    windowSize: [1440, 900]
+    windowSize: [1440, 900],
   },
   plugins: [
     "hyperterm-paste",
     "hypercwd",
     "hyper-night-owl",
     "hyperlinks",
-    "hyperterm-summon"
-  ]
+    "hyperterm-summon",
+  ],
 };
