@@ -82,3 +82,6 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # Include Flashlight CLI
 export PATH="/Users/davidcalhoun/.flashlight/bin:$PATH"
+
+# Include Maestro CLI
+export PATH=$PATH:$HOME/.maestro/bin
