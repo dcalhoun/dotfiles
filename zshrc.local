@@ -73,3 +73,9 @@ export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 # Configure asdf-vm nodejs plugin to resolve partial versions to latest installed version
 # https://github.com/asdf-vm/asdf-nodejs/blob/c5b7c40ea9ffc3470f44b6cf04a21e45dd6f81de/README.md#partial-and-codename-versions
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
+
+# Set GOROOT via asdf-golang
+source ~/.asdf/plugins/golang/set-env.zsh
+
+# Enable go.mod versioning
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
