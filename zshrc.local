@@ -85,3 +85,6 @@ export PATH="/Users/davidcalhoun/.flashlight/bin:$PATH"
 
 # Include Maestro CLI
 export PATH=$PATH:$HOME/.maestro/bin
+
+# Rust + Cargo configuration
+. "$HOME/.cargo/env"
