@@ -51,15 +51,6 @@ else
   asdf shell nodejs latest
 fi
 
-# Install pure-prompt
-package='pure-prompt'
-if [ `npm list -g | grep -c $package` -eq 1 ]; then
-  echo "✅ pure-prompt installed."
-else
-  echo "🛠 Installing pure-prompt..."
-  npm install $package --no-shrinkwrap
-fi
-
 # Link files with rcup
 echo "🔗 Linking dotfiles"
 env RCRC=$HOME/.dotfiles/rcrc rcup
