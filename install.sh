@@ -54,3 +54,7 @@ fi
 # Link files with rcup
 echo "🔗 Linking dotfiles"
 env RCRC=$HOME/.dotfiles/rcrc rcup
+
+# Disable macOS character accent press-and-hold for VSCode and Hyper
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write co.zeit.hyper ApplePressAndHoldEnabled -bool false
