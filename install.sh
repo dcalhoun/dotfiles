@@ -38,7 +38,7 @@ fi
 
 # Install Homebrew packages
 echo "🛠 Installing Homebrew packages..."
-brew bundle --file=${MY_DOTFILES}/Brewfile
+brew bundle --file=${MY_DOTFILES}/Brewfile --quiet
 
 # Install Node.js
 if which node > /dev/null; then
@@ -53,7 +53,7 @@ fi
 
 # Link files with rcup
 echo "🔗 Linking dotfiles"
-env RCRC=$HOME/.dotfiles/rcrc rcup
+env RCRC=$HOME/.dotfiles/rcrc rcup -q
 
 # Disable macOS character accent press-and-hold for VSCode and Hyper
 defaults write -g ApplePressAndHoldEnabled -bool false
