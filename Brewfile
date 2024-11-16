@@ -1,4 +1,3 @@
-tap 'homebrew/cask'
 tap 'thoughtbot/formulae'
 
 brew 'ack'
