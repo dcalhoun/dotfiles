@@ -75,7 +75,9 @@ export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
 # Set GOROOT via asdf-golang
-source ~/.asdf/plugins/golang/set-env.zsh
+if [ -f ~/.asdf/plugins/golang/set-env.zsh ]; then
+	source ~/.asdf/plugins/golang/set-env.zsh
+fi
 
 # Enable go.mod versioning
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
@@ -87,4 +89,6 @@ export PATH="/Users/davidcalhoun/.flashlight/bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
 
 # Rust + Cargo configuration
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env"
+fi
