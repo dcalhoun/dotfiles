@@ -1,2 +1,2 @@
-EXCLUDES="README.md README-ES.md LICENSE Brewfile Brewfile.lock.json install.sh rcrc atom/packages.txt vscode/packages.txt xterm-256color-italic.terminfo"
+EXCLUDES="*.md LICENSE Brewfile* install.sh rcrc *.txt xterm-256color-italic.terminfo CODEOWNERS"
 DOTFILES_DIRS="$HOME/.dotfiles $HOME/.dotfiles-thoughtbot"
