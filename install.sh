@@ -33,7 +33,7 @@ if which brew > /dev/null; then
   echo "✅ Homebrew installed."
 else
   echo "🛠 Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Install Homebrew packages
