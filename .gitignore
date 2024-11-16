@@ -1,3 +1,4 @@
+Brewfile.lock.json
 tmux/plugins/**
 !tmux/plugins/.gitkeep
 tokens.sh
