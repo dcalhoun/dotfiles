@@ -92,3 +92,8 @@ export PATH=$PATH:$HOME/.maestro/bin
 if [ -f "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
+
+# asdf-vm 0.16.0 upgrade
+# https://asdf-vm.com/guide/upgrading-to-v0-16.html#upgrading-without-losing-data
+export ASDF_DATA_DIR=/Users/davidcalhoun/.asdf
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
