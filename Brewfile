@@ -1,5 +1,3 @@
-tap 'thoughtbot/formulae'
-
 brew 'ack'
 brew 'asdf'
 brew 'diff-so-fancy'
