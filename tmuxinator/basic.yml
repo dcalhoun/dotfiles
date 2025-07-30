@@ -3,3 +3,4 @@ root: <%= @args[0] %>
 
 windows:
   - Shell:
+  - AI:
