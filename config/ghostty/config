@@ -45,7 +45,15 @@
 keybind = global:ctrl+;=toggle_visibility
 window-width = 168
 window-height = 53
+window-padding-x = 10
+window-padding-y = 10
+font-size = 14
 font-family = "Operator Mono SSm"
+font-style = Book
+font-style-italic = Italic
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
+bold-is-bright = true
 # theme = NightOwlDark
 macos-titlebar-style = tabs
 macos-icon = holographic
