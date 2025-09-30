@@ -103,3 +103,6 @@ export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # Added for cursor-agent
 export PATH="$HOME/.local/bin:$PATH"
+
+# Workaround wp-calypso issue
+export NODE_OPTIONS=--max-old-space-size=136864
