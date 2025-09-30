@@ -56,7 +56,6 @@ font-style-bold-italic = Bold Italic
 bold-is-bright = true
 # theme = NightOwlDark
 macos-titlebar-style = tabs
-macos-icon = holographic
 macos-titlebar-proxy-icon = hidden
 cursor-style = block
 cursor-style-blink = false
