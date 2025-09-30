@@ -95,6 +95,7 @@ export PATH=$PATH:$HOME/.maestro/bin
 if [ -f "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
+export PATH="$PATH:$(brew --prefix rustup)/bin"
 
 # asdf-vm 0.16.0 upgrade
 # https://asdf-vm.com/guide/upgrading-to-v0-16.html#upgrading-without-losing-data
