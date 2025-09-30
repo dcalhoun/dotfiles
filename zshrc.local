@@ -100,3 +100,6 @@ fi
 # https://asdf-vm.com/guide/upgrading-to-v0-16.html#upgrading-without-losing-data
 export ASDF_DATA_DIR=/Users/davidcalhoun/.asdf
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+# Added for cursor-agent
+export PATH="$HOME/.local/bin:$PATH"
