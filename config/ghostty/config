@@ -42,11 +42,27 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-keybind = global:ctrl+;=toggle_visibility
+# General
+auto-update-channel = tip
+
+# Window appearance
 window-width = 168
 window-height = 53
 window-padding-x = 10
 window-padding-y = 10
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+
+# Behavior
+keybind = global:ctrl+;=toggle_visibility
+keybind = shift+enter=text:\x1b\r
+
+# Cursor appearance
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Text appearance
 font-size = 14
 font-family = "Operator Mono SSm"
 font-style = Book
@@ -54,10 +70,3 @@ font-style-italic = Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 bold-is-bright = true
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = hidden
-cursor-style = block
-cursor-style-blink = false
-shell-integration-features = no-cursor
-keybind = shift+enter=text:\x1b\r
-auto-update-channel = tip
