@@ -46,8 +46,8 @@
 auto-update-channel = tip
 
 # Window appearance
-window-width = 168
-window-height = 53
+window-width = 157
+window-height = 49
 window-padding-x = 10
 window-padding-y = 10
 macos-titlebar-style = tabs
