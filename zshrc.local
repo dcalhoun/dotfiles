@@ -17,6 +17,10 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 
+# Add zmx session indicator to prompt
+BASE_PROMPT=$PROMPT
+PROMPT="${ZMX_SESSION:+[$ZMX_SESSION] }$BASE_PROMPT"
+
 # Set up zmv
 autoload -U zmv
 
