@@ -1,6 +1,7 @@
 brew 'ack'
 brew 'asdf'
 brew 'diff-so-fancy'
+brew 'fzf' # Required by thoughtbot/dotfiles
 brew 'gh'
 brew 'git'
 brew 'grip'
