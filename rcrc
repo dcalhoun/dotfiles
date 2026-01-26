@@ -1,3 +1,5 @@
-EXCLUDES="README.md CLAUDE.md LICENSE Brewfile* install.sh rcrc *.txt xterm-256color-italic.terminfo CODEOWNERS"
+# Must list individual files as it seems pairing directory-scoped patterns with
+# filename patterns does not work reliably. This may be a bug in rcm.
+EXCLUDES="README.md README-ES.md CLAUDE.md CODE_OF_CONDUCT.md SECURITY.md LICENSE Brewfile* install.sh rcrc *.txt xterm-256color-italic.terminfo CODEOWNERS"
 DOTFILES_DIRS="$HOME/.dotfiles $HOME/.dotfiles-thoughtbot"
 COPY_ALWAYS="git_template/HEAD"
