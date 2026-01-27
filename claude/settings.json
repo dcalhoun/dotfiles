@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "context-a8c@automattic-claude-code-plugins": true
+  },
+  "alwaysThinkingEnabled": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}
