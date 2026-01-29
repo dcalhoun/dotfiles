@@ -1,10 +1,11 @@
 {
-  "enabledPlugins": {
-    "context-a8c@automattic-claude-code-plugins": true
-  },
-  "alwaysThinkingEnabled": false,
   "attribution": {
     "commit": "",
     "pr": ""
-  }
+  },
+  "enabledPlugins": {
+    "context-a8c@automattic-claude-code-plugins": true,
+    "swift-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": false
 }
