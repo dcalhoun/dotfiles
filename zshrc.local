@@ -21,6 +21,11 @@ prompt pure
 BASE_PROMPT=$PROMPT
 PROMPT="${ZMX_SESSION:+[$ZMX_SESSION] }$BASE_PROMPT"
 
+# Set up zmx completions
+if command -v zmx &> /dev/null; then
+  eval "$(zmx completions zsh)"
+fi
+
 # Set up zmv
 autoload -U zmv
 
