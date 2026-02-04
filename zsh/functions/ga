@@ -10,8 +10,8 @@ ga() {
 
   local branch="$1"
   local base="$(basename "$PWD")"
-  local path="../${base}--${branch}"
+  local worktree="../${base}--${branch}"
 
-  git worktree add -b "$branch" "$path"
-  cd "$path"
+  git worktree add -b "$branch" "$worktree"
+  cd "$worktree"
 }
