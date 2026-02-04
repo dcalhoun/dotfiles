@@ -1,0 +1,23 @@
+# Remove worktree and branch from within active worktree directory.
+# Sourced from:
+# - https://gist.github.com/dhh/18575558fc5ee10f15b6cd3e108ed844
+# - https://x.com/dhh/status/2018631575337095389
+gd() {
+  if gum confirm "Remove worktree and branch?"; then
+    local cwd base branch root
+
+    cwd="$(pwd)"
+    worktree="$(basename "$cwd")"
+
+    # split on first `--`
+    root="${worktree%%--*}"
+    branch="${worktree#*--}"
+
+    # Protect against accidentially nuking a non-worktree directory
+    if [[ "$root" != "$worktree" ]]; then
+      cd "../$root"
+      git worktree remove "$worktree" --force
+      git branch -D "$branch"
+    fi
+  fi
+}

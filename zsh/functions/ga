@@ -1,0 +1,18 @@
+# Create a new worktree and branch from within current git directory.
+# Sourced from:
+# - https://gist.github.com/dhh/18575558fc5ee10f15b6cd3e108ed844
+# - https://x.com/dhh/status/2018631575337095389
+ga() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: ga [branch name]"
+    exit 1
+  fi
+
+  local branch="$1"
+  local base="$(basename "$PWD")"
+  local path="../${base}--${branch}"
+
+  git worktree add -b "$branch" "$path"
+  mise trust "$path"
+  cd "$path"
+}
