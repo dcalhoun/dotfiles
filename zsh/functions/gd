@@ -6,17 +6,16 @@ gd() {
   read "reply?Remove worktree and branch? [y/N] "
   [[ "$reply" =~ ^[Yy]$ ]] || return
 
-  local cwd base branch root
+  local worktree root branch
 
-  cwd="$(pwd)"
-  worktree="$(basename "$cwd")"
-
-  # split on first `--`
+  worktree="$(basename "$PWD")"
   root="${worktree%%--*}"
-  branch="${worktree#*--}"
 
-  # Protect against accidentially nuking a non-worktree directory
-  if [[ "$root" != "$worktree" ]]; then
+  # Get the branch name from git (handles branches with slashes)
+  branch="$(git rev-parse --abbrev-ref HEAD)"
+
+  # Protect against accidentally nuking a non-worktree directory
+  if [[ "$root" != "$worktree" ]] && [[ -n "$branch" ]]; then
     cd "../$root"
     git worktree remove "$worktree" --force
     git branch -D "$branch"
