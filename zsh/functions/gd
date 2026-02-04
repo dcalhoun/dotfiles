@@ -14,10 +14,26 @@ gd() {
   # Get the branch name from git (handles branches with slashes)
   branch="$(git rev-parse --abbrev-ref HEAD)"
 
-  # Protect against accidentally nuking a non-worktree directory
-  if [[ "$root" != "$worktree" ]] && [[ -n "$branch" ]]; then
-    cd "../$root"
-    git worktree remove "$worktree" --force
-    git branch -D "$branch"
+  # Expected worktree suffix (branch with slashes replaced by dashes)
+  local expected_suffix="${branch//\//-}"
+
+  # Protect against accidentally nuking a non-worktree directory or wrong branch
+  if [[ "$root" == "$worktree" ]]; then
+    echo "Error: Not in a worktree directory (missing '--' separator)"
+    return 1
   fi
+
+  if [[ -z "$branch" ]]; then
+    echo "Error: Could not determine current branch"
+    return 1
+  fi
+
+  if [[ "$worktree" != "${root}--${expected_suffix}" ]]; then
+    echo "Error: Branch '$branch' does not match worktree directory '$worktree'"
+    return 1
+  fi
+
+  cd "../$root"
+  git worktree remove "$worktree" --force
+  git branch -D "$branch"
 }
