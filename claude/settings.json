@@ -7,5 +7,9 @@
     "context-a8c@automattic-claude-code-plugins": true,
     "swift-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": false
+  "alwaysThinkingEnabled": false,
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); cwd=$(echo \"$input\" | jq -r '.workspace.current_dir'); short_cwd=\"${cwd/#$HOME/~}\"; cd \"$cwd\" 2>/dev/null && branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) && printf '\\e[34m%s\\e[0m \\e[2m%s\\e[0m' \"$short_cwd\" \"$branch\" || printf '\\e[34m%s\\e[0m' \"$short_cwd\""
+  }
 }
