@@ -11,7 +11,19 @@ ga() {
   local branch="$1"
   local base="$(basename "$PWD")"
   local worktree="../${base}--${branch//\//-}"
+  local source_dir="$PWD"
 
   git worktree add -b "$branch" "$worktree"
   cd "$worktree"
+
+  # Symlink .claude/*.local.* files from source directory
+  if [[ -d "${source_dir}/.claude" ]]; then
+    local local_files=("${source_dir}"/.claude/*.local.*(N))
+    if [[ ${#local_files[@]} -gt 0 ]]; then
+      mkdir -p .claude
+      for file in "${local_files[@]}"; do
+        ln -sf "$file" ".claude/$(basename "$file")"
+      done
+    fi
+  fi
 }
