@@ -1,0 +1,41 @@
+# Switch to a sibling worktree using fzf.
+gs() {
+  local worktrees current selected path
+
+  current="$(pwd)"
+
+  # Build list of worktree directories excluding the current one
+  worktrees=$(git worktree list --porcelain | awk '
+    /^worktree / { path = $2 }
+    /^branch /   { branch = $2; sub(/^refs\/heads\//, "", branch) }
+    /^bare$/     { branch = "(bare)" }
+    /^detached$/ { branch = "(detached)" }
+    /^$/ {
+      if (path != "" && path != "'"$current"'") {
+        dir = path
+        sub(/.*\//, "", dir)
+        printf "%-40s %s\t%s\n", dir, branch, path
+      }
+      path = ""; branch = ""
+    }
+    END {
+      if (path != "" && path != "'"$current"'") {
+        dir = path
+        sub(/.*\//, "", dir)
+        printf "%-40s %s\t%s\n", dir, branch, path
+      }
+    }
+  ')
+
+  if [[ -z "$worktrees" ]]; then
+    echo "No other worktrees found."
+    return 1
+  fi
+
+  selected=$(echo "$worktrees" | fzf --no-multi --delimiter='\t' --with-nth=1 --header="Switch to worktree")
+
+  if [[ -n "$selected" ]]; then
+    path=$(echo "$selected" | awk -F'\t' '{ print $2 }')
+    cd "$path"
+  fi
+}
