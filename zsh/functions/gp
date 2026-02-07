@@ -1,0 +1,53 @@
+# Prune worktrees whose branches have been merged or deleted on the remote.
+gp() {
+  local stale=()
+
+  while IFS= read -r line; do
+    # Each porcelain block: worktree path, then branch
+    [[ "$line" =~ ^worktree\ (.+)$ ]] && path="${match[1]}" && continue
+    [[ "$line" =~ ^branch\ refs/heads/(.+)$ ]] && branch="${match[1]}" && continue
+    [[ "$line" == "bare" ]] && path="" && continue
+
+    # Empty line = end of block
+    if [[ -z "$line" && -n "$path" && -n "$branch" ]]; then
+      # Check if the branch's remote tracking ref is gone
+      if ! git rev-parse --verify "origin/$branch" &>/dev/null; then
+        local dir="$path"
+        dir="${dir##*/}"
+        stale+=("$dir|$branch|$path")
+      fi
+      path=""
+      branch=""
+    fi
+  done < <(git worktree list --porcelain; echo)
+
+  if [[ ${#stale[@]} -eq 0 ]]; then
+    echo "No stale worktrees found."
+    return 0
+  fi
+
+  echo "Stale worktrees (remote branch gone):"
+  for entry in "${stale[@]}"; do
+    local dir="${entry%%|*}"
+    local rest="${entry#*|}"
+    local branch="${rest%%|*}"
+    echo "  $dir ($branch)"
+  done
+
+  echo ""
+  read "reply?Remove these worktrees and branches? [y/N] "
+  [[ "$reply" =~ ^[Yy]$ ]] || return
+
+  for entry in "${stale[@]}"; do
+    local dir="${entry%%|*}"
+    local rest="${entry#*|}"
+    local branch="${rest%%|*}"
+    local wt_path="${rest#*|}"
+
+    echo "Removing $dir ($branch)..."
+    git worktree remove "$wt_path" --force 2>/dev/null
+    git branch -D "$branch" 2>/dev/null
+  done
+
+  echo "Done."
+}
