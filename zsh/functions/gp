@@ -1,30 +1,31 @@
 # Prune worktrees whose branches have been merged or deleted on the remote.
 gp() {
   local stale=()
+  local wt_path="" wt_branch=""
 
   while IFS= read -r line; do
     # Each porcelain block: worktree path, then branch
-    [[ "$line" =~ ^worktree\ (.+)$ ]] && path="${match[1]}" && continue
-    [[ "$line" =~ ^branch\ refs/heads/(.+)$ ]] && branch="${match[1]}" && continue
-    [[ "$line" == "bare" ]] && path="" && continue
+    [[ "$line" =~ ^worktree\ (.+)$ ]] && wt_path="${match[1]}" && continue
+    [[ "$line" =~ ^branch\ refs/heads/(.+)$ ]] && wt_branch="${match[1]}" && continue
+    [[ "$line" == "bare" ]] && wt_path="" && continue
 
     # Empty line = end of block
-    if [[ -z "$line" && -n "$path" && -n "$branch" ]]; then
-      local dir="${path##*/}"
+    if [[ -z "$line" && -n "$wt_path" && -n "$wt_branch" ]]; then
+      local dir="${wt_path##*/}"
 
       # Skip non-worktree directories (no '--' separator, same check as gd)
       if [[ "$dir" != *"--"* ]]; then
-        path=""
-        branch=""
+        wt_path=""
+        wt_branch=""
         continue
       fi
 
       # Check if the branch's remote tracking ref is gone
-      if ! git rev-parse --verify "origin/$branch" &>/dev/null; then
-        stale+=("$dir|$branch|$path")
+      if ! git rev-parse --verify "origin/$wt_branch" &>/dev/null; then
+        stale+=("$dir|$wt_branch|$wt_path")
       fi
-      path=""
-      branch=""
+      wt_path=""
+      wt_branch=""
     fi
   done < <(git worktree list --porcelain; echo)
 
