@@ -1,6 +1,6 @@
 # Switch to a sibling worktree using fzf.
 gs() {
-  local worktrees current selected path
+  local worktrees current selected wt_path
 
   current="$(pwd)"
 
@@ -35,7 +35,7 @@ gs() {
   selected=$(echo "$worktrees" | fzf --no-multi --delimiter='\t' --with-nth=1 --header="Switch to worktree")
 
   if [[ -n "$selected" ]]; then
-    path=$(echo "$selected" | awk -F'\t' '{ print $2 }')
-    cd "$path"
+    wt_path=$(echo "$selected" | awk -F'\t' '{ print $2 }')
+    cd "$wt_path"
   fi
 }
