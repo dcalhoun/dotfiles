@@ -10,10 +10,17 @@ gp() {
 
     # Empty line = end of block
     if [[ -z "$line" && -n "$path" && -n "$branch" ]]; then
+      local dir="${path##*/}"
+
+      # Skip non-worktree directories (no '--' separator, same check as gd)
+      if [[ "$dir" != *"--"* ]]; then
+        path=""
+        branch=""
+        continue
+      fi
+
       # Check if the branch's remote tracking ref is gone
       if ! git rev-parse --verify "origin/$branch" &>/dev/null; then
-        local dir="$path"
-        dir="${dir##*/}"
         stale+=("$dir|$branch|$path")
       fi
       path=""
