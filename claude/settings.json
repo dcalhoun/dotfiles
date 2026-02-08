@@ -3,13 +3,13 @@
     "commit": "",
     "pr": ""
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "enabledPlugins": {
     "context-a8c@automattic-claude-code-plugins": true,
     "swift-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": false,
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  }
+  "alwaysThinkingEnabled": false
 }
