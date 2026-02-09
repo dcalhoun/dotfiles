@@ -1,4 +1,4 @@
-# Create a new worktree and branch from within current git directory.
+# Create a worktree from a new or existing branch.
 # Sourced from:
 # - https://gist.github.com/dhh/18575558fc5ee10f15b6cd3e108ed844
 # - https://x.com/dhh/status/2018631575337095389
@@ -13,7 +13,17 @@ ga() {
   local worktree="../${base}--${branch//\//-}"
   local source_dir="$PWD"
 
-  git worktree add -b "$branch" "$worktree"
+  if git show-ref --verify --quiet "refs/heads/$branch"; then
+    # Branch exists locally
+    git worktree add "$worktree" "$branch"
+  elif git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+    # Branch exists on remote
+    git worktree add --track -b "$branch" "$worktree" "origin/$branch"
+  else
+    # New branch
+    git worktree add -b "$branch" "$worktree"
+  fi
+
   cd "$worktree"
 
   # Symlink .claude/*.local.* files from source directory
