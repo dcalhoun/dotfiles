@@ -2,3 +2,4 @@ Brewfile.lock.json
 tmux/plugins/**
 !tmux/plugins/.gitkeep
 tokens.sh
+.claude/settings.local.json
