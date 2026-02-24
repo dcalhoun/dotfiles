@@ -15,3 +15,4 @@ A list of rules that Claude _MUST_ be followed:
 A list of best practices that Claude _SHOULD_ follow:
 
 - Commit changes in small, logical chunks to make it easier for reviewers to understand the changes.
+- Avoid using the `-C` flag for `git` commands when you are already in the targeted directory.
