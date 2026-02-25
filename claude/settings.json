@@ -9,7 +9,8 @@
   },
   "enabledPlugins": {
     "context-a8c@automattic-claude-code-plugins": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "voiceprint@jck-claude-plugins": true
   },
   "alwaysThinkingEnabled": false
 }
