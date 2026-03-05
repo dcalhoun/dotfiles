@@ -10,6 +10,7 @@ A list of rules that Claude _MUST_ be followed:
 - Name branches following the Conventional Commits specification (e.g., `fix/your-branch-name`).
 - Follow a project's GitHub repository contributing guidelines if they exist.
 - Adhere to a project's GitHub pull request template if it exists.
+- Avoid combining `git` commands with `&&` as it requires custom bash script permission. Run them separately (e.g., `git add` then `git commit`).
 
 ## Best Practices
 
