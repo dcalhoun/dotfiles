@@ -11,6 +11,7 @@ A list of rules that Claude _MUST_ be followed:
 - Follow a project's GitHub repository contributing guidelines if they exist.
 - Adhere to a project's GitHub pull request template if it exists.
 - Avoid combining `git` commands with `&&` as it requires custom bash script permission. Run them separately (e.g., `git add` then `git commit`).
+- When requested to create a new branch for work, also create a new Git worktree using the `ga` function defined in `zsh/functions/ga` (e.g., `ga feat/my-branch`). This creates the worktree, checks out the branch, and changes into the worktree directory.
 
 ## Best Practices
 
