@@ -41,6 +41,7 @@ Use the ContextA8C MCP server to gather activity from all of the following sourc
 ### 3. Enterprise GitHub A8C PRs
 
 - Search for PRs authored by `davidcalhoun` created or merged during the date range.
+- Search for PRs merged during the date range that reference the user's Linear issues (e.g., CMM-\* issues) — these may be authored by teammates but shepherded by the user.
 - Search for PRs reviewed by `davidcalhoun` updated during the date range.
 
 ### 4. Slack Activity
@@ -72,7 +73,9 @@ Follow these rules exactly when drafting the update:
 
 - [bullet items]
 
-**Something fun:** [PLACEHOLDER]
+**Something fun:**
+
+[PLACEHOLDER]
 ```
 
 ### References
@@ -88,7 +91,7 @@ Follow these rules exactly when drafting the update:
 
 ### Misc Line
 
-Consolidate the following into a single bullet prefixed with "Misc:":
+Consolidate the following into a single bullet prefixed with "Misc:" as the **last** work completed bullet:
 
 - PR reviews (mention which repos)
 - Dependabot dependency version bump PRs merged (include count)
@@ -97,14 +100,40 @@ Consolidate the following into a single bullet prefixed with "Misc:":
 
 Example: `Misc: reviewed teammate PRs across GBK, WordPress-iOS, WordPress-Android, and wp-calypso; merged 7 Dependabot dependency version bump PRs in GBK; monitored app store reviews`
 
+### Bullet Writing Style
+
+- **Be concise.** Each bullet should be a single sentence fragment — describe _what_ was done and _why it matters_, not _how it was done_.
+- **Do not elaborate** with dashes, parenthetical asides explaining impact, or multi-clause sentences. Avoid phrases like "coordinated testing", "shepherded a release", "enabling X" unless essential to understanding the item.
+- Good: `Fixed Android magic login redirect infinite loop for password-less accounts`
+- Bad: `Fixed an Android deep link infinite loop that trapped Jetpack users in a passwordless login cycle — coordinated testing, opened the client-side fix, and shepherded a 26.6.1 hotfix release`
+- Good: `Fixed missing text alignment and typography options for sites without editor settings`
+- Bad: `Added default typography settings (text alignment, font sizes, drop cap, etc.) for sites without the Gutenberg plugin REST API endpoint`
+- **Include PRs authored by others that the user shepherded or merged** if they relate to the user's Linear issues. Cross-reference merged PRs (including those from teammates) against the user's Linear issues.
+- **Time off should be concise** — e.g., "AFK Monday–Tuesday (3/16–3/17)" not a multi-line description of travel plans.
+
+### Bullet Ordering
+
+Order work completed bullets as follows:
+
+1. **Urgent/high-impact bug fixes** first (e.g., login loops, editor failing to load)
+2. **Feature work and other bug fixes** next
+3. **Test infrastructure and CI improvements** next
+4. **Dependency/build tooling fixes** next
+5. **In-progress work** (items where a PR was opened but not yet merged) last, just before Misc
+6. **Misc** always last
+
+### Commitments This Week
+
+- Keep to 2–3 items maximum.
+- Use concise action-oriented language.
+- Combine related items into a single bullet when possible (e.g., multiple Linear issues for the same feature).
+
 ### Something Fun
 
 Always include a `**Something fun:**` section. Use `[PLACEHOLDER]` for the user to fill in manually.
 
 ### General
 
-- Keep bullet items concise but descriptive — include what was fixed/done and why it matters.
-- Order work completed items roughly by impact/importance.
 - Days worked and time off should be confirmed with the user.
 
 ## Presenting the Draft
