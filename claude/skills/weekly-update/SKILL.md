@@ -26,6 +26,8 @@ If no date range is provided, ask the user.
 
 Use the ContextA8C MCP server to gather activity from all of the following sources. Load each provider first, then execute the relevant tools. Run independent queries in parallel when possible.
 
+**IMPORTANT:** The date range provided uses short dates (e.g., "Mar 10 – Mar 16") without an explicit year. Always use the **current year** when constructing date filters for GitHub search queries and other API calls. Do not use a prior year — results from the wrong year will contain stale, irrelevant data.
+
 ### 1. Linear Issues
 
 - Fetch issues assigned to the user updated during the date range (`my-issues` with appropriate `days` filter).
