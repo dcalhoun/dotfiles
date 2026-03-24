@@ -3,3 +3,4 @@ alias be="bundle exec"
 alias tf="terraform"
 alias tka="tmux ls | cut -d: -f1 | xargs -L1 tmux kill-session -t"
 alias ash="autossh -M 0 -q"
+alias ghe='HTTPS_PROXY="socks5://127.0.0.1:8080" GH_HOST=github.a8c.com gh'
