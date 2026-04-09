@@ -12,5 +12,13 @@
     "voiceprint@jck-claude-plugins": true,
     "github-enterprise@automattic-claude-code-plugins": true
   },
+  "extraKnownMarketplaces": {
+    "apps-infra-claude-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "Automattic/apps-infra-claude-plugins"
+      }
+    }
+  },
   "alwaysThinkingEnabled": false
 }
