@@ -15,8 +15,8 @@
   "extraKnownMarketplaces": {
     "apps-infra-claude-plugins": {
       "source": {
-        "source": "github",
-        "repo": "Automattic/apps-infra-claude-plugins"
+        "source": "git",
+        "url": "git@github.a8c.com:Automattic/apps-infra-claude-plugins.git"
       }
     }
   },
