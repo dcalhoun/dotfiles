@@ -1,4 +1,12 @@
 {
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(//**/.env)",
+      "Read(*.pem)",
+      "Read(*.key)"
+    ]
+  },
   "attribution": {
     "pr": ""
   },
