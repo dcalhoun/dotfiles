@@ -7,9 +7,6 @@
       "Read(*.key)"
     ]
   },
-  "attribution": {
-    "pr": ""
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
