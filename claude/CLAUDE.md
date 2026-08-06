@@ -11,6 +11,7 @@ A list of rules that Claude _MUST_ be followed:
 - Follow a project's GitHub repository contributing guidelines if they exist.
 - Adhere to a project's GitHub pull request template if it exists.
 - Unless absolutely necessary, always avoid combining commands with `&&` or `;` as it requires custom bash script permission. Run them separately (e.g., `git add` then `git commit`).
+- Avoid running `cd` when you are already in the targeted directory. If you repeatedly need `cd`, stop to verify your current working directory.
 
 ## Best Practices
 
