@@ -19,3 +19,4 @@ A list of best practices that Claude _SHOULD_ follow:
 
 - Commit changes in small, logical chunks to make it easier for reviewers to understand the changes.
 - If a project's auto-formatter changes files you are editing (via agent hook or otherwise), stop to first auto-format the targeted file and commit the styling changes as a separate commit, then continue your own edits to commit separately. Do not attempt to circumvent the auto-formatter with `sed` or other tools.
+- Avoid unnecessary or overly verbose comments in code, particularly if the code is self-explanatory. If a comment is needed, ensure it is clear and concise.
