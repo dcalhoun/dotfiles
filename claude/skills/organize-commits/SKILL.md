@@ -5,6 +5,7 @@ description: >-
   changes or Git history into logical, reviewable commits, or when a branch or
   pull request diff is too large to review as one unit. Do not use for routine
   commit creation, commit messages, or pull request descriptions.
+user-invocable: true
 ---
 
 # Organize Commits
