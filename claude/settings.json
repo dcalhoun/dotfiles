@@ -1,12 +1,12 @@
 {
   "permissions": {
-    "defaultMode": "manual",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(//**/.env)",
       "Read(*.pem)",
       "Read(*.key)"
-    ]
+    ],
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
