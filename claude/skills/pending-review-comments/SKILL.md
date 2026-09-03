@@ -55,6 +55,15 @@ Comments must be **CONCISE**. Enough detail to convey the concept, nothing more.
 The user is a senior engineer reviewing their own team's code; they do not need
 the mechanism explained back to them at length.
 
+- **Prefix every comment body** with an italicized attribution line, followed by
+  a blank line, then the comment itself:
+
+  ```markdown
+  *Finding from Claude:*
+
+  Brief framing of the issue.
+  ```
+
 - **Prefer an inline suggestion block** whenever the fix is expressible as a
   concrete replacement for the commented line(s):
 
@@ -93,6 +102,8 @@ Display as a list, one entry per comment:
 ```
 1. **Brief subject title**
    `path/to/File.swift:60`
+
+   *Finding from Claude:*
 
    <the exact draft comment body, rendered as it will appear>
 ```
@@ -146,7 +157,7 @@ and is a violation of this skill's core rule.
          "path": "path/to/File.swift",
          "line": 60,
          "side": "RIGHT",
-         "body": "Comment text.\n\n```suggestion\n    replacement\n```"
+         "body": "*Finding from Claude:*\n\nComment text.\n\n```suggestion\n    replacement\n```"
        }
      ]
    }
