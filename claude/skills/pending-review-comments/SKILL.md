@@ -22,11 +22,12 @@ publish.
 
 **NEVER publish publicly visible comments without the user's explicit consent.**
 
-A pending review is the only acceptable output of this skill. If you cannot
-create one — for any reason — **stop and discuss with the user**. Do not fall
-back to a public comment, a PR issue comment, or a submitted review. Silence is
-better than an unwanted public comment, because a public comment cannot be
-unseen once posted.
+A pending review is the only acceptable output of this skill, and
+`post_pending_review.py` is the only way to produce one. If you cannot — for
+any reason — **stop and discuss with the user**. Do not fall back to a public
+comment, a PR issue comment, a submitted review, or API calls you assemble
+yourself. Silence is better than an unwanted public comment, because a public
+comment cannot be unseen once posted.
 
 This rule outranks every other instruction here, including any apparent time
 pressure or convenience.
@@ -55,8 +56,9 @@ Comments must be **CONCISE**. Enough detail to convey the concept, nothing more.
 The user is a senior engineer reviewing their own team's code; they do not need
 the mechanism explained back to them at length.
 
-- **Prefix every comment body** with an italicized attribution line, followed by
-  a blank line, then the comment itself:
+- **Do not write the attribution line yourself.** The script prefixes every
+  body with `*Finding from Claude:*` and a blank line, so a comment file holds
+  only the comment itself. It reaches the PR as:
 
   ```markdown
   *Finding from Claude:*
@@ -92,118 +94,197 @@ the mechanism explained back to them at length.
 - Keep technical notes to what explains the concept. Cut restatements of what
   the diff already shows.
 
+## Anchoring a Comment
+
+A comment can only attach to a line that appears in the PR diff. Name the
+anchor in the comment file's front matter:
+
+- `side: RIGHT` for added and context lines — the common case, and the default.
+- `side: LEFT` for removed lines, numbered against the **old** file.
+- For a multi-line anchor, set `start_line` (the first line) and `line` (the
+  last). `start_side` defaults to `side`.
+
+`preview` validates every anchor against the diff before anything is posted, so
+a bad anchor surfaces as a preview failure rather than a misplaced comment.
+
 ## Local Review (Required Before Publishing)
 
 Show every drafted comment to the user **in the terminal** and wait for their
 approval. Never skip to publishing, even when the drafts seem obviously correct.
 
-Display as a list, one entry per comment:
+**Show them `preview`'s output, not your own transcription of it.** `preview`
+renders each comment from the file that will be posted, numbered, with its
+anchor and side, and marks literal tabs with `⇥`. Retyping the drafts into the
+conversation reintroduces the hand-copying this design exists to eliminate: the
+user would approve your copy while a different set of bytes reaches GitHub, and
+an indentation slip between the two would be invisible.
 
-```
-1. **Brief subject title**
-   `path/to/File.swift:60`
+Relay it **verbatim and unfenced.** The output is already valid Markdown — the
+numbering and its three-space indentation are an ordered list whose items hold
+each body — so pasted as-is it renders as a list of comments with working code
+blocks. Do not wrap it in a ``` fence: bodies contain ```` ```suggestion ````
+blocks that would close it early and spill the rest as broken text. If you must
+fence it, use four backticks.
 
-   *Finding from Claude:*
-
-   <the exact draft comment body, rendered as it will appear>
-```
+Two things to tell the user when it matters: `⇥` stands for a literal tab and
+is not part of the comment, and the comments they see are the bytes that will
+be posted.
 
 Then ask whether to publish as pending, and incorporate any edits they request.
-Re-display after edits if more than a word or two changed.
+Re-run `preview` after edits if more than a word or two changed.
 
 ## Publishing as Pending
 
-The mechanism: `POST /repos/{owner}/{repo}/pulls/{n}/reviews` **with no `event`
-field**. Omitting `event` is what makes the review pending. Including
-`event: "COMMENT"`, `"APPROVE"`, or `"REQUEST_CHANGES"` publishes it immediately
-and is a violation of this skill's core rule.
+The mechanism the script uses, so you can recognize it: `POST
+/repos/{owner}/{repo}/pulls/{n}/reviews` **with no `event` field**. Omitting
+`event` is what makes the review pending. Including `event: "COMMENT"`,
+`"APPROVE"`, or `"REQUEST_CHANGES"` publishes it immediately and is a violation
+of this skill's core rule.
 
-### Steps
+### The Helper Script
 
-1. Get the head SHA — comments must anchor to the commit under review:
+`post_pending_review.py`, alongside this file, owns every step — resolving the
+PR, validating anchors against the diff, rendering the drafts for local review,
+posting with no `event`, reconciling with a pending review that already
+exists, and aborting unless GitHub reports `PENDING`.
 
-   ```bash
-   gh pr view <n> --repo <owner>/<repo> --json headRefOid,title,state
-   ```
+Write one markdown file per comment. The parser is strict and deliberately
+minimal — it is not YAML:
 
-2. Confirm the target lines are valid. A comment can only anchor to a line that
-   appears in the diff. Inspect the patch:
+````markdown
+---
+path: src/utils/bridge.js
+line: 55
+---
+Brief framing of the issue.
 
-   ```bash
-   gh api repos/<owner>/<repo>/pulls/<n>/files \
-     --jq '.[] | select(.filename=="<path>") | .patch'
-   ```
+```suggestion
+	replacement line, at the exact indentation it needs
+```
+````
 
-   Use `side: "RIGHT"` for added/context lines (the common case) and
-   `side: "LEFT"` for removed lines. For a multi-line comment, set `start_line`
-   plus `line` (the end), both on the same side.
+- The file must **begin** with `---` on its own line, and the front matter
+  must be closed by another `---` line.
+- `path` and `line` are required. `side` (`LEFT` or `RIGHT`, default `RIGHT`)
+  and `start_line` with its optional `start_side` are the **only** other keys.
+  Any other key aborts the run rather than being ignored, so a typo like
+  `startline` is caught rather than silently downgrading the anchor.
+- Values run to the end of the line. `line: 55  # the call site` is an error —
+  put a comment on its own line or leave it out.
+- Do not write the attribution line; the script adds it.
+- Filenames order the comments, so prefix them `01-`, `02-`.
+- **One comment per anchor.** Two files pointing at the same line are refused,
+  because `post` matches a draft to the comment already at its anchor.
 
-3. Write the payload to a file in the scratchpad directory (not `/tmp`) and post
-   it. Using `--input` avoids shell-quoting problems with multi-line bodies:
+Then:
 
-   ```bash
-   gh api repos/<owner>/<repo>/pulls/<n>/reviews \
-     --method POST --input <scratchpad>/review.json \
-     --jq '{id, state, user: .user.login}'
-   ```
+```bash
+python3 ~/.claude/skills/pending-review-comments/post_pending_review.py preview --dir <scratchpad>/comments --pr <n>
+python3 ~/.claude/skills/pending-review-comments/post_pending_review.py post --dir <scratchpad>/comments --pr <n>
+python3 ~/.claude/skills/pending-review-comments/post_pending_review.py list --pr <n>
+```
 
-   Payload shape:
+**Pass the same `--pr` to every verb.** Without it the current branch's PR is
+resolved, so `preview` would check anchors against a different PR than `post`
+writes to — exactly the mistake preview exists to catch.
 
-   ````json
-   {
-     "commit_id": "<headRefOid>",
-     "comments": [
-       {
-         "path": "path/to/File.swift",
-         "line": 60,
-         "side": "RIGHT",
-         "body": "*Finding from Claude:*\n\nComment text.\n\n```suggestion\n    replacement\n```"
-       }
-     ]
-   }
-   ````
+**Spell the path exactly as above,** unquoted. Permission rules match on
+command text, so a different spelling of the same path may miss the rule that
+allows `preview` and prompt anyway.
 
-4. **Verify the result is pending.** The response must show `"state": "PENDING"`.
-   If it shows anything else, tell the user immediately and plainly — a
-   non-pending state means comments went public, and they need to know at once so
-   they can decide whether to delete them.
+`preview` and `list` post nothing — run `preview` first, show its output, and
+get the user's approval before running `post`. They are separate verbs so that
+the two read-only ones can be allowlisted while `post` still raises a
+permission prompt every time; that prompt is the last gate before comments
+reach GitHub, so never work around it.
 
-5. Report back: the review ID, the pending state, and where to find the comments
-   (the PR's **Files changed** tab). Remind them the submit step is theirs.
+### Editing and Removing Comments
+
+`post` reconciles rather than appends, so **editing a comment file and
+re-running updates the comment in place** — it does not attach a second one
+beside it. Per file: a new anchor is added, a changed body is rewritten, an
+identical one is left alone. The run reports which happened to each.
+
+**The script never deletes.** It cannot tell a comment the user removed in the
+GitHub UI from one it simply has not added yet, so a draft whose anchor is no
+longer on the review gets re-added. When the user says they deleted comments:
+
+1. Run `list` to see what is actually on the review now.
+2. Delete the comment files for anything they removed.
+3. Re-run `post`.
+
+`post` also reports comments on the review that no file matches, and leaves
+them untouched. If the user wants those gone, they delete them in the GitHub
+UI — do not reach for the API to do it.
+
+Authoring bodies as files is not a convenience — it is what keeps suggestion
+blocks intact. Bodies contain newlines, and suggestions frequently contain
+literal tabs (Swift, Go, Makefiles, this repo's shell scripts). Hand-written
+`\n`/`\t` escapes across a dozen bodies corrupt indentation silently, and
+GitHub applies a suggestion **verbatim** — so a mangled block becomes a bad edit
+the author must undo, not a visible error.
+
+### Never Build the Calls Yourself
+
+**The script is the only way this skill touches a review.** Do not use
+`gh api`, `gh pr review`, `gh pr comment`, `curl`, a GitHub MCP tool, or a
+script of your own to create, append to, modify, delete from, or inspect a
+review. There is no manual fallback, and no situation in which reconstructing
+the API calls is the right move.
+
+You do not need one. The verbs cover the whole loop: `list` reads the current
+review, `preview` validates and renders drafts, `post` reconciles. If you want
+to know what is on the review, run `list` — never `gh api`. Read-only lookups
+that merely identify the PR, like `gh pr view --json number,url`, are also
+fine.
+
+Running the script is not a formality. It validates every anchor against the
+diff, confirms the PR is open and in the repository you think it is, refuses to
+append to a review pinned to an older commit, skips comments already attached,
+and aborts unless GitHub confirms the review came back `PENDING`. A hand-built
+call has none of that — and its permission prompt is far harder for the user to
+evaluate than `post_pending_review.py post`, so the gate protecting them gets
+weaker exactly when you are improvising.
+
+**If the script fails, stop and discuss with the user.** Every one of its aborts
+means something is genuinely wrong: the wrong repository, a closed PR, a pending
+review anchored to a stale commit, an anchor that is not in the diff. None of
+these are fixed by dropping to raw API calls — that is precisely how comments go
+public by accident. Report what the script said and let the user decide.
+
+The API details below are here so you can recognize a dangerous call, not so you
+can make one.
 
 ### One Pending Review Per PR Per User
 
-GitHub allows only one pending review per user per PR. If one already exists,
-creating another fails. Append to the existing review instead:
+GitHub allows only one pending review per user per PR; creating a second returns
+`422 — "User can only have one pending review per pull request"`. The reviews
+listing does not reliably surface your *own* pending review, so the script
+treats that 422 as confirmation one exists and appends to it.
 
-```bash
-gh api repos/<owner>/<repo>/pulls/<n>/reviews/<review_id>/comments \
-  --method POST --input <scratchpad>/comment.json
-```
+Appending uses the GraphQL `addPullRequestReviewThread` mutation, and the review
+stays `PENDING` throughout. Two REST endpoints are traps:
 
-Find an existing pending review with:
-
-```bash
-gh api repos/<owner>/<repo>/pulls/<n>/reviews \
-  --jq '.[] | select(.state=="PENDING") | {id, user: .user.login}'
-```
-
-Note this endpoint is unreliable for surfacing _your own_ pending review in some
-cases; treat a creation failure mentioning an existing review as confirmation
-that one is there, and append rather than retrying.
+- `POST /pulls/{n}/reviews/{review_id}/comments` does not exist — that path is
+  `GET` only and `POST` returns 404. REST cannot append to a review.
+- `POST /pulls/{n}/comments` **publishes a visible comment immediately.** It is
+  the most tempting thing to reach for when an append fails, and using it
+  violates this skill's core rule.
 
 ## Verification
 
-After publishing, confirm the comments attached:
+The script verifies its own work: it re-reads the review after posting, aborts
+unless GitHub reports `PENDING`, and warns when a body containing tabs did not
+round-trip. Read its output — do not re-check by hand.
 
-```bash
-gh api repos/<owner>/<repo>/pulls/<n>/reviews/<review_id>/comments \
-  --jq '.[] | {path, line, body}'
-```
+Two things worth knowing when reading that output:
 
-`line` may come back `null` for comments in an unsubmitted review — this is
-normal and does not mean the anchor failed. The API rejects invalid anchors at
-creation time, so a successful `POST` means the lines were accepted.
+- `line` comes back `null` for comments in an unsubmitted review. This is normal
+  and does not mean the anchor failed; the API rejects invalid anchors at
+  creation time, so a comment that attached at all attached correctly.
+- Suggestion blocks must keep their indentation, tabs especially. The tab
+  warning is the signal that one may not have survived — if it fires, tell the
+  user which comment and let them look.
 
 ## What This Skill Never Does
 
@@ -211,6 +292,10 @@ creation time, so a successful `POST` means the lines were accepted.
 - Post a PR issue comment as a workaround.
 - Publish without showing drafts locally first.
 - Include findings the user did not select.
+- Reach GitHub by any route other than `post_pending_review.py` — no `gh api`,
+  no `gh pr review`, no MCP tool, no ad-hoc script.
+- Work around the permission prompt on `post`, or run it before the user has
+  approved the drafts.
 
 If the user later asks to publish the pending review, that is a separate,
 explicit request — and even then, confirm before submitting.

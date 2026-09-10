@@ -1,5 +1,11 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(python3 /Users/davidcalhoun/.claude/skills/pending-review-comments/post_pending_review.py preview:*)",
+      "Bash(python3 ~/.claude/skills/pending-review-comments/post_pending_review.py preview:*)",
+      "Bash(python3 ~/.claude/skills/pending-review-comments/post_pending_review.py list:*)",
+      "Bash(python3 /Users/davidcalhoun/.dotfiles/claude/skills/pending-review-comments/post_pending_review.py preview:*)"
+    ],
     "deny": [
       "Read(~/.ssh/**)",
       "Read(//**/.env)",
