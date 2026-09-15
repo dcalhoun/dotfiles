@@ -22,7 +22,7 @@
   "enabledPlugins": {
     "context-a8c@automattic-claude-code-plugins": true,
     "swift-lsp@claude-plugins-official": true,
-    "voiceprint@jck-claude-plugins": true,
+    "voiceprint@jck-claude-plugins": false,
     "github-enterprise@automattic-claude-code-plugins": true
   },
   "extraKnownMarketplaces": {
