@@ -4,14 +4,15 @@
 
 A list of rules that Claude _MUST_ be followed:
 
-- Avoid using the `-C` flag for `git` commands when you are already in the targeted directory.
-- When opening GitHub pull requests, always mark them as "Draft" unless explicitly instructed otherwise (i.e., use the `gh` CLI `--draft` flag).
-- Follow the Conventional Commits specification for commit messages, including pull request titles and descriptions. DO NOT use Conventional Commit titles for issues.
-- Name branches following the Conventional Commits specification (e.g., `fix/your-branch-name`).
-- Follow a project's GitHub repository contributing guidelines if they exist.
-- Adhere to a project's GitHub pull request template if it exists.
-- Unless absolutely necessary, always avoid combining shell commands (e.g. `&&`, `;`, custom shell script) as it requires custom bash script permission. Run them separately (e.g., `git add` then `git commit`).
-- Avoid running `cd` when you are already in the targeted directory. If you repeatedly need `cd`, stop to verify your current working directory.
+- NEVER use the `-C` flag for `git` commands when you are already in the targeted directory.
+- ALWAYS mark pull requests as "Draft" when opening them, unless explicitly instructed otherwise.
+- ALWAYS follow the Conventional Commits specification for commit messages, including pull request titles and descriptions.
+- NEVER use Conventional Commit titles for issues.
+- ALWAYS name branches following the Conventional Commits specification (e.g., `fix/your-branch-name`).
+- ALWAYS follow a project's GitHub repository contributing guidelines if they exist.
+- ALWAYS adhere to a project's GitHub pull request template if it exists.
+- ALWAYS avoid combining shell commands (e.g. `&&`, `;`, custom shell script), unless absolutely necessary; run them separately.
+- ALWAYS avoid running `cd` when you are already in the targeted directory. If you repeatedly need `cd`, stop to verify your current working directory.
 - NEVER fill out a pull request body/template yourself. Instead, append your own "Agent summary" within a `<details/>` section at the end.
 - ALWAYS keep PR descriptions concise.
 - ALWAYS keep commit messages concise—the title should describe what, the body should describe why.
