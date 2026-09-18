@@ -41,7 +41,7 @@
       "effortLevel": "xhigh"
     }
   },
-  "tui": "default",
+  "tui": "fullscreen",
   "editorMode": "vim",
   "agentPushNotifEnabled": true
 }
