@@ -13,7 +13,7 @@ A list of rules that Claude _MUST_ be followed:
 - ALWAYS adhere to a project's GitHub pull request template if it exists.
 - ALWAYS avoid combining shell commands (e.g. `&&`, `;`, custom shell script), unless absolutely necessary; run them separately.
 - ALWAYS avoid running `cd` when you are already in the targeted directory. If you repeatedly need `cd`, stop to verify your current working directory.
-- NEVER fill out a pull request body/template yourself. Instead, append your own "Agent summary" within a `<details/>` section at the end.
+- NEVER fill out a pull request body/template yourself. Instead, append your own summary within a `<details/>` section at the end labeled as "AI-generated details". Preceed the `<details/>` with a horizontal rule (`---`).
 - ALWAYS keep PR descriptions concise.
 - ALWAYS keep commit messages concise—the title should describe what, the body should describe why.
 - ALWAYS keep code comments concise (e.g., one or two sentences). Only insert them when deemed necessary and focus on the "why" for the final state rather than including reasoning about the steps taken to get there.
