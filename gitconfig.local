@@ -6,6 +6,29 @@
 [alias]
   ba = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   br = branch
+  cleanup = "!f() { \
+      git fetch --prune; \
+      branches=$(git branch -vv | grep ': gone]' | awk '{print $1}'); \
+      if [ -z \"$branches\" ]; then \
+          echo; echo 'Nothing to clean up.'; echo; \
+      elif [ \"$1\" = \"--force\" ]; then \
+          echo \"$branches\" | xargs git branch -D; \
+      else \
+          dated=$(echo \"$branches\" | while read b; do \
+              printf '%s\\t%s\\t%s\\n' \"$(git log -1 --format=%ct \"$b\")\" \"$b\" \"$(git log -1 --format=%cr \"$b\")\"; \
+          done | sort -n); \
+          count=$(echo \"$dated\" | wc -l | tr -d ' '); \
+          echo; \
+          printf '\\033[1;33mWould delete (%s branches):\\033[0m\\n' \"$count\"; \
+          echo; \
+          echo \"$dated\" | while IFS=$'\\t' read ts b rel; do \
+              printf '  %-45s %s\\n' \"$b\" \"$rel\"; \
+          done; \
+          echo; \
+          echo 'Run again with --force to actually delete.'; \
+          echo; \
+      fi; \
+  }; f"
   cp = cherry-pick
   df = diff
   fe = fetch -v --prune
