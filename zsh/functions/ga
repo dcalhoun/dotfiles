@@ -4,7 +4,7 @@
 # - https://x.com/dhh/status/2018631575337095389
 ga() {
   if [[ -z "$1" ]]; then
-    echo "Usage: ga [branch name]"
+    echo "Usage: ga <branch name> [start point, default: origin/HEAD]"
     return 1
   fi
 
@@ -13,9 +13,10 @@ ga() {
   common_dir="$(git rev-parse --path-format=absolute --git-common-dir)" || return 1
 
   local branch="$1"
+  local start_point="${2:-origin/HEAD}"
   local source_dir="${common_dir:h}"
-  local base="${source_dir:t}"
-  local worktree="${source_dir:h}/${base}--${branch//\//-}"
+  local repo_name="${source_dir:t}"
+  local worktree="${source_dir:h}/${repo_name}--${branch//\//-}"
 
   if git show-ref --verify --quiet "refs/heads/$branch"; then
     # Branch exists locally
@@ -24,8 +25,12 @@ ga() {
     # Branch exists on remote
     git worktree add --track -b "$branch" "$worktree" "origin/$branch"
   else
-    # New branch
-    git worktree add -b "$branch" "$worktree"
+    # New branch, from trunk by default rather than the current worktree's branch
+    if [[ -z "$2" ]] && ! git rev-parse --verify --quiet origin/HEAD >/dev/null; then
+      echo "Warning: origin/HEAD is unset (fix with 'git remote set-head origin -a'); using HEAD"
+      start_point="HEAD"
+    fi
+    git worktree add --no-track -b "$branch" "$worktree" "$start_point"
   fi
 
   cd "$worktree"
