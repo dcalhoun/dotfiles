@@ -3,37 +3,34 @@
 # - https://gist.github.com/dhh/18575558fc5ee10f15b6cd3e108ed844
 # - https://x.com/dhh/status/2018631575337095389
 gd() {
-  read "reply?Remove worktree and branch? [y/N] "
+  local git_dir common_dir
+  git_dir="$(git rev-parse --path-format=absolute --git-dir)" || return 1
+  common_dir="$(git rev-parse --path-format=absolute --git-common-dir)" || return 1
+
+  # Protect against accidentally nuking the main worktree
+  if [[ "$git_dir" == "$common_dir" ]]; then
+    echo "Error: Not in a linked worktree"
+    return 1
+  fi
+
+  local main_root="${common_dir:h}"
+  local worktree="$(git rev-parse --show-toplevel)"
+  local branch="$(git branch --show-current)"
+  local expected="${main_root:t}--${branch//\//-}"
+
+  # Branches may be switched intentionally, so warn rather than refuse
+  if [[ -z "$branch" ]]; then
+    echo "Warning: Detached HEAD; only the worktree will be removed"
+  elif [[ "${worktree:t}" != "$expected" ]]; then
+    echo "Warning: Branch '$branch' does not match worktree directory '${worktree:t}'"
+  fi
+
+  read "reply?Remove worktree '${worktree:t}'${branch:+ and branch '$branch'}? [y/N] "
   [[ "$reply" =~ ^[Yy]$ ]] || return
 
-  local worktree root branch
-
-  worktree="$(basename "$PWD")"
-  root="${worktree%%--*}"
-
-  # Get the branch name from git (handles branches with slashes)
-  branch="$(git rev-parse --abbrev-ref HEAD)"
-
-  # Expected worktree suffix (branch with slashes replaced by dashes)
-  local expected_suffix="${branch//\//-}"
-
-  # Protect against accidentally nuking a non-worktree directory or wrong branch
-  if [[ "$root" == "$worktree" ]]; then
-    echo "Error: Not in a worktree directory (missing '--' separator)"
-    return 1
-  fi
-
-  if [[ -z "$branch" ]]; then
-    echo "Error: Could not determine current branch"
-    return 1
-  fi
-
-  if [[ "$worktree" != "${root}--${expected_suffix}" ]]; then
-    echo "Error: Branch '$branch' does not match worktree directory '$worktree'"
-    return 1
-  fi
-
-  cd "../$root"
+  cd "$main_root"
   git worktree remove "$worktree" --force
-  git branch -D "$branch"
+  if [[ -n "$branch" ]]; then
+    git branch -D "$branch"
+  fi
 }
