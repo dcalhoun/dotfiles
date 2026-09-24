@@ -8,10 +8,14 @@ ga() {
     return 1
   fi
 
+  # Resolve the main worktree so running from a linked worktree doesn't nest names.
+  local common_dir
+  common_dir="$(git rev-parse --path-format=absolute --git-common-dir)" || return 1
+
   local branch="$1"
-  local base="$(basename "$PWD")"
-  local worktree="../${base}--${branch//\//-}"
-  local source_dir="$PWD"
+  local source_dir="${common_dir:h}"
+  local base="${source_dir:t}"
+  local worktree="${source_dir:h}/${base}--${branch//\//-}"
 
   if git show-ref --verify --quiet "refs/heads/$branch"; then
     # Branch exists locally
