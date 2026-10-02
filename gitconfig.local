@@ -1,5 +1,6 @@
 [core]
   editor = "vim"
+  excludesfile = ~/.config/git/ignore
 [user]
   name = David Calhoun
 	email = github@davidcalhoun.me
