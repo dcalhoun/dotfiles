@@ -12,6 +12,11 @@
       "Read(*.pem)",
       "Read(*.key)"
     ],
+    "ask": [
+      "Bash(ga *)",
+      "Bash(gd *)",
+      "Bash(gp *)"
+    ],
     "defaultMode": "default"
   },
   "statusLine": {
