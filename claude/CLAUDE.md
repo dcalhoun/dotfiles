@@ -9,6 +9,7 @@ A list of rules that Claude _MUST_ be followed:
 - ALWAYS follow the Conventional Commits specification for commit messages, including pull request titles and descriptions.
 - NEVER use Conventional Commit titles for issues.
 - ALWAYS name branches following the Conventional Commits specification (e.g., `fix/your-branch-name`).
+- ALWAYS create git worktrees with the `ga` shell function (e.g., `ga fix/your-branch-name`) instead of `git worktree add` or built-in worktree tools, so they land in the directory Claude Code is granted access to.
 - ALWAYS follow a project's GitHub repository contributing guidelines if they exist.
 - ALWAYS adhere to a project's GitHub pull request template if it exists.
 - ALWAYS avoid combining shell commands (e.g. `&&`, `;`, custom shell script), unless absolutely necessary; run them separately.
