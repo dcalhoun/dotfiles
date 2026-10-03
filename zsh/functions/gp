@@ -2,6 +2,9 @@
 gp() {
   local stale=()
   local wt_path="" wt_branch=""
+  local main_root
+  main_root="$(_wt_main)" || return 1
+  local wt_root="$(_wt_root "$main_root")"
 
   while IFS= read -r line; do
     # Each porcelain block: worktree path, then branch
@@ -13,8 +16,8 @@ gp() {
     if [[ -z "$line" && -n "$wt_path" && -n "$wt_branch" ]]; then
       local dir="${wt_path##*/}"
 
-      # Skip non-worktree directories (no '--' separator, same check as gd)
-      if [[ "$dir" != *"--"* ]]; then
+      # Only prune worktrees created by ga
+      if [[ "${wt_path:h}" != "$wt_root" ]]; then
         wt_path=""
         wt_branch=""
         continue

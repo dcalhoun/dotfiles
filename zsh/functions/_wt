@@ -1,0 +1,24 @@
+# Shared helpers for the ga/gd/gp worktree functions.
+
+# Print the main worktree of the repo at $1 (default: current directory).
+# Only <main>/.git layouts qualify; bare repos, submodules and separate git dirs
+# would misplace worktrees and settings.
+_wt_main() {
+  local dir="${1:-.}" common_dir
+  common_dir="$(git -C "$dir" rev-parse --path-format=absolute --git-common-dir)" || return 1
+  local -a lines=("${(@f)$(git -C "$dir" worktree list --porcelain)}")
+  local main="${lines[1]#worktree }"
+  if [[ "$common_dir" != "$main/.git" ]]; then
+    echo "Error: Only repos with a standard .git directory are supported" >&2
+    return 1
+  fi
+  echo "$main"
+}
+
+# Print the directory holding a repo's worktrees, kept outside the repo so tools
+# walking up parent directories never reach the main checkout. Resolving first
+# keeps '..' arguments from escaping .worktrees.
+_wt_root() {
+  local main_root="${1:A}"
+  echo "${main_root:h}/.worktrees/${main_root:t}"
+}

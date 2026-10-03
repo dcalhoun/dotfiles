@@ -1,4 +1,4 @@
-# Switch to a sibling worktree using fzf.
+# Switch to another worktree using fzf.
 gs() {
   local worktrees current selected wt_path
 

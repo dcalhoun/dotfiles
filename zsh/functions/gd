@@ -13,12 +13,17 @@ gd() {
     return 1
   fi
 
-  local main_root="${common_dir:h}"
+  local main_root
+  main_root="$(_wt_main)" || return 1
+  local wt_root="$(_wt_root "$main_root")"
   local worktree="$(git rev-parse --show-toplevel)"
   local branch="$(git branch --show-current)"
-  local expected="${main_root:t}--${branch//\//-}"
+  local expected="${branch//\//-}"
 
   # Branches may be switched intentionally, so warn rather than refuse
+  if [[ "${worktree:h}" != "$wt_root" ]]; then
+    echo "Warning: Worktree is outside '$wt_root'"
+  fi
   if [[ -z "$branch" ]]; then
     echo "Warning: Detached HEAD; only the worktree will be removed"
   elif [[ "${worktree:t}" != "$expected" ]]; then
