@@ -29,9 +29,10 @@ ga() {
       start_point="HEAD"
     fi
     git worktree add --no-track -b "$branch" "$worktree" "$start_point"
-  fi
+  fi || return 1
 
-  cd "$worktree"
+  cd "$worktree" || return 1
+  _wt_access add "$source_dir"
 
   # Symlink .claude/*.local.* files from source directory
   if [[ -d "${source_dir}/.claude" ]]; then

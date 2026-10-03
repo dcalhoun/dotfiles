@@ -22,3 +22,81 @@ _wt_root() {
   local main_root="${1:A}"
   echo "${main_root:h}/.worktrees/${main_root:t}"
 }
+
+# Add or remove Claude Code access to a repo's worktrees in its local settings.
+# Agents can call this directly, so it only accepts a repo's main worktree and
+# refuses symlinks that could redirect the write or the granted directory.
+_wt_access() {
+  local action="$1" main_root="${2:A}"
+  local settings="$main_root/.claude/settings.local.json"
+  local wt_root="$(_wt_root "$main_root")"
+
+  if [[ "$action" != (add|remove) ]]; then
+    echo "Usage: _wt_access add|remove <main worktree>"
+    return 1
+  fi
+  if [[ -z "$2" || "$(_wt_main "$main_root" 2>/dev/null)" != "$main_root" ]]; then
+    echo "Error: '$main_root' is not a repo's main worktree"
+    return 1
+  fi
+  local p
+  for p in "${settings:h}" "$settings" "${wt_root:h}" "$wt_root"; do
+    if [[ -L "$p" ]]; then
+      echo "Error: Refusing to follow symlink '$p'"
+      return 1
+    fi
+  done
+
+  if [[ ! -s "$settings" ]]; then
+    [[ "$action" == "remove" ]] && return 0
+    mkdir -p "${settings:h}"
+    echo '{}' > "$settings"
+  fi
+
+  local present
+  present="$(jq --arg dir "$wt_root" \
+    'any((.permissions.additionalDirectories // [])[]; . == $dir)' "$settings")" || {
+    echo "Warning: Could not read $settings"
+    return 1
+  }
+  [[ "$action" == "add" && "$present" == "true" ]] && return 0
+  [[ "$action" == "remove" && "$present" == "false" ]] && return 0
+
+  local filter
+  if [[ "$action" == "add" ]]; then
+    filter='.permissions.additionalDirectories += [$dir]'
+  else
+    filter='
+      .permissions.additionalDirectories -= [$dir]
+      | if .permissions.additionalDirectories == [] then del(.permissions.additionalDirectories) else . end
+      | if .permissions == {} then del(.permissions) else . end
+    '
+  fi
+
+  # Replace the file rather than writing through it, so a symlink swapped in
+  # after the checks above gets replaced instead of followed.
+  local tmp
+  tmp="$(mktemp "${settings:h}/.settings.local.json.XXXXXX")" || return 1
+  if jq --arg dir "$wt_root" "$filter" "$settings" > "$tmp" && mv -f "$tmp" "$settings"; then
+    if [[ "$action" == "add" ]]; then
+      echo "Granted Claude Code access to $wt_root"
+    else
+      echo "Removed Claude Code access to $wt_root"
+    fi
+  else
+    rm -f "$tmp"
+    echo "Warning: Could not update $settings"
+    return 1
+  fi
+}
+
+# Once a repo's last worktree is gone, remove its directory and access entry.
+_wt_cleanup() {
+  local main_root="$1"
+  local wt_root="$(_wt_root "$main_root")"
+  if [[ -d "$wt_root" ]]; then
+    rmdir "$wt_root" 2>/dev/null || return 0
+  fi
+  rmdir "${wt_root:h}" 2>/dev/null
+  _wt_access remove "$main_root"
+}

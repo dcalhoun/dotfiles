@@ -19,6 +19,8 @@
       "Bash(ga *)",
       "Bash(gd *)",
       "Bash(gp *)",
+      "Bash(_wt_access *)",
+      "Bash(_wt_cleanup *)",
       "Bash(asdf list all *)",
       "Bash(git *reset *--hard*)",
       "Bash(git *checkout *-- *)",

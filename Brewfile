@@ -5,6 +5,7 @@ brew 'fzf' # Required by thoughtbot/dotfiles
 brew 'gh'
 brew 'git'
 brew 'grip'
+brew 'jq'
 brew 'poppler'
 brew 'pure'
 brew 'rcm'

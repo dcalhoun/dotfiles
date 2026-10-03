@@ -38,4 +38,5 @@ gd() {
   if [[ -n "$branch" ]]; then
     git branch -D "$branch"
   fi
+  _wt_cleanup "$main_root"
 }
