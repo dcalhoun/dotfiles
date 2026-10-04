@@ -1,4 +1,4 @@
-# Shared helpers for the ga/gd/gp worktree functions.
+# Shared helpers for the ga/gd/gl/gp/gs worktree functions.
 
 # Print the main worktree of the repo at $1 (default: current directory).
 # Only <main>/.git layouts qualify; bare repos, submodules and separate git dirs
@@ -88,6 +88,63 @@ _wt_access() {
     echo "Warning: Could not update $settings"
     return 1
   fi
+}
+
+# Print "<path>\t<row>" per worktree, main first and the rest newest commit
+# first. Directories only appear when they differ from the name ga derives from
+# the branch, since otherwise they repeat it.
+_wt_list() {
+  local porcelain line
+  porcelain="$(git worktree list --porcelain)" || return 1
+
+  local -a paths branches heads
+  for line in "${(@f)porcelain}"; do
+    case "$line" in
+      "worktree "*) paths+=("${line#worktree }"); branches+=("(detached)"); heads+=("") ;;
+      "HEAD "*)     heads[-1]="${line#HEAD }" ;;
+      "branch "*)   branches[-1]="${line#branch refs/heads/}" ;;
+      bare)         branches[-1]="(bare)" ;;
+    esac
+  done
+
+  # One git call for every worktree's commit date rather than one per worktree.
+  # Unborn branches report an all-zero HEAD, which git show would reject.
+  setopt local_options extended_glob
+  local -A times ages
+  local -a shas=("${(@u)${(@)heads:#}:#0##}")
+  local sha ct cr
+  if (( ${#shas} )); then
+    git show -s --format='%H %ct %cr' "${shas[@]}" | while read -r sha ct cr; do
+      times[$sha]="$ct"
+      ages[$sha]="$cr"
+    done
+  fi
+
+  local -a order
+  local i
+  for (( i = 2; i <= $#paths; i++ )); do
+    order+=("${times[${heads[i]}]:-0}:$i")
+  done
+  order=(1 "${(@)${(@On)order}#*:}")
+
+  local branch_w=0 age_w=0
+  for i in {1..$#paths}; do
+    (( ${#branches[i]} > branch_w )) && branch_w=${#branches[i]}
+    (( ${#ages[${heads[i]}]} > age_w )) && age_w=${#ages[${heads[i]}]}
+  done
+
+  local current="${$(git rev-parse --show-toplevel 2>/dev/null):A}"
+  local dim=$'\e[2m' reset=$'\e[0m' marker tag age dir
+  for i in "${order[@]}"; do
+    marker=" " tag="    " age="${ages[${heads[i]}]}" dir=""
+    [[ "${paths[i]:A}" == "$current" ]] && marker="*"
+    if (( i == 1 )); then
+      tag="main"
+    elif [[ "${paths[i]:t}" != "${branches[i]//\//-}" ]]; then
+      age="${(r:age_w:)age}" dir="  ↳ ${paths[i]:t}"
+    fi
+    print -r -- "${paths[i]}"$'\t'"$marker ${(r:branch_w:)branches[i]}  $tag  $dim$age$dir$reset"
+  done
 }
 
 # Once a repo's last worktree is gone, remove its directory and access entry.
