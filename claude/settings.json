@@ -4,7 +4,10 @@
       "Bash(python3 /Users/davidcalhoun/.claude/skills/pending-review-comments/post_pending_review.py preview:*)",
       "Bash(python3 ~/.claude/skills/pending-review-comments/post_pending_review.py preview:*)",
       "Bash(python3 ~/.claude/skills/pending-review-comments/post_pending_review.py list:*)",
-      "Bash(python3 /Users/davidcalhoun/.dotfiles/claude/skills/pending-review-comments/post_pending_review.py preview:*)"
+      "Bash(python3 /Users/davidcalhoun/.dotfiles/claude/skills/pending-review-comments/post_pending_review.py preview:*)",
+      "Bash(asdf current *)",
+      "Bash(asdf list *)",
+      "Bash(asdf which *)"
     ],
     "deny": [
       "Read(~/.ssh/**)",
@@ -16,6 +19,7 @@
       "Bash(ga *)",
       "Bash(gd *)",
       "Bash(gp *)",
+      "Bash(asdf list all *)",
       "Bash(git *reset *--hard*)",
       "Bash(git *checkout *-- *)",
       "Bash(git *checkout .)",
