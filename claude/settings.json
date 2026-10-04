@@ -13,7 +13,8 @@
       "Read(~/.ssh/**)",
       "Read(//**/.env)",
       "Read(*.pem)",
-      "Read(*.key)"
+      "Read(*.key)",
+      "Bash(git *worktree add *)"
     ],
     "ask": [
       "Bash(ga *)",
