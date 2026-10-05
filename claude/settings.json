@@ -22,6 +22,7 @@
       "Bash(gp *)",
       "Bash(wt-access *)",
       "Bash(wt-cleanup *)",
+      "Bash(wt-derived-data *)",
       "Bash(asdf list all *)",
       "Bash(git *reset *--hard*)",
       "Bash(git *checkout *-- *)",

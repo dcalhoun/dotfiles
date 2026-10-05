@@ -147,6 +147,44 @@ wt-list() {
   done
 }
 
+# Trash Xcode DerivedData for projects under $1 that no longer exist. Xcode
+# keys these folders by project path, so removed worktrees leave them behind.
+wt-derived-data() {
+  local prefix="${1%/}"
+  [[ "$prefix" == /?* && -d ~/Library/Developer/Xcode/DerivedData ]] || return 0
+
+  # Xcode names folders <Project>-<28-letter hash>, which rules out '/', '.' and '..'.
+  local xcode_name='^[^/]+-[a-z]{28}$'
+  local name project reply
+  local -a stale
+  local -A projects
+  for name in ~/Library/Developer/Xcode/DerivedData/*(N/:t); do
+    [[ "$name" =~ $xcode_name ]] || continue
+    project="$(plutil -extract WorkspacePath raw ~/Library/Developer/Xcode/DerivedData/"$name"/info.plist 2>/dev/null)" || continue
+    if [[ "$project" == "$prefix"/* && ! -e "$project" ]]; then
+      stale+=("$name")
+      projects[$name]="$project"
+    fi
+  done
+  (( ${#stale} )) || return 0
+
+  echo "Xcode DerivedData for removed projects:"
+  for name in "${stale[@]}"; do
+    printf '  %6s  %s\n          %s\n' "$(du -sh ~/Library/Developer/Xcode/DerivedData/"$name" | cut -f1)" \
+      "$name" "${projects[$name]/#$HOME/~}"
+  done
+  read "reply?Move ${#stale} folder(s) to the Trash? [y/N] "
+  [[ "$reply" =~ ^[Yy]$ ]] || return 0
+
+  # Only the last path component is variable, and it's rechecked here so this
+  # line can never reach outside DerivedData.
+  for name in "${stale[@]}"; do
+    [[ "$name" =~ $xcode_name ]] || continue
+    trash -s ~/Library/Developer/Xcode/DerivedData/"${name:?}" || return 1
+  done
+  echo "Moved ${#stale} folder(s) to the Trash"
+}
+
 # Once a repo's last worktree is gone, remove its directory and access entry.
 wt-cleanup() {
   local main_root="$1"

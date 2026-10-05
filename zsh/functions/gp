@@ -33,7 +33,8 @@ gp() {
   done < <(git worktree list --porcelain; echo)
 
   if [[ ${#stale[@]} -eq 0 ]]; then
-    # Also catches grants left behind by worktrees removed without gd/gp
+    # Also catches leftovers from worktrees removed without gd/gp
+    wt-derived-data "$wt_root"
     wt-cleanup "$main_root"
     echo "No stale worktrees found."
     return 0
@@ -61,6 +62,7 @@ gp() {
     git worktree remove "$wt_path" --force 2>/dev/null
     git branch -D "$branch" 2>/dev/null
   done
+  wt-derived-data "$wt_root"
   wt-cleanup "$main_root"
 
   echo "Done."
