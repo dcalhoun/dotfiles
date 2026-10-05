@@ -3,7 +3,7 @@ gs() {
   local rows row current selected
   local -a others
 
-  rows="$(_wt_list)" || return 1
+  rows="$(wt-list)" || return 1
   current="${$(git rev-parse --show-toplevel):A}"
   for row in "${(@f)rows}"; do
     [[ "${${row%%$'\t'*}:A}" != "$current" ]] && others+=("$row")

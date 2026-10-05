@@ -3,7 +3,7 @@
 # Print the main worktree of the repo at $1 (default: current directory).
 # Only <main>/.git layouts qualify; bare repos, submodules and separate git dirs
 # would misplace worktrees and settings.
-_wt_main() {
+wt-main() {
   local dir="${1:-.}" common_dir
   common_dir="$(git -C "$dir" rev-parse --path-format=absolute --git-common-dir)" || return 1
   local -a lines=("${(@f)$(git -C "$dir" worktree list --porcelain)}")
@@ -18,7 +18,7 @@ _wt_main() {
 # Print the directory holding a repo's worktrees, kept outside the repo so tools
 # walking up parent directories never reach the main checkout. Resolving first
 # keeps '..' arguments from escaping .worktrees.
-_wt_root() {
+wt-root() {
   local main_root="${1:A}"
   echo "${main_root:h}/.worktrees/${main_root:t}"
 }
@@ -26,16 +26,16 @@ _wt_root() {
 # Add or remove Claude Code access to a repo's worktrees in its local settings.
 # Agents can call this directly, so it only accepts a repo's main worktree and
 # refuses symlinks that could redirect the write or the granted directory.
-_wt_access() {
+wt-access() {
   local action="$1" main_root="${2:A}"
   local settings="$main_root/.claude/settings.local.json"
-  local wt_root="$(_wt_root "$main_root")"
+  local wt_root="$(wt-root "$main_root")"
 
   if [[ "$action" != (add|remove) ]]; then
-    echo "Usage: _wt_access add|remove <main worktree>"
+    echo "Usage: wt-access add|remove <main worktree>"
     return 1
   fi
-  if [[ -z "$2" || "$(_wt_main "$main_root" 2>/dev/null)" != "$main_root" ]]; then
+  if [[ -z "$2" || "$(wt-main "$main_root" 2>/dev/null)" != "$main_root" ]]; then
     echo "Error: '$main_root' is not a repo's main worktree"
     return 1
   fi
@@ -93,7 +93,7 @@ _wt_access() {
 # Print "<path>\t<row>" per worktree, main first and the rest newest commit
 # first. Directories only appear when they differ from the name ga derives from
 # the branch, since otherwise they repeat it.
-_wt_list() {
+wt-list() {
   local porcelain line
   porcelain="$(git worktree list --porcelain)" || return 1
 
@@ -148,12 +148,12 @@ _wt_list() {
 }
 
 # Once a repo's last worktree is gone, remove its directory and access entry.
-_wt_cleanup() {
+wt-cleanup() {
   local main_root="$1"
-  local wt_root="$(_wt_root "$main_root")"
+  local wt_root="$(wt-root "$main_root")"
   if [[ -d "$wt_root" ]]; then
     rmdir "$wt_root" 2>/dev/null || return 0
   fi
   rmdir "${wt_root:h}" 2>/dev/null
-  _wt_access remove "$main_root"
+  wt-access remove "$main_root"
 }

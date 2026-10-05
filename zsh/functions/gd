@@ -14,8 +14,8 @@ gd() {
   fi
 
   local main_root
-  main_root="$(_wt_main)" || return 1
-  local wt_root="$(_wt_root "$main_root")"
+  main_root="$(wt-main)" || return 1
+  local wt_root="$(wt-root "$main_root")"
   local worktree="$(git rev-parse --show-toplevel)"
   local branch="$(git branch --show-current)"
   local expected="${branch//\//-}"
@@ -38,5 +38,5 @@ gd() {
   if [[ -n "$branch" ]]; then
     git branch -D "$branch"
   fi
-  _wt_cleanup "$main_root"
+  wt-cleanup "$main_root"
 }

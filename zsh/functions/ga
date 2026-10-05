@@ -10,11 +10,11 @@ ga() {
 
   # Resolve the main worktree so running from a linked worktree doesn't nest names.
   local source_dir
-  source_dir="$(_wt_main)" || return 1
+  source_dir="$(wt-main)" || return 1
 
   local branch="$1"
   local start_point="${2:-origin/HEAD}"
-  local worktree="$(_wt_root "$source_dir")/${branch//\//-}"
+  local worktree="$(wt-root "$source_dir")/${branch//\//-}"
 
   if git show-ref --verify --quiet "refs/heads/$branch"; then
     # Branch exists locally
@@ -32,7 +32,7 @@ ga() {
   fi || return 1
 
   cd "$worktree" || return 1
-  _wt_access add "$source_dir"
+  wt-access add "$source_dir"
 
   # Symlink .claude/*.local.* files from source directory
   if [[ -d "${source_dir}/.claude" ]]; then

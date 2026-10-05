@@ -3,8 +3,8 @@ gp() {
   local stale=()
   local wt_path="" wt_branch=""
   local main_root
-  main_root="$(_wt_main)" || return 1
-  local wt_root="$(_wt_root "$main_root")"
+  main_root="$(wt-main)" || return 1
+  local wt_root="$(wt-root "$main_root")"
 
   while IFS= read -r line; do
     # Each porcelain block: worktree path, then branch
@@ -34,7 +34,7 @@ gp() {
 
   if [[ ${#stale[@]} -eq 0 ]]; then
     # Also catches grants left behind by worktrees removed without gd/gp
-    _wt_cleanup "$main_root"
+    wt-cleanup "$main_root"
     echo "No stale worktrees found."
     return 0
   fi
@@ -61,7 +61,7 @@ gp() {
     git worktree remove "$wt_path" --force 2>/dev/null
     git branch -D "$branch" 2>/dev/null
   done
-  _wt_cleanup "$main_root"
+  wt-cleanup "$main_root"
 
   echo "Done."
 }

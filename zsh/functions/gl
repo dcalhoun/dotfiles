@@ -1,6 +1,6 @@
 # List all worktrees with branch and latest commit age.
 gl() {
   local rows
-  rows="$(_wt_list)" || return 1
+  rows="$(wt-list)" || return 1
   print -rl -- "${(@)${(@f)rows}#*$'\t'}"
 }
