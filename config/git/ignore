@@ -18,3 +18,4 @@ tmp/**/*
 /tags
 
 **/.claude/settings.local.json
+**/.claude/plans/

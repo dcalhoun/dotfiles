@@ -18,6 +18,7 @@ A list of rules that Claude _MUST_ be followed:
 - ALWAYS keep PR descriptions concise.
 - ALWAYS keep commit messages concise—the title should describe what, the body should describe why.
 - ALWAYS keep code comments concise (e.g., one or two sentences). Only insert them when deemed necessary and focus on the "why" for the final state rather than including reasoning about the steps taken to get there.
+- ALWAYS place project-specific plan files in the project's local `./.claude/plans/` directory.
 
 ## Best Practices
 
