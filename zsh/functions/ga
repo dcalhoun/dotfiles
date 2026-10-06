@@ -36,7 +36,11 @@ ga() {
 
   # Symlink .claude/*.local.* files from source directory
   if [[ -d "${source_dir}/.claude" ]]; then
-    local local_files=("${source_dir}"/.claude/*.local.*(N))
+    local file
+    local -a local_files
+    # null_glob is scoped to this one glob, and the results are checked before
+    # use, never passed to a command directly, so an empty match can't change what runs.
+    () { setopt local_options null_glob; local_files=("${source_dir}"/.claude/*.local.*) }
     if [[ ${#local_files[@]} -gt 0 ]]; then
       mkdir -p .claude
       for file in "${local_files[@]}"; do

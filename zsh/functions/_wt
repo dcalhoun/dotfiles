@@ -109,10 +109,14 @@ wt-list() {
 
   # One git call for every worktree's commit date rather than one per worktree.
   # Unborn branches report an all-zero HEAD, which git show would reject.
-  setopt local_options extended_glob
   local -A times ages
-  local -a shas=("${(@u)${(@)heads:#}:#0##}")
+  local -a shas
   local sha ct cr
+  for sha in "${(@u)heads}"; do
+    [[ "$sha" == *[^0]* ]] && shas+=("$sha")
+  done
+  # Checked before use, never passed to git show empty, since with no commits
+  # given it shows HEAD instead.
   if (( ${#shas} )); then
     git show -s --format='%H %ct %cr' "${shas[@]}" | while read -r sha ct cr; do
       times[$sha]="$ct"
@@ -155,10 +159,15 @@ wt-derived-data() {
 
   # Xcode names folders <Project>-<28-letter hash>, which rules out '/', '.' and '..'.
   local xcode_name='^[^/]+-[a-z]{28}$'
-  local name project reply
-  local -a stale
+  local dir name project reply
+  local -a dirs stale
   local -A projects
-  for name in ~/Library/Developer/Xcode/DerivedData/*(N/:t); do
+
+  # null_glob is scoped to this one glob, and the results only feed the loop
+  # below, never a command directly, so an empty match can't change what runs.
+  () { setopt local_options null_glob; dirs=(~/Library/Developer/Xcode/DerivedData/*/) }
+  for dir in "${dirs[@]}"; do
+    name="${${dir%/}:t}"
     [[ "$name" =~ $xcode_name ]] || continue
     project="$(plutil -extract WorkspacePath raw ~/Library/Developer/Xcode/DerivedData/"$name"/info.plist 2>/dev/null)" || continue
     if [[ "$project" == "$prefix"/* && ! -e "$project" ]]; then
