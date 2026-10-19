@@ -30,11 +30,17 @@ gd() {
     echo "Warning: Branch '$branch' does not match worktree directory '${worktree:t}'"
   fi
 
+  local busy
+  if busy="$(wt-busy "$worktree")"; then
+    echo "Warning: Node.js processes running in the worktree may break or keep writing files:"
+    print -r -- "$busy" | sed 's/^/  /'
+  fi
+
   read "reply?Remove worktree '${worktree:t}'${branch:+ and branch '$branch'}? [y/N] "
   [[ "$reply" =~ ^[Yy]$ ]] || return
 
   cd "$main_root"
-  git worktree remove "$worktree" --force
+  wt-remove "$main_root" "$worktree" || return 1
   if [[ -n "$branch" ]]; then
     git branch -D "$branch"
   fi

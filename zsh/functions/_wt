@@ -194,10 +194,51 @@ wt-derived-data() {
   echo "Moved ${#stale} folder(s) to the Trash"
 }
 
-# Once a repo's last worktree is gone, remove its directory and access entry.
+# Print "<pid> <command>" for Node.js processes running from worktree $1, like
+# dev servers that keep writing into it while it's removed. Fails when none.
+wt-busy() {
+  local pids
+  pids="$(lsof -t -a -c node -d cwd -- "$1" 2>/dev/null)" || return 1
+  ps -o pid=,comm= -p "${(j:,:)${(f)pids}}"
+}
+
+# Remove a worktree by first moving it into a holding folder that wt-cleanup
+# deletes. The move is a single rename, so processes still writing into the
+# worktree can't leave files behind the way git's recursive delete can.
+wt-remove() {
+  local main_root="$1" worktree="$2"
+  local wt_root="$(wt-root "$main_root")"
+
+  # Elsewhere the holding folder may be on another volume, where mv copies.
+  if [[ "${worktree:h}" != "$wt_root" ]]; then
+    git -C "$main_root" worktree remove --force "$worktree"
+    return
+  fi
+
+  # Dot-prefixed so it can't collide with a worktree named after a branch
+  local dest
+  mkdir -p "$wt_root/.removing" || return 1
+  dest="$(mktemp -d "$wt_root/.removing/${worktree:t}.XXXXXX")" || return 1
+  mv "$worktree" "$dest/" || return 1
+
+  # Put it back if git refuses, e.g. for a locked worktree
+  if ! git -C "$main_root" worktree remove --force "$worktree"; then
+    mv "$dest/${worktree:t}" "$worktree"
+    rmdir "$dest"
+    return 1
+  fi
+}
+
+# Delete worktrees held by wt-remove, then once a repo's last worktree is gone,
+# remove its directory and access entry. Processes still writing into a held
+# worktree can make the delete fail, so every gd/gp run retries it.
 wt-cleanup() {
   local main_root="$1"
   local wt_root="$(wt-root "$main_root")"
+  if [[ -d "$wt_root/.removing" ]]; then
+    rm -rf "${wt_root:?}/.removing" 2>/dev/null ||
+      echo "Warning: Removed worktree files are still in use; the next gd/gp will retry"
+  fi
   if [[ -d "$wt_root" ]]; then
     rmdir "$wt_root" 2>/dev/null || return 0
   fi

@@ -41,11 +41,16 @@ gp() {
   fi
 
   echo "Stale worktrees (remote branch gone):"
+  local busy
   for entry in "${stale[@]}"; do
     local dir="${entry%%|*}"
     local rest="${entry#*|}"
     local branch="${rest%%|*}"
     echo "  $dir ($branch)"
+    if busy="$(wt-busy "${rest#*|}")"; then
+      echo "    Node.js still running here:"
+      print -r -- "$busy" | sed 's/^/    /'
+    fi
   done
 
   echo ""
@@ -59,7 +64,7 @@ gp() {
     local wt_path="${rest#*|}"
 
     echo "Removing $dir ($branch)..."
-    git worktree remove "$wt_path" --force 2>/dev/null
+    wt-remove "$main_root" "$wt_path" || continue
     git branch -D "$branch" 2>/dev/null
   done
   wt-derived-data "$wt_root"
