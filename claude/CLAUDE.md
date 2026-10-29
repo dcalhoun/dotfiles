@@ -27,3 +27,4 @@ A list of best practices that Claude _SHOULD_ follow:
 - Commit changes in small, logical chunks to make it easier for reviewers to understand the changes.
 - Commit early and often to avoid reaching a state where changes are too entangled to commit separately.
 - If a project's auto-formatter changes files you are editing (via agent hook or otherwise), stop to first auto-format the targeted file and commit the styling changes as a separate commit, then continue your own edits to commit separately. Do not attempt to circumvent the auto-formatter with `sed` or other tools.
+- Whenever possible, verify the existence of a bug (e.g., reproduction, screenshot, log file) before reporting it to ensure accuracy and avoid false positives.
